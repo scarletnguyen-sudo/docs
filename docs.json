@@ -1,7 +1,7 @@
 {
-  "theme": "mint",
+  "theme": "willow",
   "name": "Epsilo Docs",
-  "logo": { "light": "/logo/light.svg", "dark": "/logo/dark.svg" },
+  "logo": { "light": "/logo/dark.svg", "dark": "/logo/dark.svg" },
   "favicon": "/favicon.svg",
   "colors": { "primary": "#2563EB" },
   "seo": { "indexing": "navigable" },
