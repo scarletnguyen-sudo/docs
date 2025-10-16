@@ -1,32 +1,26 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-
   "theme": "maple",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
-
   "colors": {
     "primary": "#2563EB",
     "light": "#F8FAFC",
     "dark": "#0F172A"
   },
-
   "appearance": {
     "default": "system",
     "strict": false
   },
-
   "icons": {
     "library": "lucide"
   },
-
   "styling": {
     "eyebrows": "breadcrumbs",
     "codeblocks": "system"
   },
-
   "seo": {
     "indexing": "navigable",
     "metatags": {
@@ -34,15 +28,12 @@
       "og:type": "website"
     }
   },
-
   "search": {
     "prompt": "Search docs…"
   },
-
   "interaction": {
     "drilldown": false
   },
-
   "head": {
     "links": [
       { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
@@ -52,7 +43,6 @@
     ]
   },
   "css": ["/styles.css"],
-
   "navbar": {
     "links": [
       { "label": "Website", "href": "https://next.epsilo.ai", "icon": "globe" }
@@ -63,15 +53,21 @@
       "href": "https://calendly.com/alex-vo/meeting-with-alex?back=1&month=2025-10"
     }
   },
-
   "navigation": {
     "tabs": [
       {
         "tab": "Introduction",
         "icon": "home",
         "pages": [
-          "introduction/welcome",
-          "introduction/getting-started"
+          "introduction/getting-started",
+          "introduction/navigating-epsilo",
+          "introduction/workspaces",
+          "introduction/login-methods",
+          "introduction/invite-members",
+          "introduction/members-and-roles",
+          "introduction/security",
+          "introduction/billing-and-plans",
+          "introduction/exporting-data"
         ]
       },
       {
@@ -171,7 +167,6 @@
       }
     ]
   },
-
   "footer": {
     "socials": {
       "x": "https://x.com/epsilo",
@@ -186,7 +181,6 @@
       }
     ]
   },
-
   "errors": {
     "404": {
       "redirect": false,
