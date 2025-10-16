@@ -1,13 +1,47 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
+
   "theme": "maple",
   "name": "Epsilo Docs",
-  "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg" },
+  "description": "Unified workspace for retail media teams.",
+  "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://next.epsilo.ai" },
   "favicon": "/favicon.svg",
 
-  "colors": { "primary": "#2563EB" }, 
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#F8FAFC",
+    "dark": "#0F172A"
+  },
 
-  "styling": { "eyebrows": "breadcrumbs" },
-  "interaction": { "drilldown": false }, 
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+
+  "icons": {
+    "library": "lucide"
+  },
+
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system"
+  },
+
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "og:title": "Epsilo Docs",
+      "og:type": "website"
+    }
+  },
+
+  "search": {
+    "prompt": "Search docs…"
+  },
+
+  "interaction": {
+    "drilldown": false
+  },
 
   "head": {
     "links": [
@@ -19,10 +53,22 @@
   },
   "css": ["/styles.css"],
 
+  "navbar": {
+    "links": [
+      { "label": "Website", "href": "https://next.epsilo.ai", "icon": "globe" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Book a demo",
+      "href": "https://next.epsilo.ai/book-demo"
+    }
+  },
+
   "navigation": {
     "tabs": [
       {
         "tab": "Introduction",
+        "icon": "home",
         "pages": [
           "introduction/welcome",
           "introduction/getting-started"
@@ -124,5 +170,29 @@
         "pages": ["changelog/index"]
       }
     ]
+  },
+
+  "footer": {
+    "socials": {
+      "x": "https://x.com/epsilo",
+      "linkedin": "https://www.linkedin.com/company/epsilo"
+    },
+    "links": [
+      {
+        "header": "Resources",
+        "items": [
+          { "label": "Product", "href": "https://next.epsilo.ai/products" },
+          { "label": "Pricing", "href": "https://next.epsilo.ai/pricing" }
+        ]
+      }
+    ]
+  },
+
+  "errors": {
+    "404": {
+      "redirect": false,
+      "title": "Page not found",
+      "description": "This page moved or never existed. Use the search bar above."
+    }
   }
 }
