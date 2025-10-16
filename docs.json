@@ -5,6 +5,14 @@
   "favicon": "/favicon.svg",
   "colors": { "primary": "#0F123C" },
   "seo": { "indexing": "navigable" },
+  "head": {
+    "links": [
+      { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
+      { "rel": "preconnect", "href": "https://fonts.gstatic.com", "crossOrigin": "anonymous" },
+      { "rel": "stylesheet", "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" },
+      { "rel": "stylesheet", "href": "/styles.css" }
+    ]
+  },
 
   "navigation": {
     "groups": [
@@ -91,15 +99,8 @@
         ]
       },
 
-      {
-        "group": "Glossary",
-        "pages": ["/glossary/index"]
-      },
-
-      {
-        "group": "Changelog",
-        "pages": ["/changelog/index"]
-      }
+      { "group": "Glossary", "pages": ["/glossary/index"] },
+      { "group": "Changelog", "pages": ["/changelog/index"] }
     ]
   }
 }
