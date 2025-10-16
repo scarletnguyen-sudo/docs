@@ -3,7 +3,7 @@ header .site-logo,
 header .logo {
   display: inline-flex;
   align-items: center;
-  height: 28px;             
+  height: 24px;             
 }
 
 header a[aria-label="Logo"] img,
