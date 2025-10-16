@@ -72,7 +72,7 @@
       {
         "tab": "Integrations",
         "icon": "plug",
-        "pages": ["connectors/shopee", "connectors/lazada", "connectors/tiktok-shop", "connectors/amazon"]
+        "pages": ["integrations/shopee", "integrations/lazada", "integrations/tiktok-shop", "integrations/amazon"]
       },
       { "tab": "Use Cases", "icon": "puzzle", "pages": ["use-cases/gmv-max", "use-cases/budget-distribution", "use-cases/dsa-playbook"] },
       { "tab": "Glossary", "icon": "book-text", "pages": ["glossary/index"] },
