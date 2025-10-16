@@ -1,4 +1,98 @@
 ---
-title: "Login Methods"
-description: "Description of your new file."
+title: Login Methods
+description: Learn how to sign in securely to Epsilo using SSO, Google, Microsoft, or email authentication.
 ---
+Epsilo supports multiple secure authentication methods for different organizational needs.  
+Enterprise workspaces can enable **Single Sign-On (SSO)** to simplify and centralize access management.
+
+![Epsilo login screen example](/assets/login-screen.png)
+
+---
+
+## Overview
+
+Members can log in to their Epsilo workspace using Google, Microsoft, Email, or SSO—depending on the organization’s setup.  
+Each workspace may enable or restrict specific login methods to comply with internal IT policies.
+
+---
+
+## Login Options
+
+### Google for Work
+If your organization uses **Google Workspace**, select **Sign in with Google for Work**.  
+Epsilo authenticates you directly with your corporate Google account—ideal for Gmail-based domains.
+
+### Microsoft for Work
+If your organization manages users via **Microsoft 365** or **Azure AD**, choose **Sign in with Microsoft for Work**.  
+Epsilo uses Microsoft’s OAuth flow and respects conditional access policies defined by your IT team.
+
+### Email Login
+You can also sign in manually with your **work email and password**:
+
+1. Enter your work email.  
+2. Input your password.  
+3. Click **Continue with Email**.
+
+If your workspace enforces SSO, you’ll automatically be redirected to the correct identity provider.
+
+> 💡 **Tip:** Use your company-issued email (e.g., `name@brand.com`). Personal domains may not be supported.
+
+---
+
+## Single Sign-On (SSO)
+
+SSO lets members access Epsilo with existing company credentials—no separate passwords required.  
+Epsilo supports both **SAML 2.0** and **OIDC-based** integrations.
+
+### Supported Identity Providers
+- Google Workspace  
+- Microsoft Azure AD  
+- Okta  
+- OneLogin  
+- JumpCloud  
+
+### How SSO Works
+- Members are redirected to your identity provider for authentication.  
+- Password-based logins can be disabled for added security.  
+- Session tokens are renewed automatically via your provider.
+
+### Configure SSO
+1. Go to **Settings → Administration → Security**.  
+2. Select **Enable SSO** and choose your provider.  
+3. Add required metadata (ACS URL, Entity ID, certificate).  
+4. Save and test authentication.
+
+> 🏢 **Enterprise plans** can request setup support from **support@epsilo.io** to enforce domain-based or regional access policies.
+
+---
+
+## Switching Workspaces
+
+You can access multiple Epsilo workspaces under the same account.
+
+1. Click your **workspace name** in the top-left corner.  
+2. Select **Switch workspace**.  
+3. Choose an existing workspace or **Create / Join a Workspace**.
+
+Each workspace keeps its own:
+- Members and roles  
+- Billing plan  
+- Connected storefronts and data  
+
+---
+
+## Logging Out
+
+Signing out from one workspace logs you out of all active sessions on that device.  
+To re-enter, simply authenticate again with your preferred method.
+
+---
+
+## Summary
+
+- Epsilo supports **Google**, **Microsoft**, **Email**, and **SSO** authentication.  
+- **SSO (SAML / OIDC)** provides the most secure, scalable access control.  
+- Admins can enforce login and IP restrictions per workspace.  
+- Authentication and billing remain isolated per workspace.
+
+> 🔒 Secure, centralized login keeps your automations and reports protected while making access effortless for every operator.

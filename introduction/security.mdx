@@ -1,4 +1,98 @@
 ---
-title: "Security"
-description: "Description of your new file."
+title: Security
+description: Learn how Epsilo protects your data, storefronts, and automations with enterprise-grade security and compliance.
 ---
+Epsilo is built with enterprise-level security and compliance standards to protect your data and connected storefronts.  
+This guide outlines how access, encryption, and permissions work inside every workspace.
+
+---
+
+## Overview
+
+Security in Epsilo operates at three levels:
+
+1. **Data protection** — encryption and isolation across tenants.  
+2. **Access control** — role-based permissions and authentication.  
+3. **Compliance** — policies that meet global data protection laws (GDPR, PDPA).
+
+> 🔒 Your connected marketplaces and reports are isolated to your workspace.  
+> Only authorized members with defined roles can access your data.
+
+---
+
+## Data Protection
+
+Epsilo uses strong encryption and storage standards to protect your assets.
+
+| Area | Method |
+|------|--------|
+| **Data in transit** | TLS 1.2+ encryption for all requests and API traffic. |
+| **Data at rest** | AES-256 encryption for all databases and backups. |
+| **Token storage** | Encrypted and isolated by workspace; tokens never leave the secured environment. |
+| **Backups** | Daily encrypted backups with automated recovery testing. |
+
+All infrastructure runs in **regional cloud environments** with dedicated tenancy per customer cluster.
+
+---
+
+## Access Controls
+
+Workspaces enforce strict **role-based access control (RBAC)**.
+
+| Role | Access Level |
+|------|---------------|
+| Owner | Full control, including billing, members, and connected storefronts. |
+| Admin | Manage users, automations, and campaigns. |
+| Member | Operate campaigns and view reports. |
+| Viewer | Read-only access to dashboards. |
+
+Authentication options:
+- **Single Sign-On (SSO)** via Google Workspace, Microsoft 365, or Okta (Enterprise plan).  
+- **Two-Factor Authentication (2FA)** for Owners and Admins.  
+- Automatic **session expiry** after inactivity.
+
+> 💡 Tip: Require SSO or 2FA for all admins to prevent unauthorized automation edits.
+
+---
+
+## Compliance and Privacy
+
+Epsilo follows regional data protection frameworks to ensure transparency and control.
+
+- **GDPR & PDPA compliance** for user and campaign data.  
+- **Data residency**: information stored in the region defined by your workspace.  
+- **Marketplace API compliance**: aligns with Shopee, Lazada, and TikTok Shop integration policies.  
+- Annual third-party **security audits** and vulnerability assessments.
+
+You can request our latest compliance report by contacting **security@epsilo.io**.
+
+---
+
+## Best Practices for Teams
+
+- Use **company-issued emails** for all invites.  
+- Review the **Members & Roles** list quarterly.  
+- Enable **2FA** for sensitive roles.  
+- Avoid sharing access credentials across users.  
+- Rotate marketplace tokens regularly in **Partner Center → Connections**.
+
+---
+
+## Incident Response
+
+If you suspect a security issue:
+1. Immediately revoke affected user access under **Workspace Settings → Members**.  
+2. Notify the Epsilo team via **security@epsilo.io** with details of the event.  
+3. Epsilo will initiate its incident-response procedure within **24 hours**.
+
+> 🧠 Our internal monitoring continuously tracks anomalies in API usage and automation execution. Suspicious activity triggers real-time alerts to our ops team.
+
+---
+
+## Related Topics
+
+- [Members and Roles](./members-and-roles) — Learn how permissions are structured.  
+- [Workspaces](./workspaces) — Understand data isolation across teams.  
+- [Billing and Plans](./billing-and-plans) — Manage ownership and admin rights for invoices.
+
+> Security is embedded into how Epsilo operates — protecting your campaigns, automations, and performance data so you can focus on optimization, not risk.

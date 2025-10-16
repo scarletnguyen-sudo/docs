@@ -1,4 +1,72 @@
 ---
-title: "Exporting-data"
-description: "Description of your new file."
+title: Exporting Data
+description: Export campaign performance, automation logs, and marketplace insights from Epsilo for reporting or analysis.
 ---
+
+Epsilo gives you full control of your campaign and automation data.  
+You can export reports, metrics, or logs directly from the dashboard or through the Unified API.
+
+Use this guide to learn how to extract your data safely and efficiently.
+
+---
+
+## Overview
+
+Data exports allow you to:
+- Generate campaign performance reports for analysis.  
+- Share metrics with other teams or BI dashboards.  
+- Download automation logs and audit history for compliance.  
+
+All exports respect your workspace permissions — only authorized users can access campaign data.
+
+---
+
+## Exporting from Dashboards
+
+### Campaign Reports
+1. Go to any **Performance Report** or **Dashboard**.  
+2. Use filters (Marketplace, Country, Storefront) to narrow your data.  
+3. Click **Export → CSV / Excel**.  
+4. Choose a date range and metric set.  
+5. Download the file once processing completes.
+
+Exports include all visible columns — GMV, Ad Spend, ROAS, Orders, Impressions, Clicks, and Conversion Rate.
+
+> 💡 **Tip:** Save your preferred filters as a *Custom View* to reuse the same export setup later.
+
+---
+
+### Automation Logs
+1. Navigate to **Marketing Automation → History Logs**.  
+2. Use filters to select rule type, status, or time period.  
+3. Click **Export Logs** to download CSV or JSON.
+
+Automation exports include:
+- Rule name and ID  
+- Trigger condition  
+- Action result (executed / failed)  
+- Timestamp and user  
+- Associated campaign or storefront  
+
+> 🧠 Use these exports for audit or troubleshooting automation performance.
+
+---
+
+## Exporting via Unified API
+
+Developers and analysts can integrate directly with the **Epsilo Unified API** for automated data retrieval.
+
+### Example Use Cases
+- Sync campaign data into BI tools (e.g., Looker, Power BI).  
+- Combine performance data across Shopee, Lazada, and TikTok Shop.  
+- Automate weekly report generation for multiple brands.
+
+### API Access
+1. Go to **Partner Center → API Access**.  
+2. Generate an **API token** (requires Owner or Admin permissions).  
+3. Review available endpoints in [Unified API Documentation](../features/aggregate/unified-api).  
+4. Query campaign metrics by date or campaign ID.
+
+Example request:
+```bash
+GET /api/v1/campaigns?workspace_id=1234&date_range=2025-10-01:2025-10-16

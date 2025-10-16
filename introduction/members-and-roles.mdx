@@ -1,4 +1,78 @@
 ---
-title: "Members & Roles"
-description: "Description of your new file."
+title: "Members and Roles"
+description: "Manage permissions and access levels for your team inside an Epsilo workspace."
 ---
+
+Epsilo workspaces are built for collaboration.\
+Each member has a defined role that controls what they can view, edit, or automate.
+
+Use this guide to understand available roles, assign permissions, and keep your workspace secure.
+
+## Overview
+
+Every workspace includes four main roles:
+
+| Role       | Access level                                                            | Best for                        |
+| ---------- | ----------------------------------------------------------------------- | ------------------------------- |
+| **Owner**  | Full access to billing, workspace settings, and storefront connections. | Business or team lead           |
+| **Admin**  | Manage members, create and edit automations, and view all campaigns.    | Performance or operations lead  |
+| **Member** | Run campaigns, view dashboards, and trigger automations.                | Daily operator                  |
+| **Viewer** | Read-only access to dashboards and reports.                             | External partners or management |
+
+> 💡 **Tip:** Use the **Principle of Least Privilege** — grant the lowest necessary access for each person.
+
+## Adding and Managing Members
+
+### Invite a new member
+
+1. Go to **Workspace Settings → Members**.
+2. Click **Invite**.
+3. Enter the user’s work email.
+4. Choose a role (Owner, Admin, Member, or Viewer).
+5. Click **Send invite**.
+
+Invitations expire after **7 days** if not accepted.\
+Admins can resend or revoke invitations at any time.
+
+### Update an existing member
+
+1. From the **Members** list, select a user.
+2. Use the role dropdown to adjust permissions.
+3. Changes apply immediately — no need to resend invites.
+
+### Remove a member
+
+Owners and Admins can remove users at any time:
+
+- Select the member → click **Remove from workspace**.
+- All active automations remain intact, but ownership transfers to the workspace.
+
+## Role Capabilities
+
+| Action                    | Owner | Admin | Member | Viewer |
+| ------------------------- | :---: | :---: | :----: | :----: |
+| Manage billing and plan   | ✅     | ❌     | ❌      | ❌      |
+| Add/remove members        | ✅     | ✅     | ❌      | ❌      |
+| Connect storefronts       | ✅     | ✅     | ❌      | ❌      |
+| Create automations        | ✅     | ✅     | ✅      | ❌      |
+| Edit campaigns            | ✅     | ✅     | ✅      | ❌      |
+| View dashboards           | ✅     | ✅     | ✅      | ✅      |
+| Access AI Reports (Botep) | ✅     | ✅     | ✅      | ✅      |
+| Export data               | ✅     | ✅     | ✅      | ❌      |
+
+> 🔒 Only Owners and Admins can modify workspace-level automations or access marketplace credentials.
+
+## Security Recommendations
+
+- **Use company email domains** for all invites.
+- Enable **two-factor authentication** for Owners and Admins.
+- Review member lists quarterly and remove inactive users.
+- Limit Viewer access to external agencies or auditors.
+
+## Related Topics
+
+- [Invite Members](./invite-members) — Step-by-step guide for inviting teammates.
+- [Workspaces](./workspaces) — Learn how workspaces organize your storefronts and users.
+- [Security](./security) — Data protection, permissions, and compliance details.
+
+> 🧠 Keeping clear role boundaries ensures your automations and reports stay consistent — especially across multiple brands or marketplaces.
