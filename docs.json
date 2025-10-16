@@ -23,7 +23,6 @@
     "tabs": [
       {
         "tab": "Introduction",
-        "icon": "home",
         "pages": [
           "introduction/welcome",
           "introduction/getting-started"

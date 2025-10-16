@@ -1,4 +1,126 @@
-/* -------- Global top category bar -------- */
+
+:root {
+  --brand: #2563EB;       
+  --epsilo-navy: #0F123C;
+  --epsilo-text: #0B0C0E;
+  --epsilo-border: #E6E8EB;
+  --epsilo-tint: #EAF2FF;
+  --bg: #ffffff;
+  --fg: var(--epsilo-text);
+
+  --primary: var(--brand);
+  --mint-primary: var(--brand);
+  --mintlify-primary: var(--brand);
+  --color-primary: var(--brand);
+  --accent: var(--brand);
+
+  accent-color: var(--brand);
+}
+html.dark {
+  --bg: #0B0C0E;
+  --fg: #EAEFF5;
+  --epsilo-border: #2A2F39;
+  --epsilo-tint: #172035;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.prose a {
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--brand) 40%, transparent);
+}
+.prose a:hover {
+  border-bottom-color: color-mix(in oklab, var(--brand) 65%, transparent);
+}
+
+
+.mintlify-button--primary,
+button.primary {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+}
+.mintlify-button--primary:hover,
+button.primary:hover { filter: brightness(0.96); }
+
+.badge, .tag, .label {
+  background: color-mix(in oklab, var(--brand) 18%, transparent);
+  color: var(--brand);
+  border: 1px solid color-mix(in oklab, var(--brand) 28%, #DDE5F5);
+  border-radius: 6px;
+}
+
+header nav a[aria-current="page"],
+[role="tab"][aria-selected="true"],
+[data-role="tabs"] a[aria-current="page"] {
+  color: var(--brand) !important;
+  border-bottom-color: var(--brand) !important;
+}
+
+
+aside nav a[aria-current="page"] {
+  color: var(--brand) !important;
+}
+aside nav a:hover {
+  background: color-mix(in oklab, var(--brand) 10%, transparent);
+  border-radius: 8px;
+}
+
+
+nav[aria-label="On this page"] a[aria-current="true"],
+nav[aria-label='On this page'] a[aria-current="page"] {
+  color: var(--brand) !important;
+  border-left-color: var(--brand) !important;
+}
+
+
+:focus-visible {
+  outline: 2px solid var(--brand) !important;
+  outline-offset: 2px;
+}
+
+
+pre {
+  background: color-mix(in oklab, var(--epsilo-navy) 8%, var(--bg));
+  border: 1px solid var(--epsilo-border);
+  border-radius: 12px;
+}
+.prose :not(pre) > code {
+  background: #EAF2FF;
+  color: #0F123C;
+  border: 1px solid #DDE5F5;
+  border-radius: 6px;
+  padding: .15rem .35rem;
+}
+
+
+.prose table {
+  border: 1px solid var(--epsilo-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.prose table thead th {
+  background: #F7F9FC;
+  color: var(--epsilo-navy);
+  font-weight: 600;
+}
+html.dark .prose table thead th { color: #E8ECFF; }
+
+
+.note, .tip, .warning, .info {
+  border-radius: 12px !important;
+  border: 1px solid var(--epsilo-border) !important;
+}
+.note    { background: #EAF2FF; }
+.tip     { background: #ECF8EE; }
+.warning { background: #FFF4E5; }
+html.dark .tip     { background: #102417; }
+html.dark .warning { background: #2A2016; }
+
+
 #eps-topnav {
   position: sticky;
   top: 0;
@@ -6,7 +128,6 @@
   background: var(--bg);
   border-bottom: 1px solid var(--epsilo-border);
 }
-
 #eps-topnav ul {
   margin: 0;
   padding: 8px 16px;
@@ -15,7 +136,6 @@
   list-style: none;
   overflow-x: auto;
 }
-
 #eps-topnav a {
   display: inline-block;
   padding: 6px 10px;
@@ -25,61 +145,14 @@
   border-bottom: 2px solid transparent;
   border-radius: 8px;
 }
-
 #eps-topnav a:hover {
   background: color-mix(in oklab, var(--epsilo-navy) 8%, transparent);
 }
-
 #eps-topnav a.active {
-  color: var(--epsilo-navy);
-  border-bottom-color: var(--epsilo-navy);
+  color: var(--brand);
+  border-bottom-color: var(--brand);
 }
 html.dark #eps-topnav a.active {
-  color: #e8ecff;
-  border-bottom-color: #c7d3ff;
-}
-/* Brand tokens */
-:root {
-  --brand: #2563EB;            /* CTA blue */
-  --epsilo-navy: #0F123C;
-  --epsilo-text: #0B0C0E;
-  --epsilo-border: #E6E8EB;
-  --epsilo-tint: #EAF2FF;
-  --bg: #fff;
-  --fg: var(--epsilo-text);
-}
-html.dark {
-  --bg: #0B0C0E;
-  --fg: #EAEFF5;
-  --epsilo-border: #2A2F39;
-  --epsilo-tint: #172035;
-}
-
-/* Buttons */
-.mintlify-button--primary, button.primary {
-  background: var(--brand) !important;
-  color: #fff !important;
-  border-radius: 999px !important;
-}
-
-/* Active states: tabs + sidebar */
-header nav a[aria-current="page"],
-[role="tab"][aria-selected="true"],
-aside nav a[aria-current="page"] {
-  color: var(--brand) !important;
-  border-bottom-color: var(--brand) !important;
-}
-
-/* Links underline tint */
-.prose a {
-  border-bottom: 1px solid color-mix(in oklab, var(--brand) 40%, transparent);
-}
-
-/* Inline code + badges tông xanh dương */
-.prose :not(pre) > code {
-  background: #EAF2FF;
-  color: #0F123C;
-  border: 1px solid #DDE5F5;
-  border-radius: 6px;
-  padding: .15rem .35rem;
+  color: #E8ECFF;
+  border-bottom-color: #C7D3FF;
 }
