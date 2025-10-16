@@ -38,3 +38,14 @@ html.dark #eps-topnav a.active {
   color: #e8ecff;
   border-bottom-color: #c7d3ff;
 }
+:root {
+  --epsilo-navy:#0f123c;
+  --epsilo-text:#0b0c0e;
+  --epsilo-border:#e6e8eb;
+  --epsilo-tint:#eaf2ff;
+  --bg:#fff; --fg:var(--epsilo-text);
+}
+html.dark {
+  --bg:#0b0c0e; --fg:#eaeef5;
+  --epsilo-border:#2a2f39; --epsilo-tint:#172035;
+}
