@@ -54,10 +54,11 @@
   },
 
   "navigation": {
-    "dropdowns": [
+    "groups": [
       {
-        "dropdown": "Introduction",
+        "group": "Introduction",
         "icon": "home",
+        "expanded": false,
         "pages": [
           "introduction/getting-started",
           "introduction/navigating-epsilo",
@@ -71,74 +72,9 @@
         ]
       },
       {
-        "dropdown": "Features",
-        "icon": "sparkles",
-        "groups": [
-          {
-            "group": "Aggregate",
-            "icon": "git-merge",
-            "expanded": false,
-            "pages": [
-              "features/aggregate/competitive-intelligence",
-              "features/aggregate/digital-self-tracking",
-              "features/aggregate/keyword-lab",
-              "features/aggregate/operational-index",
-              "features/aggregate/unified-api"
-            ]
-          },
-          {
-            "group": "Benchmark",
-            "icon": "activity",
-            "expanded": false,
-            "pages": [
-              "features/benchmark/ask-botep",
-              "features/benchmark/budget-notification",
-              "features/benchmark/metrics-benchmark",
-              "features/benchmark/performance-tracking",
-              "features/benchmark/time-benchmark"
-            ]
-          },
-          {
-            "group": "Collaboration",
-            "icon": "users",
-            "expanded": false,
-            "pages": [
-              "features/collaboration/advanced-filtering",
-              "features/collaboration/custom-views",
-              "features/collaboration/export-tools",
-              "features/collaboration/media-planning",
-              "features/collaboration/workspace-sync"
-            ]
-          },
-          {
-            "group": "Decide",
-            "icon": "brain",
-            "expanded": false,
-            "pages": [
-              "features/decide/budget-distribution",
-              "features/decide/bulk-actions",
-              "features/decide/campaign-taxonomy",
-              "features/decide/cross-channel-execution",
-              "features/decide/custom-workflows"
-            ]
-          },
-          {
-            "group": "Execute",
-            "icon": "rocket",
-            "expanded": false,
-            "pages": [
-              "features/execute/agent-orchestration",
-              "features/execute/automated-reporting",
-              "features/execute/optimize-performance",
-              "features/execute/scheduled-automation",
-              "features/execute/smart-alerts"
-            ]
-          }
-        ]
-      },
-      {
-        "dropdown": "Integrations",
+        "group": "Integrations",
         "icon": "plug",
+        "expanded": false,
         "pages": [
           "connectors/shopee",
           "connectors/lazada",
@@ -147,8 +83,9 @@
         ]
       },
       {
-        "dropdown": "Use Cases",
+        "group": "Use Cases",
         "icon": "puzzle",
+        "expanded": false,
         "pages": [
           "use-cases/gmv-max",
           "use-cases/budget-distribution",
@@ -156,14 +93,20 @@
         ]
       },
       {
-        "dropdown": "Glossary",
+        "group": "Glossary",
         "icon": "book-text",
-        "pages": ["glossary/index"]
+        "expanded": false,
+        "pages": [
+          "glossary/index"
+        ]
       },
       {
-        "dropdown": "Changelog",
+        "group": "Changelog",
         "icon": "history",
-        "pages": ["changelog/index"]
+        "expanded": false,
+        "pages": [
+          "changelog/index"
+        ]
       }
     ]
   },
