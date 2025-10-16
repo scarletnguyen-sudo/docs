@@ -39,13 +39,30 @@ html.dark #eps-topnav a.active {
   border-bottom-color: #c7d3ff;
 }
 :root {
-  --epsilo-navy:#0f123c;
-  --epsilo-text:#0b0c0e;
-  --epsilo-border:#e6e8eb;
-  --epsilo-tint:#eaf2ff;
-  --bg:#fff; --fg:var(--epsilo-text);
+  --epsilo-primary: #2563EB;     /* NEW */
+  --epsilo-navy: #0F123C;
+  --epsilo-text: #0B0C0E;
+  --epsilo-border: #E6E8EB;
+  --epsilo-tint: #EAF2FF;
+
+  --bg: #fff;
+  --fg: var(--epsilo-text);
 }
 html.dark {
-  --bg:#0b0c0e; --fg:#eaeef5;
-  --epsilo-border:#2a2f39; --epsilo-tint:#172035;
+  --bg: #0B0C0E;
+  --fg: #EAEFF5;
+  --epsilo-border: #2A2F39;
+  --epsilo-tint: #172035;
 }
+
+/* Buttons & CTA */
+.mintlify-button--primary, button.primary {
+  background: var(--epsilo-primary) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+}
+
+/* Link underline + active nav tint */
+.prose a { border-bottom: 1px solid color-mix(in oklab, var(--epsilo-primary) 40%, transparent); }
+#eps-topnav a.active,
+aside nav a[aria-current="page"] { color: var(--epsilo-primary); border-bottom-color: var(--epsilo-primary); }

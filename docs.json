@@ -3,8 +3,10 @@
   "name": "Epsilo Docs",
   "logo": { "light": "/logo/light.svg", "dark": "/logo/dark.svg" },
   "favicon": "/favicon.svg",
-  "colors": { "primary": "#0F123C" },
+  "colors": { "primary": "#2563EB" },
   "seo": { "indexing": "navigable" },
+  "styling": { "eyebrows": "breadcrumbs" },
+  "interaction": { "drilldown": false },
   "head": {
     "links": [
       { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
@@ -14,117 +16,110 @@
     ]
   },
   "css": ["/styles.css"],
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "interaction": {
-    "drilldown": false
-  },
-
   "navigation": {
     "tabs": [
       {
         "tab": "Introduction",
         "icon": "home",
         "pages": [
-          "/introduction/welcome",
-          "/introduction/getting-started"
+          "introduction/welcome",
+          "introduction/getting-started"
         ]
       },
-
       {
         "tab": "Features",
         "icon": "sparkles",
         "groups": [
           {
             "group": "Aggregate",
-            "expanded": true,
+            "icon": "merge",
+            "expanded": false,
             "pages": [
-              "/features/aggregate/competitive-intelligence",
-              "/features/aggregate/digital-self-tracking",
-              "/features/aggregate/keyword-lab",
-              "/features/aggregate/operational-index",
-              "/features/aggregate/unified-api"
+              "features/aggregate/competitive-intelligence",
+              "features/aggregate/digital-self-tracking",
+              "features/aggregate/keyword-lab",
+              "features/aggregate/operational-index",
+              "features/aggregate/unified-api"
             ]
           },
           {
             "group": "Benchmark",
+            "icon": "activity",
+            "expanded": false,
             "pages": [
-              "/features/benchmark/ask-botep",
-              "/features/benchmark/budget-notification",
-              "/features/benchmark/metrics-benchmark",
-              "/features/benchmark/performance-tracking",
-              "/features/benchmark/time-benchmark"
+              "features/benchmark/ask-botep",
+              "features/benchmark/budget-notification",
+              "features/benchmark/metrics-benchmark",
+              "features/benchmark/performance-tracking",
+              "features/benchmark/time-benchmark"
             ]
           },
           {
             "group": "Collaboration",
+            "icon": "users",
+            "expanded": false,
             "pages": [
-              "/features/collaboration/advanced-filtering",
-              "/features/collaboration/custom-views",
-              "/features/collaboration/export-tools",
-              "/features/collaboration/media-planning",
-              "/features/collaboration/workspace-sync"
+              "features/collaboration/advanced-filtering",
+              "features/collaboration/custom-views",
+              "features/collaboration/export-tools",
+              "features/collaboration/media-planning",
+              "features/collaboration/workspace-sync"
             ]
           },
           {
             "group": "Decide",
+            "icon": "brain",
+            "expanded": false,
             "pages": [
-              "/features/decide/budget-distribution",
-              "/features/decide/bulk-actions",
-              "/features/decide/campaign-taxonomy",
-              "/features/decide/cross-channel-execution",
-              "/features/decide/custom-workflows"
+              "features/decide/budget-distribution",
+              "features/decide/bulk-actions",
+              "features/decide/campaign-taxonomy",
+              "features/decide/cross-channel-execution",
+              "features/decide/custom-workflows"
             ]
           },
           {
             "group": "Execute",
+            "icon": "rocket",
+            "expanded": false,
             "pages": [
-              "/features/execute/agent-orchestration",
-              "/features/execute/automated-reporting",
-              "/features/execute/optimize-performance",
-              "/features/execute/scheduled-automation",
-              "/features/execute/smart-alerts"
+              "features/execute/agent-orchestration",
+              "features/execute/automated-reporting",
+              "features/execute/optimize-performance",
+              "features/execute/scheduled-automation",
+              "features/execute/smart-alerts"
             ]
           }
         ]
       },
-
       {
         "tab": "Integrations",
         "icon": "plug",
         "pages": [
-          "/connectors/shopee",
-          "/connectors/lazada",
-          "/connectors/tiktok-shop",
-          "/connectors/amazon"
+          "connectors/shopee",
+          "connectors/lazada",
+          "connectors/tiktok-shop",
+          "connectors/amazon"
         ]
       },
-
       {
         "tab": "Use Cases",
         "icon": "puzzle",
         "pages": [
-          "/use-cases/gmv-max",
-          "/use-cases/budget-distribution",
-          "/use-cases/dsa-playbook"
+          "use-cases/gmv-max",
+          "use-cases/budget-distribution",
+          "use-cases/dsa-playbook"
         ]
       },
-
       {
         "tab": "Glossary",
         "icon": "book-text",
-        "pages": [
-          "/glossary/index"
-        ]
+        "pages": ["glossary/index"]
       },
-
       {
         "tab": "Changelog",
         "icon": "history",
-        "pages": [
-          "/changelog/index"
-        ]
+        "pages": ["changelog/index"]
       }
     ]
   }
