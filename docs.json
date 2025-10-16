@@ -5,6 +5,7 @@
   "favicon": "/favicon.svg",
   "colors": { "primary": "#0F123C" },
   "seo": { "indexing": "navigable" },
+
   "head": {
     "links": [
       { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
@@ -26,7 +27,7 @@
 
       {
         "group": "Features",
-        "groups": [
+        "pages": [
           {
             "group": "Aggregate",
             "pages": [
