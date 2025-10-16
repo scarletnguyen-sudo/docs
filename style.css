@@ -40,13 +40,12 @@ html.dark #eps-topnav a.active {
 }
 /* Brand tokens */
 :root {
-  --epsilo-primary: #2563EB;   /* your blue */
+  --brand: #2563EB;            /* CTA blue */
   --epsilo-navy: #0F123C;
   --epsilo-text: #0B0C0E;
   --epsilo-border: #E6E8EB;
   --epsilo-tint: #EAF2FF;
-
-  --bg: #ffffff;
+  --bg: #fff;
   --fg: var(--epsilo-text);
 }
 html.dark {
@@ -56,27 +55,31 @@ html.dark {
   --epsilo-tint: #172035;
 }
 
-/* Buttons/CTAs */
+/* Buttons */
 .mintlify-button--primary, button.primary {
-  background: var(--epsilo-primary) !important;
+  background: var(--brand) !important;
   color: #fff !important;
   border-radius: 999px !important;
 }
 
-/* Tabs (top nav) active state */
+/* Active states: tabs + sidebar */
 header nav a[aria-current="page"],
-[data-role="tabs"] a[aria-current="page"],
-[role="tab"][aria-selected="true"] {
-  color: var(--epsilo-primary) !important;
-  border-bottom-color: var(--epsilo-primary) !important;
-}
-
-/* Sidebar active */
+[role="tab"][aria-selected="true"],
 aside nav a[aria-current="page"] {
-  color: var(--epsilo-primary) !important;
+  color: var(--brand) !important;
+  border-bottom-color: var(--brand) !important;
 }
 
 /* Links underline tint */
 .prose a {
-  border-bottom: 1px solid color-mix(in oklab, var(--epsilo-primary) 40%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--brand) 40%, transparent);
+}
+
+/* Inline code + badges tông xanh dương */
+.prose :not(pre) > code {
+  background: #EAF2FF;
+  color: #0F123C;
+  border: 1px solid #DDE5F5;
+  border-radius: 6px;
+  padding: .15rem .35rem;
 }
