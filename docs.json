@@ -5,11 +5,100 @@
   "favicon": "/favicon.svg",
   "colors": { "primary": "#0F123C" },
   "seo": { "indexing": "navigable" },
+
   "navigation": {
     "groups": [
       {
         "group": "Introduction",
-        "pages": ["/introduction/welcome"]
+        "pages": [
+          "/introduction/welcome",
+          "/introduction/getting-started"
+        ]
+      },
+
+      {
+        "group": "Features",
+        "groups": [
+          {
+            "group": "Aggregate",
+            "pages": [
+              "/features/aggregate/competitive-intelligence",
+              "/features/aggregate/digital-self-tracking",
+              "/features/aggregate/keyword-lab",
+              "/features/aggregate/operational-index",
+              "/features/aggregate/unified-api"
+            ]
+          },
+          {
+            "group": "Benchmark",
+            "pages": [
+              "/features/benchmark/ask-botep",
+              "/features/benchmark/budget-notification",
+              "/features/benchmark/metrics-benchmark",
+              "/features/benchmark/performance-tracking",
+              "/features/benchmark/time-benchmark"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "pages": [
+              "/features/collaboration/advanced-filtering",
+              "/features/collaboration/custom-views",
+              "/features/collaboration/export-tools",
+              "/features/collaboration/media-planning",
+              "/features/collaboration/workspace-sync"
+            ]
+          },
+          {
+            "group": "Decide",
+            "pages": [
+              "/features/decide/budget-distribution",
+              "/features/decide/bulk-actions",
+              "/features/decide/campaign-taxonomy",
+              "/features/decide/cross-channel-execution",
+              "/features/decide/custom-workflows"
+            ]
+          },
+          {
+            "group": "Execute",
+            "pages": [
+              "/features/execute/agent-orchestration",
+              "/features/execute/automated-reporting",
+              "/features/execute/optimize-performance",
+              "/features/execute/scheduled-automation",
+              "/features/execute/smart-alerts"
+            ]
+          }
+        ]
+      },
+
+      {
+        "group": "Connectors",
+        "pages": [
+          "/connectors/shopee",
+          "/connectors/lazada",
+          "/connectors/tiktok-shop",
+          "/connectors/amazon"
+        ]
+      },
+
+      {
+        "group": "Use cases",
+        "pages": [
+          "/use-cases/gmv-max",
+          "/use-cases/budget-distribution",
+          "/use-cases/dsa-playbook"
+        ]
+      },
+
+      {
+        "group": "Glossary",
+        "pages": ["/glossary/index"]
+      },
+
+      {
+        "group": "Changelog",
+        "pages": ["/changelog/index"]
       }
     ]
   }
