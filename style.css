@@ -1,106 +1,40 @@
-/* ---------- Base typography ---------- */
-html, body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color: #0B0C0E;
+/* -------- Global top category bar -------- */
+#eps-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--epsilo-border);
 }
 
-/* Links */
-.prose a {
-  text-decoration: none;
-  border-bottom: 1px solid rgba(15,18,60,0.25);
-}
-.prose a:hover {
-  border-bottom-color: rgba(15,18,60,0.55);
-}
-
-/* Headings */
-.prose h1, .prose h2, .prose h3 {
-  color: #0F123C;
-  letter-spacing: -0.015em;
-}
-.prose h1 { font-weight: 700; }
-.prose h2, .prose h3 { font-weight: 600; }
-
-/* Code blocks */
-pre, code {
-  font-feature-settings: "ss01" on, "ss02" on;
-}
-pre {
-  background: #0F123C0D;       /* 5–10% navy tint */
-  border: 1px solid #E6E8EB;
-  border-radius: 12px;
+#eps-topnav ul {
+  margin: 0;
+  padding: 8px 16px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  overflow-x: auto;
 }
 
-/* Inline code */
-.prose :not(pre) > code {
-  background: #EAF2FF;
-  color: #0F123C;
-  padding: 0.15rem 0.35rem;
-  border-radius: 6px;
-  border: 1px solid #DDE5F5;
-}
-
-/* Callouts (Mintlify components render to .callout variants) */
-.callout,
-.note, .tip, .warning, .info {
-  border-radius: 12px !important;
-  border: 1px solid #E6E8EB !important;
-}
-.note   { background: #EAF2FF; }
-.tip    { background: #ECF8EE; }
-.warning{ background: #FFF4E5; }
-.info   { background: #EEF3FF; }
-
-/* Buttons and CTAs (topbar, in-page) */
-button, .btn, .mintlify-button {
-  border-radius: 999px !important;
-  font-weight: 600 !important;
-}
-.mintlify-button--primary,
-button.primary {
-  background: #0F123C !important;
-  color: #fff !important;
-}
-.mintlify-button--primary:hover,
-button.primary:hover {
-  filter: brightness(0.95);
-}
-
-/* Sidebar polish */
-aside nav {
-  border-right: 1px solid #E6E8EB;
-}
-aside nav .active,
-aside nav a[aria-current="page"] {
-  background: #EAF2FF;
-  color: #0F123C;
-  border-radius: 10px;
-}
-
-/* Tables */
-.prose table {
-  border: 1px solid #E6E8EB;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.prose table thead th {
-  background: #F7F9FC;
-  color: #0F123C;
+#eps-topnav a {
+  display: inline-block;
+  padding: 6px 10px;
+  color: var(--fg);
   font-weight: 600;
-}
-.prose table td, .prose table th {
-  border-color: #E6E8EB;
-}
-
-/* Changelog date tags */
-.badge, .tag, .label {
-  background: #EAF2FF;
-  color: #0F123C;
-  border: 1px solid #DDE5F5;
-  border-radius: 6px;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 8px;
 }
 
-/* Footer (if present) */
-footer {
-  border-top: 1px solid #E6E8EB;
+#eps-topnav a:hover {
+  background: color-mix(in oklab, var(--epsilo-navy) 8%, transparent);
+}
+
+#eps-topnav a.active {
+  color: var(--epsilo-navy);
+  border-bottom-color: var(--epsilo-navy);
+}
+html.dark #eps-topnav a.active {
+  color: #e8ecff;
+  border-bottom-color: #c7d3ff;
 }
