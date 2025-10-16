@@ -30,7 +30,6 @@
           {
             "group": "Aggregate",
             "icon": "merge",
-            "expanded": false,
             "pages": [
               "features/aggregate/competitive-intelligence",
               "features/aggregate/digital-self-tracking",
