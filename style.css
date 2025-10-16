@@ -38,14 +38,15 @@ html.dark #eps-topnav a.active {
   color: #e8ecff;
   border-bottom-color: #c7d3ff;
 }
+/* Brand tokens */
 :root {
-  --epsilo-primary: #2563EB;     /* NEW */
+  --epsilo-primary: #2563EB;   /* your blue */
   --epsilo-navy: #0F123C;
   --epsilo-text: #0B0C0E;
   --epsilo-border: #E6E8EB;
   --epsilo-tint: #EAF2FF;
 
-  --bg: #fff;
+  --bg: #ffffff;
   --fg: var(--epsilo-text);
 }
 html.dark {
@@ -55,14 +56,27 @@ html.dark {
   --epsilo-tint: #172035;
 }
 
-/* Buttons & CTA */
+/* Buttons/CTAs */
 .mintlify-button--primary, button.primary {
   background: var(--epsilo-primary) !important;
   color: #fff !important;
   border-radius: 999px !important;
 }
 
-/* Link underline + active nav tint */
-.prose a { border-bottom: 1px solid color-mix(in oklab, var(--epsilo-primary) 40%, transparent); }
-#eps-topnav a.active,
-aside nav a[aria-current="page"] { color: var(--epsilo-primary); border-bottom-color: var(--epsilo-primary); }
+/* Tabs (top nav) active state */
+header nav a[aria-current="page"],
+[data-role="tabs"] a[aria-current="page"],
+[role="tab"][aria-selected="true"] {
+  color: var(--epsilo-primary) !important;
+  border-bottom-color: var(--epsilo-primary) !important;
+}
+
+/* Sidebar active */
+aside nav a[aria-current="page"] {
+  color: var(--epsilo-primary) !important;
+}
+
+/* Links underline tint */
+.prose a {
+  border-bottom: 1px solid color-mix(in oklab, var(--epsilo-primary) 40%, transparent);
+}
