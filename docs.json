@@ -1,39 +1,37 @@
 {
   "$schema": "https://mintlify.com/docs.json",
+
   "theme": "maple",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
+
   "colors": {
     "primary": "#2563EB",
     "light": "#F8FAFC",
     "dark": "#0F172A"
   },
-  "appearance": {
-    "default": "system",
-    "strict": false
-  },
-  "icons": {
-    "library": "lucide"
-  },
+
+  "appearance": { "default": "system", "strict": false },
+  "icons": { "library": "lucide" },
+
   "styling": {
     "eyebrows": "breadcrumbs",
     "codeblocks": "system"
   },
+
   "seo": {
     "indexing": "navigable",
-    "metatags": {
-      "og:title": "Epsilo Docs",
-      "og:type": "website"
-    }
+    "metatags": { "og:title": "Epsilo Docs", "og:type": "website" }
   },
-  "search": {
-    "prompt": "Search docs…"
-  },
+
+  "search": { "prompt": "Search docs…" },
+
   "interaction": {
     "drilldown": false
   },
+
   "head": {
     "links": [
       { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
@@ -43,6 +41,7 @@
     ]
   },
   "css": ["/styles.css"],
+
   "navbar": {
     "links": [
       { "label": "Website", "href": "https://next.epsilo.ai", "icon": "globe" }
@@ -53,10 +52,11 @@
       "href": "https://calendly.com/alex-vo/meeting-with-alex?back=1&month=2025-10"
     }
   },
+
   "navigation": {
-    "tabs": [
+    "dropdowns": [
       {
-        "tab": "Introduction",
+        "dropdown": "Introduction",
         "icon": "home",
         "pages": [
           "introduction/getting-started",
@@ -71,12 +71,12 @@
         ]
       },
       {
-        "tab": "Features",
+        "dropdown": "Features",
         "icon": "sparkles",
         "groups": [
           {
             "group": "Aggregate",
-            "icon": "merge",
+            "icon": "git-merge",
             "expanded": false,
             "pages": [
               "features/aggregate/competitive-intelligence",
@@ -137,7 +137,7 @@
         ]
       },
       {
-        "tab": "Integrations",
+        "dropdown": "Integrations",
         "icon": "plug",
         "pages": [
           "connectors/shopee",
@@ -147,7 +147,7 @@
         ]
       },
       {
-        "tab": "Use Cases",
+        "dropdown": "Use Cases",
         "icon": "puzzle",
         "pages": [
           "use-cases/gmv-max",
@@ -156,17 +156,18 @@
         ]
       },
       {
-        "tab": "Glossary",
+        "dropdown": "Glossary",
         "icon": "book-text",
         "pages": ["glossary/index"]
       },
       {
-        "tab": "Changelog",
+        "dropdown": "Changelog",
         "icon": "history",
         "pages": ["changelog/index"]
       }
     ]
   },
+
   "footer": {
     "socials": {
       "x": "https://x.com/epsilo",
@@ -181,6 +182,7 @@
       }
     ]
   },
+
   "errors": {
     "404": {
       "redirect": false,
