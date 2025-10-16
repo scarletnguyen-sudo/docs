@@ -77,11 +77,10 @@
       {
         "tab": "Features",
         "icon": "sparkles",
-        "groups": [
+        "dropdowns": [
           {
-            "group": "Aggregate",
+            "dropdowns": "Aggregate",
             "icon": "merge",
-            "expanded": false,
             "pages": [
               "features/aggregate/competitive-intelligence",
               "features/aggregate/digital-self-tracking",
