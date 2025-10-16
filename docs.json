@@ -1,122 +1,107 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://mintlify.com/schema.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "name": "Epsilo Docs",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0F123C"
+  },
+  "seo": {
+    "indexing": "navigable"
+  },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Introduction",
+        "pages": [
+          "/introduction/welcome",
+          "/introduction/getting-started"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
           {
-            "group": "Getting started",
+            "group": "Aggregate",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "/features/aggregate/competitive-intelligence",
+              "/features/aggregate/digital-self-tracking",
+              "/features/aggregate/keyword-lab",
+              "/features/aggregate/operational-index",
+              "/features/aggregate/unified-api"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Benchmark",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "/features/benchmark/ask-botep",
+              "/features/benchmark/budget-notification",
+              "/features/benchmark/metrics-benchmark",
+              "/features/benchmark/performance-tracking",
+              "/features/benchmark/time-benchmark"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Collaboration",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "/features/collaboration/advanced-filtering",
+              "/features/collaboration/custom-views",
+              "/features/collaboration/export-tools",
+              "/features/collaboration/media-planning",
+              "/features/collaboration/workspace-sync"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Decide",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "/features/decide/budget-distribution",
+              "/features/decide/bulk-actions",
+              "/features/decide/campaign-taxonomy",
+              "/features/decide/cross-channel-execution",
+              "/features/decide/custom-workflows"
+            ]
+          },
+          {
+            "group": "Execute",
+            "pages": [
+              "/features/execute/agent-orchestration",
+              "/features/execute/automated-reporting",
+              "/features/execute/optimize-performance",
+              "/features/execute/scheduled-automation",
+              "/features/execute/smart-alerts"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "Connectors",
+        "pages": [
+          "/connectors/shopee",
+          "/connectors/lazada",
+          "/connectors/tiktok-shop",
+          "/connectors/amazon"
         ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
+      },
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "group": "Use cases",
+        "pages": [
+          "/use-cases/gmv-max",
+          "/use-cases/budget-distribution",
+          "/use-cases/dsa-playbook"
+        ]
+      },
+      {
+        "group": "Glossary",
+        "pages": ["/glossary/index"]
+      },
+      {
+        "group": "Changelog",
+        "pages": ["/changelog/index"]
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }
