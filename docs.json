@@ -75,7 +75,7 @@
         "pages": ["integrations/shopee", "integrations/lazada", "integrations/tiktok-shop", "integrations/amazon"]
       },
       { "tab": "Use Cases", "icon": "puzzle", "pages": ["use-cases/gmv-max", "use-cases/budget-distribution", "use-cases/dsa-playbook"] },
-      { "tab": "Glossary", "icon": "book-text", "pages": ["glossary/index"] },
+      { "tab": "Glossary", "icon": "book", "pages": ["glossary/index"] },
       { "tab": "Changelog", "icon": "history", "pages": ["changelog/index"] }
     ]
   }
