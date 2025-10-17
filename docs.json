@@ -83,13 +83,13 @@
         ]
       },
       {
-        "group": "Use Cases",
+        "group": "How to Guides",
         "icon": "puzzle",
         "expanded": false,
         "pages": [
           "use-cases/gmv-max",
           "use-cases/budget-distribution",
-          "use-cases/dsa-playbook"
+          "use-cases/attribute-scheduled"
         ]
       },
       {
