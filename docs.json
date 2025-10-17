@@ -72,14 +72,14 @@
         ]
       },
       {
-        "group": "Integrations",
+        "group": "Optimization Playbooks",
         "icon": "plug",
         "expanded": false,
         "pages": [
-          "connectors/shopee",
-          "connectors/lazada",
-          "connectors/tiktok-shop",
-          "connectors/amazon"
+          "optimization-playbooks/ad-spend-optimization",
+          "optimization-playbooks/hyper-automation-scripts",
+          "optimization-playbooks/thinking-in-campaigns",
+          "optimization-playbooks/playbook"
         ]
       },
       {
@@ -87,9 +87,9 @@
         "icon": "puzzle",
         "expanded": false,
         "pages": [
-          "use-cases/gmv-max",
-          "use-cases/budget-distribution",
-          "use-cases/attribute-scheduled"
+          "how-to-guide/gmv-max",
+          "how-to-guide/budget-distribution",
+          "how-to-guide/attribute-scheduled"
         ]
       },
       {
