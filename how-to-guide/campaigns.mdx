@@ -1,0 +1,83 @@
+---
+title: "Campaigns: a guide to campaign structure and creation"
+description: "A guide for creating Epsilo ad campaigns across e-commerce platforms, covering campaign structure, hierarchy, and setup processes."
+---
+
+<Note>
+  **TLDR**
+
+  Epsilo campaigns organize ads across e-commerce platforms with a three-level structure: campaigns (top level), ad objects (products/SKUs), and ad placements (specific locations). Campaign setup includes naming, marketplace selection, budget settings, product addition, and placement configuration.
+</Note>
+
+## **What are campaigns on Epsilo**
+
+On Epsilo, a campaign is a structured group of ads (ad objects) that promotes a set of products (SKUs) on platforms like Shopee and Lazada. It serves as a container that defines how you group your advertised products. Think of it as a folder holding your ad objects (SKUs), their rules, and optimization settings.
+
+## **Campaign structure on Epsilo**
+
+**Campaign level:** This is the highest level of the ad structure, housing all ad units within it. Campaigns are matched 1-to-1 with ad tools (e.g., Shopee GMV Max, Lazada Sponsored Discovery, TikTok In-Feed). Inside, you group SKUs/ad objects with a common purpose (e.g., top sellers, new launching products).
+
+At this level, you can manage:
+
+- **Campaign daily budget**: Manage the campaign daily budget via scheduling, choosing distribution models, or manual updates.
+- **Campaign status**: Turn the campaign on or off when the campaign needs to run, or schedule it in advance.
+- **Campaign timeline**: Manage the timeline of the campaign, how long it runs for.
+- **Campaign objective**: Where applicable (e.g., Lazada campaigns), you can select a target for the campaign here.
+
+**Ad object level:** The next level down under campaigns are ad objects, the product (SKU) level. This is the item that you are choosing to advertise. This may include other ad objects such as Shop Ads.
+
+At this level, you can manage:
+
+- **Ad object budget**: Use manual, bulk, or mass actions to change the budget, or schedule it in advance.
+- **Ad object status**: Change the on/off status of the ad object manual, scheduled in advance, or through a script.
+- **Ad object timeline**: Manage the timeline of the ad object, how long it runs for.
+- **Ad object ROAS target**: For GMV Max campaigns, you can change the ROAS target at the ad object level.
+- **Ad object bidding**: Where applicable, you can enhance the bid price to allow the marketplaces to increase the bid when they believe is useful.
+
+**Ad placement level:** This is the lowest level of ads on Epsilo, where your item will be advertised. This location can be explicit such as a specific keyword placement, or a more general placement like discovery or automated.
+
+At this level, you can manage:
+
+- **Ad placement bidding price**: For manual ads, you can update the bidding price through mass action or scripts.
+- **Ad placement status**: For manual ads, you can control the on/off status of an ad through mass action or scripts.
+
+## **How to create a campaign on Epsilo**
+
+Click on “New campaign” either in the Campaign optimization table or in the left-side navigation bar
+
+![Newcampaign Pn](/images/newcampaign.png)
+
+Start by giving your campaign a name and completing all the required fields:
+
+- **Marketplace**: The ad platform for your campaign (Examples: Shopee, Lazada, Tokopedia).
+- **Country**: The country where your store is located.
+- **Storefront**: The specific store for your campaign.
+- **Ad tool:** Choose ad tool related to your marketplace. You’ll see all the available ad tools in this dropdown.
+- **Schedule**: The start and end dates of your campaign. Campaigns without an end date will continue running as long as budget is available (always-on campaign).
+- **Total budget**: The maximum amount to spend on the campaign. When this limit is reached, the campaign automatically pauses. Campaigns without a budget limit will run as long as the store’s wallet balance remains available.
+- **Daily budget**: The maximum daily spend. When reached, the campaign pauses until the next day.
+- **Time zone**: Auto-filled to match the selected store's location. All campaign timing will follow this time zone.
+- **Ad object method**: How you'll add your ad objects (products, keywords, etc.). Options: Manual, Automated by Shopee (Auto-generated keywords), Automated by Lazada (Automated campaign).
+- **Distribution mode**l: How you would like the automated budget distribution to move budgets.
+
+  ![Campaignsettings Pn](/images/campaignsettings.png)
+
+Next, you’ll select the ad objects to include in the campaign. Scroll to the right to see to the **Ad object column. Click on the + sign.** You'll see a list of your products to select.
+
+![Adobjectpicker Pn](/images/adobjectpicker.png)
+
+Finally, you’ll select the ad placement settings. Depending on the type of ad you are running, you may be selecting keywords or setting ROAS targets.
+
+![Keywordpicket Pn](/images/keywordpicket.png)
+
+Once that’s done, click “Publish” for your campaign to start running as soon as the schedule hits.
+
+## FAQs
+
+<Expandable title="What ad tools are currently available to operate on Epsilo?">
+  We’re constantly closing the gap on campaigns available on the marketplaces to be available on Epsilo. When you are selecting your ad tool, you’ll see all the current ad tools that we offer. Don’t see the ad tool you’re looking for? Let us know at [<u>support@epsilo.io</u>](mailto:support@epsilo.io)
+</Expandable>
+
+<Expandable title="What does the distribution model do?">
+  This is a setting for Epsilo’s Budget distribution feature, that automates the budget allocation and reallocation process across SKUs
+</Expandable>
