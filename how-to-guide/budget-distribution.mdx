@@ -1,6 +1,78 @@
 ---
-title: "Budget Distribution"
+title: "Budget distribution: Automated budget allocation from one budget to many"
 description: "Discover how Epsilo's Budget Distribution automatically allocates campaign funds across ad objects based on performance."
 ---
 
-# **Automated budget allocation from one budget to many**
+<Note>
+  **TLDR**
+
+  Epsilo's Budget distribution auto-allocates funds to ad objects based on performance. It honors locked budgets, maintains minimums, and follows your chosen model. Triggers include daily resets, half-hourly checks, and manual updates. This keeps spending aligned with goals, prioritizes performance, and adapts automatically without manual work.
+</Note>
+
+## **Benefits of Budget distribution**
+
+- Keeps spend aligned with campaign goals without manual checks.
+- Ensures high performing SKUs receive more budget.
+- Adapts automatically to daily resets, performance shifts, and manual budget edits.
+- Helps prevent overspending above campaign cap.
+
+## **How Budget distribution works**
+
+Budget distribution is Epsilo’s automated mechanism to allocate budgets from a higher ad level to a lower ad level. For example, you can set a budget at a campaign level, and Budget distribution would manage the allocation to the SKUs (Ad objects) within that campaign.
+
+Budget distribution acts upon two main factors: trigger time and distribution model. The trigger time is when the budget will be distribution or re-distributed. The distribution model decides which metric to focus on when choosing which SKUs get what portion of the campaign budget.
+
+When budget distribution is triggered, the following three-step process takes place:
+
+1. **Locked budgets first:** Ad objects with locked budgets are funded first. For example if Ad Object A is locked at \$400, that amount is set aside.
+2. **Minimum thresholds:** Each remaining ad object gets at least the marketplace minimum budget, depending on market.
+3. **Remaining budget allocation:** The leftover is distributed by your selected model (e.g., spend, GMV, ROAS, fair share).
+
+## **How to lock and unlock a budget**
+
+When you change a budget at the ad object (SKU) level, that budget will be considered locked. This means that the campaign budget will not override your manual budget change. If you unlock a budget, that budget will be subject to change as a result of Budget distribution.
+
+**To lock a budget:** In the Ad Object Optimization Table, open the _Ad Object Budget_ column, click the menu (⋮), and set a fixed budget.
+
+**To unlock a budget:** Open the same menu and select _Enable auto-distribution_.
+
+![Bd1 Pn](/images/bd1.png)
+
+## **Triggers for when Budget distribution occurs**
+
+Budget Distribution rebalances automatically in these scenarios:
+
+1. **Daily distribution (daily reset):** At midnight, budgets are recalculated based on yesterday’s performance.
+2. **Redistribution (every 30 minutes):** System checks live performance and adjusts spend to match trends.
+3. **Auto distribution (auto-triggered following manual/scheduled changes):** Any manual budget edit or scheduled update triggers instant redistribution.
+
+## **Available distribution models**
+
+Choose a model that matches your goal:
+
+**Ad Spend (Yesterday)** – Default; allocates by yesterday’s spend pattern. Best for maximizing budget utilization with low intraday fluctuation.
+
+**Ad Spend (Today)** – Allocates by real-time spend today. Best for maximizing budget usage based on today's spending.
+
+**Ad GMV (Today)** – Allocates more budget to SKUs driving today’s revenue. Best for maximizing top line revenue to the storefront.
+
+**Impressions (Today)** – Favors SKUs with higher visibility today. Best for increasing awareness, especially from new or underserved product groups.
+
+**ROAS (Today)** – Prioritizes SKUs with better return on ad spend today. Best for maximizing storefront efficiency.
+
+**Fair (Equal)** – Splits remaining budget equally across ad objects. Best for giving all products a chance to demonstrate performance before switching to another model.
+
+![Bd3 Pn](/images/bd3.png)
+
+## **Best practices for Budget distribution**
+
+- Always make sure the campaign budget ≥ sum of all locked ad object budgets + minimum ad object budgets. For example, if the campaign budget is \$70, with a locked ad object at \$60 and four unlocked ad objects requiring \$5 minimum, the system will require \$80 total. This leads to spend higher than the campaign budget.
+- Additionally, you cannot set a budget below today’s spend or the marketplace minimum. To reduce the budget for the next day, schedule the budget ahead of time.
+- After you’ve adjusted a budget for Ad objects, if you are not sure that the Campaign budget is sufficient, try reapplying a new value to the Campaign daily budget, the system will notify you if the budget is no longer sufficient.
+
+## \
+FAQs
+
+<Expandable title="Can I disable budget distribution?">
+  Not directly, but you can set campaign budget to _No Limit_ if you want full manual control or Lock the budget of all Ad Objects inside the selected campaign.
+</Expandable>
