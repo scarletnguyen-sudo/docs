@@ -2,3 +2,77 @@
 title: "Ad spend optimization: Rules and best practices"
 description: "A guide to optimizing ad spend through SKU management, bid adjustment, and campaign grouping for higher ROAS and GMV efficiency."
 ---
+
+
+<Note>
+  TDLR
+
+  To maximize returns from your ad spend, focus on three key principles:
+
+  1. **Eliminate waste early** by pausing low-performing SKUs.
+  2. **Reallocate budgets** to SKUs that deliver consistent GMV and ROAS.
+  3. **Compete smartly** for top ad positions with the right bidding strategy.
+</Note>
+
+## 1. Cut Wasted Spend Early
+
+Eliminate unproductive cost by pausing SKUs that underperform over time.
+
+- **Pause inactive SKUs:**\
+  If `ROAS (L3D) = 0` and `Spend (L3D) > benchmark`, pause the SKU immediately.
+- **Avoid low-stock spend:**
+  - Pause ads when `Stock < threshold (e.g., 10 units)`.
+  - Resume once stock exceeds threshold.
+
+## 2. Capture More Quality Traffic
+
+Prioritize your high-efficiency SKUs in the top 5 ad positions, where **~70% of impressions** typically occur.
+
+- **Reduce bid when performance drops:**\
+  If `Keyword ROAS ≤ 5` **and** `Avg. Position ≤ 4` **and** `Impressions > benchmark`,\
+  → Reduce bid by **10%** (until the minimum allowed price).
+- **Increase bid to reach top 5:**\
+  If `Avg. Position > 4` **and** `Impressions ≤ 400`,\
+  → Increase bid by **10%** (up to benchmark cap).
+- **Compete for top 1 (only when profitable):**\
+  If `ROAS > benchmark` **and** `Position > 2` **and** `Direct Items Sold > 1`,\
+  → Increase bid by **10%** (up to benchmark cap).
+
+## 3. Maximize Selling Opportunities Throughout the Day
+
+Ensure your best SKUs remain visible during key traffic hours.
+
+| Time Range  | Action      | Criteria                              |
+| ----------- | ----------- | ------------------------------------- |
+| 00:00–03:00 | Resume SKUs | SKUs with zero impressions            |
+| 03:00–08:59 | Pause SKUs  | Zero sales and high cost              |
+| 09:00–23:59 | Resume SKUs | Active sales and ROAS above benchmark |
+
+## 4. Reallocate Budgets Dynamically
+
+Ensure your budget distribution reflects actual performance contribution.
+
+- **Redistribute budget proportionally:**\
+  SKUs contributing **80% of GMV or ROAS** should receive **at least 80% of the budget**.
+
+**Example:**\
+If 3 SKUs drive most ad GMV, allocate the majority of spend to them to avoid dilution.
+
+## 5. Group Campaigns for Efficiency
+
+Organize your campaigns logically to reduce overlap and simplify budget control.
+
+- **By category:**\
+  Group products under the same product line\
+  _(e.g., Toothpaste vs. Toothbrush)_.
+- **By objective:**\
+  Separate campaigns focused on **Sales**, **Traffic**, or **Efficiency**.
+- **By performance contribution:**
+
+  | Type                | Description                       | Example              |
+  | ------------------- | --------------------------------- | -------------------- |
+  | **Hero products**   | High budget, strong GMV           | Whitening Toothpaste |
+  | **Growth products** | Medium budget, potential to scale | Sensitive Toothpaste |
+  | **Tail products**   | Test budget, minimal focus        | Kids Toothpaste      |
+
+---

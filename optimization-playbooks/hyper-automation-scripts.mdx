@@ -1,4 +1,90 @@
 ---
-title: "Hyper automation scripts: Most common use cases"
-description: "Practical Hyper automation script templates, grouped by objectives and business questions"
+title: "Hyper Automation Scripts: Most Common Use Cases"
+description: "Practical Hyper Automation script templates, grouped by objectives and business questions."
+---
+
+
+<Note>
+  **TLDR**
+
+  Pick a script based on your objective (e.g., maximize impressions, control bids, reduce waste). For best results, always use **paired scripts** — an “increase” script with a matching “decrease” script — so performance stays balanced.
+</Note>
+
+## Missing Opportunities
+
+**Business question:** Do we have any paused ads that should be activated?
+
+**Focus:** Re-activate paused ads that show signs of strong performance or potential (e.g., positive GMV or high ROAS). Poor-performing SKUs may be paused but later show good performance due to a delayed attribution window.
+
+| **Ad Unit** | **Ad Type**        | **Condition**                                                       | **Action**       |
+| ----------- | ------------------ | ------------------------------------------------------------------- | ---------------- |
+| Placement   | Product search ads | Ads GMV `L7Ds` ≥ `0` AND Ads Spend `L7Ds` = `0` AND status = paused | Status → Ongoing |
+| Placement   | Product search ads | ROAS `this month` ≥ Store ROAS plan AND status = paused             | Status → Ongoing |
+| Object      | Auto product       | Ads GMV `L7Ds` ≥ `0` AND Ads Spend `L7Ds` = `0` AND status = paused | Status → Ongoing |
+| Object      | Discovery ads      | Ads GMV `L7Ds` ≥ `0` AND Ads Spend `L7Ds` = `0` AND status = paused | Status → Ongoing |
+| Object      | Product search ads | ROAS `L7Ds` ≥ 130% of Store ROAS plan AND status = paused           | Status → Ongoing |
+| Object      | Auto product       | ROAS `L7Ds` ≥ 130% of Store ROAS plan AND status = paused           | Status → Ongoing |
+| Object      | Discovery ads      | ROAS `L7Ds` ≥ 130% of Store ROAS plan AND status = paused           | Status → Ongoing |
+| Object      | Product search ads | ROAS `this month` ≥ Store ROAS plan AND status = paused             | Status → Ongoing |
+| Object      | Auto product       | ROAS `this month` ≥ Store ROAS plan AND status = paused             | Status → Ongoing |
+| Object      | Discovery ads      | ROAS `this month` ≥ Store ROAS plan AND status = paused             | Status → Ongoing |
+
+## Impression Maximization
+
+**Business question:** Where can we acquire more efficient traffic?
+
+**Focus:** Boost bids for ads that already meet or exceed ROAS targets, to gain more traffic.
+
+| Ad Unit   | Ad Type            | Condition                                                                                    | Action              |
+| --------- | ------------------ | -------------------------------------------------------------------------------------------- | ------------------- |
+| Placement | Shop search ads    | ROAS `this month` ≥ 150% of Store ROAS plan AND bid ≤ max threshold CPC AND status = ongoing | Increase bid by 10% |
+| Placement | Product search ads | ROAS `this month` ≥ 150% of Store ROAS plan AND bid ≤ max threshold CPC AND status = ongoing | Increase bid by 10% |
+| Placement | Discovery ads      | ROAS `this month` ≥ 150% of Store ROAS plan AND bid ≤ max threshold CPC AND status = ongoing | Increase bid by 10% |
+
+## Bidding Control
+
+**Business question:** Do we have any inefficient cases of bidding?
+
+**Focus:** Reduce bids when ROAS is below plan to avoid overspending.
+
+| Ad Unit   | Ad Type            | Condition                                                                                      | Action                    |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------- | ------------------------- |
+| Placement | Product search ads | ROAS `this month` \< 130% of Store ROAS plan AND bid \> min threshold CPC AND status = ongoing | Decrease bid to min price |
+| Placement | Shop search ads    | ROAS `this month` \< 130% of Store ROAS plan AND bid \> min threshold CPC AND status = ongoing | Decrease bid to min price |
+| Placement | Discovery ads      | ROAS `this month` \< 130% of Store ROAS plan AND bid \> min threshold CPC AND status = ongoing | Decrease bid to min price |
+
+## Waste Removal
+
+**Business question:** Do we have any inefficient cases of ad activation to turn off?
+
+**Focus:** Pause or deactivate ads that spend budget but do not generate sales or meet ROAS targets.
+
+| Ad Unit | Ad Type            | Condition                                                                         | Action          |
+| ------- | ------------------ | --------------------------------------------------------------------------------- | --------------- |
+| Object  | Product search ads | Ads GMV `this month` = `0` AND Ads Spend `this month` \> `0` AND status = ongoing | Status → Paused |
+| Object  | Auto product       | Ads GMV `this month` = `0` AND Ads Spend `this month` \> `0` AND status = ongoing | Status → Paused |
+| Object  | Discovery ads      | Ads GMV `this month` = `0` AND Ads Spend `this month` \> `0` AND status = ongoing | Status → Paused |
+| Object  | Product search ads | ROAS `this month` \< min ROAS plan AND status = ongoing                           | Status → Paused |
+| Object  | Auto product       | ROAS `this month` \< min ROAS plan AND status = ongoing                           | Status → Paused |
+| Object  | Discovery ads      | ROAS `this month` \< min ROAS plan AND status = ongoing                           | Status → Paused |
+
+---
+
+## Best Practices
+
+- **Always pair scripts:** if you create an increase-bid script, add a decrease-bid script to balance it.
+- **Segment ad objects:** apply scripts to clear cohorts (e.g., short-tail vs long-tail SKUs).
+- **Customize for campaign days:** use more aggressive thresholds on spike days than in BAU.
+
+## FAQs
+
+**Q: Why do my bids only go up, not down?**\
+Make sure you’ve paired each “increase” script with a matching “decrease” script.
+
+**Q: What happens if two scripts act on the same ad? Which one takes effect first?**\
+If you have two ongoing scripts on the same ad unit, you cannot choose which one runs first in every 15-minute interval. To control this, schedule those scripts in different time blocks each day.
+
+**Q: Can I copy these use cases across campaigns?**\
+Yes. When you set up a script, you can select ad units from different campaigns. If the script is already running, duplicate it and apply to other ad units.
+
 ---

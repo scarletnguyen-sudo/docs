@@ -1,5 +1,81 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Thinking in Campaigns: Strategies for Grouping and Organizing Ad Objects (SKUs) into Campaigns"
+description: "A guide to organizing SKUs into ad campaigns – covering grouping principles, segmentation models, and maintenance practices."
 ---
 
+<Note>
+  TLDR
+
+  Group SKUs that share targeting, budgeting, and scheduling needs.\
+  Only combine SKUs with matching ROAS targets and campaign timing.\
+  Begin with basic groupings (`Priority/Non-Priority`, `Proven/New`, `Short-Tail/Long-Tail`) and add complexity only when it directly affects bidding or budget decisions.
+</Note>
+
+## Why Grouping Matters
+
+A good grouping lets you:
+
+- Apply one target (ROAS, Spend rate) to many SKUs effectively.
+- Run the same schedule (e.g., double day, spike day) automatically.
+- Report and optimize cleanly by intent (push, protect, test) without SKU-by-SKU micromanagement.
+
+A bad grouping leads to:
+
+- Uneven targeting that requires constant adjustment and troubleshooting.
+- Excessive spend on less important products while priority ones don't get enough.
+- Difficulty in scaling your campaigns effectively across peak and non-peak periods.
+
+## Core Principle for Grouping
+
+Group SKUs that share:
+
+- A budget size or target (ROAS, Item sold, GMV, etc.)
+- A budget cadence (daily / weekly / monthly)
+- A schedule (on/off windows)
+
+If any of these differ meaningfully, split them into separate campaigns.
+
+## Practical Segmentation Models (Choose What Works for You)
+
+Use these suggestions to define campaign groups. Start with **1–2** models and add more only when truly needed.
+
+| **Segmentation Principle**             | **Description**                                        |
+| -------------------------------------- | ------------------------------------------------------ |
+| 🏆 **Business Priority**               | Priority (Must-Invest) vs Non-Priority SKUs            |
+| ⌛ **Maturity Cohort**                  | Proven vs New/Unproven SKUs                            |
+| 📈 **Performance Cohort**              | Short-Tail (top ~80%) vs Long-Tail (rest)              |
+| 🏷️ **Promo Status / Event Readiness** | On-Promo vs Off-Promo vs Event-Only                    |
+| 💰 **Price Tier / Pack Size**          | Entry / Mid / Premium or Small / Bundled / Family Pack |
+
+## Example Case
+
+Advanced users can apply multiple campaign segmentation models within a storefront to better address varying operational needs across different product groups.
+
+In the following example, we combine 🏆 Business Priority, ⌛ Maturity Cohort, and 📈 Performance Cohort principles to group SKUs into campaigns — each with its own specialized bidding logic.
+
+| Campaign Type                        | Description                                           |
+| ------------------------------------ | ----------------------------------------------------- |
+| **Priority \| Proven \| Short-Tail** | Tight ROAS targets, always-on, event top-ups.         |
+| **Priority \| New Launch**           | Discovery budget, impression-share focus, learn fast. |
+| **Non-Priority \| Long-Tail**        | Limited bids, efficiency first, opportunistic boosts. |
+
+You can run both **Auto** and **Manual** versions for each campaign (or start with one bidding model if your workflow prioritizes it).
+
+## Ongoing Maintenance
+
+- **Weekly:** Promote or demote between cohorts using KPIs (GMV, ROAS, Direct GMV/ROAS).
+- **Before events:** Adjust budget and schedule for each campaign tier.
+- **Monthly:** Reassess bidding effectiveness and add more segmentation cohorts if required.
+
+## FAQs
+
+**Q: Why does performance fluctuate within a campaign after applying recommended segmentation?**\
+You may have unknowingly mixed cohorts in the same campaign. Review where you might need to separate them — e.g., _New Launch | Small Pack_ vs _New Launch | Bundled Pack_.
+
+**Q: Why can’t I move SKUs between campaigns for re-segmentation?**\
+Pause the SKUs first, then move them to the new campaign and resume afterward.
+
+**Q: What if I end up with too many campaigns?**\
+Collapse cohorts that share the same targets and schedules into a single campaign to simplify management.
+
+---
