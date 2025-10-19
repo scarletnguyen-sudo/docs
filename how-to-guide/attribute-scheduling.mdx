@@ -1,8 +1,68 @@
 ---
 title: "Attribute scheduling"
 description: "Learn how to schedule adjustments like budget, status, target, and distribution models in Epsilo down to the hour.
-
 "
 ---
 
-## How to use the scheduling feature for budget, status, target, and distribution model
+<Note>
+  **TLDR**
+
+  The scheduling feature in Epsilo allows you to pre-set changes to your campaign or ad object's budget, status, target ROAS, and distribution model so they automatically take effect at a specified time.
+</Note>
+
+## **How it works**
+
+Scheduling allow you to set changes for attributes like budget, status, target ROAS, or distribution model at specific times in the future, down to the hour. This saves you from having to stay up late or wait for a specific time to update settings manually. You can create multiple schedules per campaign and object.
+
+## **Step-by-step instructions**
+
+**Open your Campaign optimization or Ad object optimization table**
+
+In your Epsilo dashboard, navigate to the campaign you want to schedule changes for in the Campaign optimization table.
+
+![Step1schedulinggif Gi](/images/step1schedulinggif.gif)
+
+**Access the scheduling menu**
+
+Find the column for the attribute you want to schedule. Click the kebab menu (three vertical dots) in that column and select “Schedule [Attribute name].”
+
+![Step2schedulinggif Gi](/images/step2schedulinggif.gif)
+
+**Set your schedule time and values**
+
+Click “+ Add new schedule”. Then, choose the future date and hour you want the change to take effect. Finally, choose the new value you would like to update to at that time.
+
+![Step3schedulinggif Gi](/images/step3schedulinggif.gif)
+
+**(Optional) Clone the schedule for multiple days**
+
+To create more scheduled actions: Click on the kebab menu on the right hand side and select “Clone this schedule”. You’ll be prompted to select a time range. After you select the days, it will duplicate the row for each day, keeping the same hour.
+
+![Step4schedulinggif Gi](/images/step4schedulinggif.gif)
+
+**Confirm and apply the schedule**
+
+Once you’ve set the desired values and time, confirm the schedule. The system will automatically implement the changes at the specified time.
+
+## **Use Cases**
+
+- **Scheduling budgets:** Set a daily budget for the full month at midnight each day to match a media spending plan.
+- **Scheduling status:** Turn campaigns on or off for specific high-traffic days or hours.
+- **Adjusting distribution models:** Automatically switch to a GMV-based model on campaign days and revert to a ROAS-based model on BAU days.
+- **Target ROAS adjustment**: Automatically drop the target ROAS for high-traffic days in to maximize ad reach.
+
+## FAQs
+
+<Expandable title="What can I schedule in Epsilo?">
+  You can schedule at two levels: Campaign and ad object.
+
+  For campaigns, you can schedule the campaign daily budget, campaign status, and budget distribution model.
+
+  For ad objects, you can schedule the ad object daily budget, ad object status, and target ROI/ROAS.
+</Expandable>
+
+<Expandable title="Can I track what budget, status, or model changes were made?">
+  Yes, if you click the kebab menu (three vertical dots) on the attribute cell, and select “History”, you’ll see the history of changes made to that attribute and by who at what time.
+
+  If the action was made in the seller center, the user field will say “Marketplace reflector” as user actions cannot be tied to a specific user if the action was taken on the marketplace’s seller center.
+</Expandable>
