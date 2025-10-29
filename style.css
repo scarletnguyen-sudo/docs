@@ -1,178 +1,67 @@
-header a[aria-label="Logo"],
-header .site-logo,
-header .logo {
-  display: inline-flex;
-  align-items: center;
-  height: 24px;             
-}
+/* =========== Linear-like additions (non-breaking) =========== */
 
-header a[aria-label="Logo"] img,
-header a[aria-label="Logo"] svg,
-header .site-logo img,
-header .site-logo svg,
-header .logo img,
-header .logo svg {
-  height: 24px;              
-  width: auto;               
-  display: block;            
-}
+/* Comfortable reading measure + slightly larger base */
+.prose { max-width: 820px; line-height: 1.7; font-size: 16.5px; }
+.prose h1 { letter-spacing: -0.01em; margin-top: .2rem; margin-bottom: 1rem; }
+.prose h2 { margin-top: 1.9rem; }
 
-header a[aria-label="Logo"] { padding-right: 4px; }
-
-:root {
-  --brand: #2563EB;       
-  --epsilo-navy: #0F123C;
-  --epsilo-text: #0B0C0E;
-  --epsilo-border: #E6E8EB;
-  --epsilo-tint: #EAF2FF;
-  --bg: #ffffff;
-  --fg: var(--epsilo-text);
-
-  --primary: var(--brand);
-  --mint-primary: var(--brand);
-  --mintlify-primary: var(--brand);
-  --color-primary: var(--brand);
-  --accent: var(--brand);
-
-  accent-color: var(--brand);
-}
-html.dark {
-  --bg: #0B0C0E;
-  --fg: #EAEFF5;
-  --epsilo-border: #2A2F39;
-  --epsilo-tint: #172035;
-}
-
-html, body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
-.prose a {
-  text-decoration: none;
-  border-bottom: 1px solid color-mix(in oklab, var(--brand) 40%, transparent);
-}
-.prose a:hover {
-  border-bottom-color: color-mix(in oklab, var(--brand) 65%, transparent);
-}
-
-
-.mintlify-button--primary,
-button.primary {
-  background: var(--brand) !important;
-  color: #fff !important;
-  border-radius: 999px !important;
-}
-.mintlify-button--primary:hover,
-button.primary:hover { filter: brightness(0.96); }
-
-.badge, .tag, .label {
-  background: color-mix(in oklab, var(--brand) 18%, transparent);
-  color: var(--brand);
-  border: 1px solid color-mix(in oklab, var(--brand) 28%, #DDE5F5);
-  border-radius: 6px;
-}
-
-header nav a[aria-current="page"],
-[role="tab"][aria-selected="true"],
-[data-role="tabs"] a[aria-current="page"] {
-  color: var(--brand) !important;
-  border-bottom-color: var(--brand) !important;
-}
-
-
+/* Sidebar current page: subtle brand tint */
 aside nav a[aria-current="page"] {
-  color: var(--brand) !important;
-}
-aside nav a:hover {
-  background: color-mix(in oklab, var(--brand) 10%, transparent);
-  border-radius: 8px;
+  background: color-mix(in oklab, var(--brand) 12%, transparent);
+  border-radius: 999px;
 }
 
-
-nav[aria-label="On this page"] a[aria-current="true"],
-nav[aria-label='On this page'] a[aria-current="page"] {
-  color: var(--brand) !important;
-  border-left-color: var(--brand) !important;
-}
-
-
-:focus-visible {
-  outline: 2px solid var(--brand) !important;
-  outline-offset: 2px;
-}
-
-
-pre {
-  background: color-mix(in oklab, var(--epsilo-navy) 8%, var(--bg));
-  border: 1px solid var(--epsilo-border);
+/* Minimal code blocks */
+pre code {
+  display: block;
+  padding: 16px;
   border-radius: 12px;
 }
-.prose :not(pre) > code {
-  background: #EAF2FF;
-  color: #0F123C;
-  border: 1px solid #DDE5F5;
-  border-radius: 6px;
-  padding: .15rem .35rem;
-}
 
-
-.prose table {
-  border: 1px solid var(--epsilo-border);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.prose table thead th {
-  background: #F7F9FC;
-  color: var(--epsilo-navy);
-  font-weight: 600;
-}
-html.dark .prose table thead th { color: #E8ECFF; }
-
-
-.note, .tip, .warning, .info {
-  border-radius: 12px !important;
+/* --- Search: make the DocSearch button icon-only & align near logo --- */
+.DocSearch-Button{
   border: 1px solid var(--epsilo-border) !important;
+  background: var(--bg) !important;
+  border-radius: 10px !important;
+  padding: 6px 8px !important;
+  margin-left: 8px; /* once we move it after the logo */
 }
-.note    { background: #EAF2FF; }
-.tip     { background: #ECF8EE; }
-.warning { background: #FFF4E5; }
-html.dark .tip     { background: #102417; }
-html.dark .warning { background: #2A2016; }
+.DocSearch-Button .DocSearch-Button-Placeholder { display: none !important; }
+.DocSearch-Button .DocSearch-Search-Icon { margin: 0 !important; }
 
+/* --- Top-right actions (Copy page + Mode switch) --- */
+.eps-actions{
+  position: fixed; top: 10px; right: 16px; z-index: 50;
+  display: flex; gap: 8px;
+}
+.eps-btn{
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  padding: 8px 10px; border-radius: 10px;
+  border: 1px solid var(--epsilo-border);
+  background: var(--bg); color: var(--fg);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft, 0 1px 2px rgba(15,23,42,.04));
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+.eps-btn:hover{ transform: translateY(-1px); }
+.eps-btn.done{ background: color-mix(in oklab, #16a34a 12%, var(--bg)); border-color: color-mix(in oklab, #16a34a 35%, var(--epsilo-border)); }
 
-#eps-topnav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: var(--bg);
-  border-bottom: 1px solid var(--epsilo-border);
-}
-#eps-topnav ul {
-  margin: 0;
-  padding: 8px 16px;
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  overflow-x: auto;
-}
-#eps-topnav a {
-  display: inline-block;
-  padding: 6px 10px;
-  color: var(--fg);
-  font-weight: 600;
+/* --- Bottom-left: Contact support pill --- */
+.eps-support{
+  position: fixed; left: 16px; bottom: 16px; z-index: 50;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 12px; border-radius: 12px;
+  background: var(--bg); color: var(--fg);
+  border: 1px solid var(--epsilo-border);
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  border-radius: 8px;
+  box-shadow: var(--shadow-soft, 0 1px 2px rgba(15,23,42,.04));
 }
-#eps-topnav a:hover {
-  background: color-mix(in oklab, var(--epsilo-navy) 8%, transparent);
-}
-#eps-topnav a.active {
-  color: var(--brand);
-  border-bottom-color: var(--brand);
-}
-html.dark #eps-topnav a.active {
-  color: #E8ECFF;
-  border-bottom-color: #C7D3FF;
+.eps-support:hover{ transform: translateY(-1px); }
+
+/* Respect your existing token names in dark mode */
+html.dark .eps-btn, html.dark .eps-support {
+  background: var(--bg);
+  color: var(--fg);
+  border-color: var(--epsilo-border);
 }

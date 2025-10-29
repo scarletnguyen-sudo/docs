@@ -5,7 +5,6 @@
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
-
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
 
@@ -53,13 +52,5 @@
         ]
       }
     ]
-  },
-
-  "errors": {
-    "404": {
-      "redirect": false,
-      "title": "Page not found",
-      "description": "This page moved or never existed. Use the search bar above."
-    }
   }
 }
