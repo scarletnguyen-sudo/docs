@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
@@ -50,21 +50,6 @@
           "how-to-guide/hyper-automation",
           "how-to-guide/multi-row",
           "how-to-guide/setting-up-views"
-        ]
-      }
-    ]
-  },
-
-  "footer": {
-    "socials": {
-      "x": "https://x.com/epsilo",
-      "linkedin": "https://www.linkedin.com/company/epsilo"
-    },
-    "links": [
-      {
-        "header": "Resources",
-        "items": [
-          { "label": "Pricing", "href": "https://next.epsilo.ai/pricing" }
         ]
       }
     ]
