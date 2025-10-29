@@ -1,67 +1,62 @@
-/* ---- Fix overlapping buttons + alignment ---- */
-.eps-actions {
-  position: fixed;
-  top: 10px;
-  right: 16px;
-  z-index: 100;
-  display: flex;
+/* --- Kill the old floating cluster (we're using navbar now) --- */
+.eps-actions { display: none !important; }
+
+/* --- Navbar action cluster (holds Copy + Sign in) --- */
+.eps-nav-actions{
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-left: 8px; /* a little space from nav links */
 }
 
-/* Align sizes for all three buttons (Theme / Copy / Open) */
-.eps-actions .eps-btn {
+/* Base button styling for navbar buttons */
+.eps-nav-actions .eps-btn,
+.eps-btn {
   font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  height: 32px;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid var(--epsilo-border);
-  background: var(--bg);
-  color: var(--fg);
-  cursor: pointer;
-  height: 32px;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
-  transition: all 120ms ease;
-}
-.eps-actions .eps-btn:hover {
-  transform: translateY(-1px);
-}
-.eps-actions .eps-btn.open {
-  background: var(--brand);
-  color: #fff;
-  border-color: var(--brand);
-}
-.eps-actions .eps-btn.open:hover {
-  filter: brightness(0.96);
-}
-.eps-actions .eps-btn.done {
-  background: color-mix(in oklab, #2563eb 10%, var(--bg));
-  border-color: color-mix(in oklab, #2563eb 35%, var(--epsilo-border));
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease, background 120ms ease, border-color 120ms ease;
 }
 
-/* ---- Bottom-left: Get support ---- */
-.eps-support {
-  position: fixed;
-  left: 16px;
-  bottom: 18px;
-  z-index: 90;
-  padding: 10px 14px;
-  border-radius: 12px;
+/* Outlined style for Copy */
+.eps-btn-outline{
   background: var(--bg);
   color: var(--fg);
   border: 1px solid var(--epsilo-border);
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 1px 2px rgba(15,23,42,.04);
 }
-.eps-support::before {
-  content: ":speech_balloon:";
-  font-size: 15px;
+.eps-btn-outline:hover{ transform: translateY(-1px); }
+
+/* Brand primary for Sign in (and any .open-style if used) */
+.eps-btn-primary, .eps-actions .eps-btn.open {
+  background: #2563EB;
+  color: #fff;
+  border: 1px solid #2563EB;
 }
-.eps-support:hover {
-  transform: translateY(-1px);
+.eps-btn-primary:hover, .eps-actions .eps-btn.open:hover { filter: brightness(0.96); }
+
+/* If Mintlify renders your primary CTA, give it same look */
+nav .primary a, nav .primary button,
+header .primary a, header .primary button {
+  background: #2563EB !important;
+  color: #fff !important;
+  border: 1px solid #2563EB !important;
+  border-radius: 10px !important;
+  height: 32px;
+  padding: 8px 12px;
+  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
+
+/* Copy “done” state = brand blue (not green) */
+.eps-btn.done {
+  background: color-mix(in oklab, #2563EB 10%, var(--bg));
+  border: 1px solid color-mix(in oklab, #2563EB 35%, var(--epsilo-border));
+  color: #fff;
+}
+
+/* Bottom-left support pill (fix icon) */
+.eps-support::before { content: "💬"; font-size: 15px; }
