@@ -6,44 +6,12 @@
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
 
-  "colors": {
-    "primary": "#2563EB",
-    "light": "#F8FAFC",
-    "dark": "#0F172A"
-  },
-
-  "appearance": { "default": "system", "strict": false },
-  "icons": { "library": "lucide" },
-
-  "styling": {
-    "eyebrows": "breadcrumbs",
-    "codeblocks": "system"
-  },
-
-  "seo": {
-    "indexing": "navigable",
-    "metatags": { "og:title": "Epsilo Docs", "og:type": "website" }
-  },
-
-  "search": { "prompt": "Search docs…" },
-
-  "interaction": {
-    "drilldown": false
-  },
-
-  "head": {
-    "links": [
-      { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
-      { "rel": "preconnect", "href": "https://fonts.gstatic.com", "crossorigin": "anonymous" },
-      { "rel": "stylesheet", "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" },
-      { "rel": "stylesheet", "href": "/styles.css" }
-    ]
-  },
-  "css": ["/styles.css"],
+  "colors": { "primary": "#2563EB" },
+  "appearance": { "default": "system" },
 
   "navbar": {
     "links": [
-      { "label": "Website", "href": "https://next.epsilo.ai", "icon": "globe" }
+      { "label": "Website", "href": "https://next.epsilo.ai" }
     ],
     "primary": {
       "type": "button",
@@ -55,9 +23,8 @@
   "navigation": {
     "groups": [
       {
-        "group": "Introduction",
-        "icon": "home",
-        "expanded": false,
+        "group": "Start Guide",
+        "expanded": true,
         "pages": [
           "introduction/getting-started",
           "introduction/navigating-epsilo"
@@ -65,7 +32,6 @@
       },
       {
         "group": "Optimization Playbooks",
-        "icon": "plug",
         "expanded": false,
         "pages": [
           "optimization-playbooks/ad-spend-optimization",
@@ -74,8 +40,7 @@
         ]
       },
       {
-        "group": "How to Guides",
-        "icon": "puzzle",
+        "group": "How-to Guides",
         "expanded": false,
         "pages": [
           "how-to-guide/gmv-max",
