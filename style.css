@@ -36,8 +36,8 @@
   filter: brightness(0.96);
 }
 .eps-actions .eps-btn.done {
-  background: color-mix(in oklab, #16a34a 10%, var(--bg));
-  border-color: color-mix(in oklab, #16a34a 35%, var(--epsilo-border));
+  background: color-mix(in oklab, #2563eb 10%, var(--bg));
+  border-color: color-mix(in oklab, #2563eb 35%, var(--epsilo-border));
 }
 
 /* ---- Bottom-left: Get support ---- */
