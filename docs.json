@@ -3,19 +3,26 @@
   "theme": "almond",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
-  "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
+  "logo": {
+    "light": "/logo/dark.svg",
+    "dark": "/logo/light.svg",
+    "href": "https://one.epsilo.io"
+  },
   "favicon": "/favicon.svg",
+
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
 
+  "contextual": {
+    "options": ["copy"]
+  },
+
   "navbar": {
-    "links": [
-      { "label": "Website", "href": "https://next.epsilo.ai" }
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Sign in",
-      "href": "https:one.epsilo.io"
+      "href": "https://one.epsilo.io"
     }
   },
 
