@@ -1,37 +1,62 @@
-/* =========== Linear-like additions (non-breaking) =========== */
+/* ===== Linear-like refinements (adds on top of your existing rules) ===== */
 
-/* Comfortable reading measure + slightly larger base */
-.prose { max-width: 820px; line-height: 1.7; font-size: 16.5px; }
-.prose h1 { letter-spacing: -0.01em; margin-top: .2rem; margin-bottom: 1rem; }
-.prose h2 { margin-top: 1.9rem; }
-
-/* Sidebar current page: subtle brand tint */
-aside nav a[aria-current="page"] {
-  background: color-mix(in oklab, var(--brand) 12%, transparent);
-  border-radius: 999px;
+/* Header bar: flat, subtle divider, compact height */
+header, .navbar, .top-nav, nav[role="navigation"]{
+  position: sticky; top: 0; z-index: 60;
+  background: var(--bg);
+  border-bottom: 1px solid var(--epsilo-border);
+  min-height: 56px;
+  display: flex; align-items: center;
+}
+header.eps-shadow, .navbar.eps-shadow, .top-nav.eps-shadow{
+  box-shadow: 0 1px 0 var(--epsilo-border);
 }
 
-/* Minimal code blocks */
-pre code {
-  display: block;
-  padding: 16px;
-  border-radius: 12px;
-}
-
-/* --- Search: make the DocSearch button icon-only & align near logo --- */
+/* Search button compact & icon-only */
 .DocSearch-Button{
   border: 1px solid var(--epsilo-border) !important;
   background: var(--bg) !important;
   border-radius: 10px !important;
   padding: 6px 8px !important;
-  margin-left: 8px; /* once we move it after the logo */
+  margin-left: 8px;
 }
-.DocSearch-Button .DocSearch-Button-Placeholder { display: none !important; }
-.DocSearch-Button .DocSearch-Search-Icon { margin: 0 !important; }
+.DocSearch-Button .DocSearch-Button-Placeholder{ display:none !important; }
+.DocSearch-Button .DocSearch-Search-Icon{ margin:0 !important; }
 
-/* --- Top-right actions (Copy page + Mode switch) --- */
+/* Content reading rhythm (Linear-ish) */
+.prose{ max-width: 820px; line-height: 1.7; font-size: 16.5px; }
+.prose h1{ letter-spacing: -0.01em; margin-top: .2rem; margin-bottom: 1rem; font-weight: 700; }
+.prose h2{ margin-top: 1.9rem; font-weight: 700; }
+
+/* Sidebar: active item pill + spacing like Linear */
+aside nav a[aria-current="page"]{
+  background: color-mix(in oklab, var(--brand) 12%, transparent);
+  color: var(--brand) !important;
+  border-radius: 12px;
+}
+aside nav a{ padding: 8px 10px; border-radius: 10px; }
+aside nav a:hover{ background: color-mix(in oklab, var(--brand) 10%, transparent); }
+
+/* Right TOC: subtle rail + sticky */
+nav[aria-label="On this page"], nav[aria-label='On this page']{
+  border-left: 1px solid var(--epsilo-border);
+  padding-left: 12px;
+  position: sticky; top: 88px;
+}
+nav[aria-label="On this page"] a[aria-current="true"],
+nav[aria-label='On this page'] a[aria-current="page"]{
+  color: var(--brand) !important;
+  border-left: 2px solid var(--brand) !important;
+  padding-left: 10px;
+}
+
+/* Callouts, code, links already styled by you; add minimal polish */
+pre{ border-radius: 12px; }
+pre code{ display: block; padding: 16px; border-radius: 12px; }
+
+/* Top-right action cluster (Copy page + Mode) */
 .eps-actions{
-  position: fixed; top: 10px; right: 16px; z-index: 50;
+  position: fixed; top: 10px; right: 16px; z-index: 70;
   display: flex; gap: 8px;
 }
 .eps-btn{
@@ -41,27 +66,29 @@ pre code {
   border: 1px solid var(--epsilo-border);
   background: var(--bg); color: var(--fg);
   cursor: pointer;
-  box-shadow: var(--shadow-soft, 0 1px 2px rgba(15,23,42,.04));
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
   transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
 }
 .eps-btn:hover{ transform: translateY(-1px); }
-.eps-btn.done{ background: color-mix(in oklab, #16a34a 12%, var(--bg)); border-color: color-mix(in oklab, #16a34a 35%, var(--epsilo-border)); }
+.eps-btn.done{
+  background: color-mix(in oklab, #16a34a 12%, var(--bg));
+  border-color: color-mix(in oklab, #16a34a 35%, var(--epsilo-border));
+}
 
-/* --- Bottom-left: Contact support pill --- */
+/* Bottom-left persistent support pill */
 .eps-support{
-  position: fixed; left: 16px; bottom: 16px; z-index: 50;
+  position: fixed; left: 16px; bottom: 16px; z-index: 70;
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 12px; border-radius: 12px;
   background: var(--bg); color: var(--fg);
   border: 1px solid var(--epsilo-border);
   text-decoration: none;
-  box-shadow: var(--shadow-soft, 0 1px 2px rgba(15,23,42,.04));
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
 }
 .eps-support:hover{ transform: translateY(-1px); }
 
-/* Respect your existing token names in dark mode */
-html.dark .eps-btn, html.dark .eps-support {
-  background: var(--bg);
-  color: var(--fg);
-  border-color: var(--epsilo-border);
+/* Breadcrumbs + top spacing feel */
+.breadcrumbs, nav.breadcrumbs, .mintlify-breadcrumbs{
+  color: color-mix(in oklab, var(--fg) 60%, transparent);
+  font-size: 13px;
 }

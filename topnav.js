@@ -1,116 +1,127 @@
 // /topnav.js
 (function () {
-  const ready = (fn) =>
-    (document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn));
-
-  function ensureOnce(selector, create) {
-    let el = document.querySelector(selector);
-    if (!el) el = create();
-    return el;
-  }
+  const onReady = (fn) =>
+    (document.readyState !== 'loading'
+      ? fn()
+      : document.addEventListener('DOMContentLoaded', fn));
 
   function moveSearchNextToLogo() {
-    const searchBtn = document.querySelector('.DocSearch-Button');
+    const header = document.querySelector('header, .navbar, .top-nav, nav[role="navigation"]');
+    if (!header) return;
+
     const logo =
-      document.querySelector('header a[aria-label="Logo"]') ||
-      document.querySelector('header .site-logo, header .logo') ||
-      document.querySelector('header a[href="/"]');
-    if (searchBtn && logo && logo.parentElement) {
-      // Insert search right after the logo
-      if (searchBtn.previousElementSibling !== logo) {
+      header.querySelector('a[aria-label="Logo"]') ||
+      header.querySelector('.site-logo, .logo, a[href="/"]');
+    const searchBtn = header.querySelector('.DocSearch-Button');
+
+    if (logo && searchBtn) {
+      // make search compact + place just after logo
+      if (logo.nextSibling !== searchBtn) {
         logo.parentElement.insertBefore(searchBtn, logo.nextSibling);
       }
+      searchBtn.setAttribute('aria-label', 'Search');
+      // icon-only (text hidden via CSS too)
+      const ph = searchBtn.querySelector('.DocSearch-Button-Placeholder');
+      if (ph) ph.style.display = 'none';
     }
   }
 
-  function initTopActions() {
-    const actions = ensureOnce('.eps-actions', () => {
-      const div = document.createElement('div');
-      div.className = 'eps-actions';
-      document.body.appendChild(div);
-      return div;
-    });
+  function buildTopRightActions() {
+    // a fixed cluster at the very top-right like Linear (Copy page + theme toggle)
+    let cluster = document.querySelector('.eps-actions');
+    if (!cluster) {
+      cluster = document.createElement('div');
+      cluster.className = 'eps-actions';
+      document.body.appendChild(cluster);
+    }
 
-    // ---- Copy page button ----
-    let copyBtn = actions.querySelector('.eps-btn.copy');
+    // Copy page button
+    let copyBtn = cluster.querySelector('.eps-btn.copy');
     if (!copyBtn) {
       copyBtn = document.createElement('button');
       copyBtn.className = 'eps-btn copy';
+      copyBtn.type = 'button';
       copyBtn.textContent = 'Copy page';
       copyBtn.addEventListener('click', async () => {
         const title = document.querySelector('h1')?.innerText?.trim() || document.title;
-        const url = window.location.href;
-        const sections = Array.from(document.querySelectorAll('h2'))
-          .slice(0, 6).map(h => `- ${h.textContent.trim()}`).join('\n');
-        const text = `${title}\n${url}${sections ? `\n\nSections:\n${sections}` : ''}`;
+        const url = location.href;
+        const h2s = Array.from(document.querySelectorAll('h2')).slice(0, 8)
+          .map(h => `- ${h.textContent.trim()}`).join('\n');
+        const text = `${title}\n${url}${h2s ? `\n\nSections:\n${h2s}` : ''}`;
         try {
           await navigator.clipboard.writeText(text);
           copyBtn.classList.add('done');
           copyBtn.textContent = 'Copied';
-          setTimeout(() => { copyBtn.classList.remove('done'); copyBtn.textContent = 'Copy page'; }, 1600);
+          setTimeout(() => { copyBtn.classList.remove('done'); copyBtn.textContent = 'Copy page'; }, 1400);
         } catch {
-          alert('Copy failed. Please copy from the address bar.');
+          alert('Copy failed—please copy from the address bar.');
         }
       });
-      actions.appendChild(copyBtn);
+      cluster.appendChild(copyBtn);
     }
 
-    // ---- Mode switch (reuse if Mintlify already injects one) ----
-    let toggle = actions.querySelector('.eps-btn.theme');
-    if (!toggle) {
-      // Try to clone an existing theme toggle if present
-      const existingToggle = document.querySelector(
+    // Theme toggle: reuse Mintlify's if available; else provide a minimal fallback
+    if (!cluster.querySelector('.eps-btn.theme')) {
+      const existing = document.querySelector(
         'button[aria-label*="theme" i], button[aria-label*="dark" i], button[aria-label*="light" i]'
       );
-      if (existingToggle) {
-        toggle = existingToggle.cloneNode(true);
-        toggle.classList.add('eps-btn', 'theme');
+      if (existing) {
+        const clone = existing.cloneNode(true);
+        clone.classList.add('eps-btn', 'theme');
+        cluster.appendChild(clone);
       } else {
-        // Fallback: a lightweight toggle that sets html.dark and persists it
-        toggle = document.createElement('button');
-        toggle.className = 'eps-btn theme';
-        toggle.textContent = 'Mode';
-        const applyTheme = (val) => {
-          document.documentElement.classList.toggle('dark', val === 'dark');
-        };
-        const getPref = () =>
-          localStorage.getItem('theme') ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        applyTheme(getPref());
-        toggle.addEventListener('click', () => {
+        const btn = document.createElement('button');
+        btn.className = 'eps-btn theme';
+        btn.type = 'button';
+        btn.textContent = 'Mode';
+        const apply = (t) => document.documentElement.classList.toggle('dark', t === 'dark');
+        const get = () => localStorage.getItem('theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        apply(get());
+        btn.addEventListener('click', () => {
           const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-          localStorage.setItem('theme', next);
-          applyTheme(next);
+          localStorage.setItem('theme', next); apply(next);
         });
+        cluster.appendChild(btn);
       }
-      actions.appendChild(toggle);
     }
   }
 
-  function initSupportPill() {
-    ensureOnce('.eps-support', () => {
+  function addContactSupport() {
+    // bottom-left persistent contact pill
+    if (!document.querySelector('.eps-support')) {
       const a = document.createElement('a');
       a.className = 'eps-support';
-      a.href = 'mailto:support@epsilo.io'; // update if you prefer a link/form
+      a.href = 'mailto:support@epsilo.io'; // change if you use a help portal
       a.textContent = 'Contact support';
       document.body.appendChild(a);
-      return a;
-    });
+    }
   }
 
-  // Handle SPA navigation: watch for content swaps and re-run placement
-  function observeRouteChanges() {
-    const obs = new MutationObserver(() => {
+  function headerScrollShadow() {
+    const header = document.querySelector('header, .navbar, .top-nav, nav[role="navigation"]');
+    if (!header) return;
+    const handler = () => {
+      if (window.scrollY > 2) header.classList.add('eps-shadow');
+      else header.classList.remove('eps-shadow');
+    };
+    handler();
+    window.addEventListener('scroll', handler, { passive: true });
+  }
+
+  function observeSpaChanges() {
+    // Mintlify is SPA-like; watch for route/content changes and re-run placement
+    const mo = new MutationObserver(() => {
       moveSearchNextToLogo();
     });
-    obs.observe(document.body, { childList: true, subtree: true });
+    mo.observe(document.body, { childList: true, subtree: true });
   }
 
-  ready(() => {
+  onReady(() => {
     moveSearchNextToLogo();
-    initTopActions();
-    initSupportPill();
-    observeRouteChanges();
+    buildTopRightActions();
+    addContactSupport();
+    headerScrollShadow();
+    observeSpaChanges();
   });
 })();
