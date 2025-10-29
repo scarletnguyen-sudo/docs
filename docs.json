@@ -1,109 +1,115 @@
 {
-  "theme": "mint",
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
   "name": "Epsilo Docs",
-  "logo": { "light": "/logo/light.svg", "dark": "/logo/dark.svg" },
+  "description": "Unified workspace for retail media teams.",
+  "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
-  "colors": { "primary": "#0F123C" },
-  "seo": { "indexing": "navigable" },
+
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#F8FAFC",
+    "dark": "#0F172A"
+  },
+
+  "appearance": { "default": "system", "strict": false },
+  "icons": { "library": "lucide" },
+
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system"
+  },
+
+  "seo": {
+    "indexing": "navigable",
+    "metatags": { "og:title": "Epsilo Docs", "og:type": "website" }
+  },
+
+  "search": { "prompt": "Search docs…" },
+
+  "interaction": {
+    "drilldown": false
+  },
+
   "head": {
     "links": [
       { "rel": "preconnect", "href": "https://fonts.googleapis.com" },
-      { "rel": "preconnect", "href": "https://fonts.gstatic.com", "crossOrigin": "anonymous" },
+      { "rel": "preconnect", "href": "https://fonts.gstatic.com", "crossorigin": "anonymous" },
       { "rel": "stylesheet", "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" },
       { "rel": "stylesheet", "href": "/styles.css" }
-    ],
-    "scripts": [
-      { "src": "/topnav.js", "defer": true }
     ]
+  },
+  "css": ["/styles.css"],
+
+  "navbar": {
+    "links": [
+      { "label": "Website", "href": "https://next.epsilo.ai", "icon": "globe" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Book a demo",
+      "href": "https://calendly.com/alex-vo/meeting-with-alex?back=1&month=2025-10"
+    }
   },
 
   "navigation": {
     "groups": [
       {
         "group": "Introduction",
+        "icon": "home",
+        "expanded": false,
         "pages": [
-          "/introduction/welcome",
-          "/introduction/getting-started"
+          "introduction/getting-started",
+          "introduction/navigating-epsilo"
         ]
       },
-
       {
-        "group": "Features",
+        "group": "Optimization Playbooks",
+        "icon": "plug",
+        "expanded": false,
         "pages": [
-          {
-            "group": "Aggregate",
-            "pages": [
-              "/features/aggregate/competitive-intelligence",
-              "/features/aggregate/digital-self-tracking",
-              "/features/aggregate/keyword-lab",
-              "/features/aggregate/operational-index",
-              "/features/aggregate/unified-api"
-            ]
-          },
-          {
-            "group": "Benchmark",
-            "pages": [
-              "/features/benchmark/ask-botep",
-              "/features/benchmark/budget-notification",
-              "/features/benchmark/metrics-benchmark",
-              "/features/benchmark/performance-tracking",
-              "/features/benchmark/time-benchmark"
-            ]
-          },
-          {
-            "group": "Collaboration",
-            "pages": [
-              "/features/collaboration/advanced-filtering",
-              "/features/collaboration/custom-views",
-              "/features/collaboration/export-tools",
-              "/features/collaboration/media-planning",
-              "/features/collaboration/workspace-sync"
-            ]
-          },
-          {
-            "group": "Decide",
-            "pages": [
-              "/features/decide/budget-distribution",
-              "/features/decide/bulk-actions",
-              "/features/decide/campaign-taxonomy",
-              "/features/decide/cross-channel-execution",
-              "/features/decide/custom-workflows"
-            ]
-          },
-          {
-            "group": "Execute",
-            "pages": [
-              "/features/execute/agent-orchestration",
-              "/features/execute/automated-reporting",
-              "/features/execute/optimize-performance",
-              "/features/execute/scheduled-automation",
-              "/features/execute/smart-alerts"
-            ]
-          }
+          "optimization-playbooks/ad-spend-optimization",
+          "optimization-playbooks/hyper-automation-scripts",
+          "optimization-playbooks/thinking-in-campaigns"
         ]
       },
-
       {
-        "group": "Connectors",
+        "group": "How to Guides",
+        "icon": "puzzle",
+        "expanded": false,
         "pages": [
-          "/connectors/shopee",
-          "/connectors/lazada",
-          "/connectors/tiktok-shop",
-          "/connectors/amazon"
+          "how-to-guide/gmv-max",
+          "how-to-guide/budget-distribution",
+          "how-to-guide/attribute-scheduled",
+          "how-to-guide/campaigns",
+          "how-to-guide/hyper-automation",
+          "how-to-guide/multi-row",
+          "how-to-guide/setting-up-views"
         ]
-      },
-
-      {
-        "group": "Use cases",
-        "pages": [
-          "/use-cases/gmv-max",
-          "/use-cases/budget-distribution",
-          "/use-cases/dsa-playbook"
-        ]
-      },
-
-      { "group": "Glossary", "pages": ["/glossary/index"] },
-      { "group": "Changelog", "pages": ["/changelog/index"] }
+      }
     ]
+  },
+
+  "footer": {
+    "socials": {
+      "x": "https://x.com/epsilo",
+      "linkedin": "https://www.linkedin.com/company/epsilo"
+    },
+    "links": [
+      {
+        "header": "Resources",
+        "items": [
+          { "label": "Pricing", "href": "https://next.epsilo.ai/pricing" }
+        ]
+      }
+    ]
+  },
+
+  "errors": {
+    "404": {
+      "redirect": false,
+      "title": "Page not found",
+      "description": "This page moved or never existed. Use the search bar above."
+    }
   }
 }
