@@ -1,15 +1,12 @@
-/* --- Kill the old floating cluster (we're using navbar now) --- */
 .eps-actions { display: none !important; }
 
-/* --- Navbar action cluster (holds Copy + Sign in) --- */
 .eps-nav-actions{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-left: 8px; /* a little space from nav links */
+  margin-left: 8px; 
 }
 
-/* Base button styling for navbar buttons */
 .eps-nav-actions .eps-btn,
 .eps-btn {
   font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -23,7 +20,6 @@
   transition: transform 120ms ease, filter 120ms ease, background 120ms ease, border-color 120ms ease;
 }
 
-/* Outlined style for Copy */
 .eps-btn-outline{
   background: var(--bg);
   color: var(--fg);
@@ -31,7 +27,6 @@
 }
 .eps-btn-outline:hover{ transform: translateY(-1px); }
 
-/* Brand primary for Sign in (and any .open-style if used) */
 .eps-btn-primary, .eps-actions .eps-btn.open {
   background: #2563EB;
   color: #fff;
@@ -39,7 +34,6 @@
 }
 .eps-btn-primary:hover, .eps-actions .eps-btn.open:hover { filter: brightness(0.96); }
 
-/* If Mintlify renders your primary CTA, give it same look */
 nav .primary a, nav .primary button,
 header .primary a, header .primary button {
   background: #2563EB !important;
@@ -51,12 +45,10 @@ header .primary a, header .primary button {
   font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-/* Copy “done” state = brand blue (not green) */
 .eps-btn.done {
   background: color-mix(in oklab, #2563EB 10%, var(--bg));
   border: 1px solid color-mix(in oklab, #2563EB 35%, var(--epsilo-border));
   color: #fff;
 }
 
-/* Bottom-left support pill (fix icon) */
 .eps-support::before { content: "💬"; font-size: 15px; }
