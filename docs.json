@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "almond",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
