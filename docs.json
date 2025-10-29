@@ -12,6 +12,7 @@
 
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
+  
   "navbar": {
   "contextual": {
     "options": ["copy"]
