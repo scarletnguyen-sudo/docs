@@ -9,7 +9,6 @@
     "href": "https://one.epsilo.io"
   },
   "favicon": "/favicon.svg",
-
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
 
@@ -22,6 +21,7 @@
       "href": "https://one.epsilo.io"
     }
   },
+
 
   "navigation": {
     "groups": [
