@@ -1,18 +1,53 @@
-/* ===== Linear-like refinements (adds on top of your existing rules) ===== */
+/* ---------- Linear polish: v2 tweaks ---------- */
 
-/* Header bar: flat, subtle divider, compact height */
+/* 1) Headings never hide under sticky header */
+.prose h1, .prose h2, .prose h3, .prose h4 { scroll-margin-top: 96px; }
+
+/* 2) Page measure + rhythm a touch larger */
+.prose { max-width: 860px; font-size: 17px; line-height: 1.72; }
+.prose h1 { font-weight: 750; font-size: 36px; }
+.prose h2 { font-weight: 700; font-size: 24px; margin-top: 2.1rem; }
+
+/* 3) Hide any built-in “Copy page” so we only show our top-right one */
+[data-testid="copy-page"], .copy-page { display: none !important; }
+
+/* 4) TOC: cleaner rail + tighter spacing; align with Linear */
+nav[aria-label="On this page"], nav[aria-label='On this page']{
+  border-left: 1px solid var(--epsilo-border);
+  padding-left: 12px;
+  margin-left: 12px;
+  position: sticky; top: 90px;
+}
+nav[aria-label="On this page"] li,
+nav[aria-label='On this page'] li { margin: 2px 0; }
+nav[aria-label="On this page"] a[aria-current="true"],
+nav[aria-label='On this page'] a[aria-current="page"]{
+  color: #22c55e !important;                      /* Linear’s green accent */
+  border-left: 2px solid #22c55e !important;
+  padding-left: 10px;
+}
+
+/* 5) Sidebar: spacing + active state pill tighter */
+aside nav a { padding: 8px 10px; border-radius: 10px; }
+aside nav a[aria-current="page"]{
+  background: color-mix(in oklab, #22c55e 12%, transparent);
+  color: #22c55e !important;
+}
+
+/* 6) Cards / callouts: lighter chrome */
+.note, .tip, .warning, .info { box-shadow: none !important; }
+pre { box-shadow: none; }
+
+/* 7) Sticky header height & subtle divider like Linear */
 header, .navbar, .top-nav, nav[role="navigation"]{
-  position: sticky; top: 0; z-index: 60;
-  background: var(--bg);
-  border-bottom: 1px solid var(--epsilo-border);
   min-height: 56px;
-  display: flex; align-items: center;
+  border-bottom: 1px solid var(--epsilo-border);
 }
 header.eps-shadow, .navbar.eps-shadow, .top-nav.eps-shadow{
   box-shadow: 0 1px 0 var(--epsilo-border);
 }
 
-/* Search button compact & icon-only */
+/* 8) Search next to logo, icon-only look */
 .DocSearch-Button{
   border: 1px solid var(--epsilo-border) !important;
   background: var(--bg) !important;
@@ -20,43 +55,12 @@ header.eps-shadow, .navbar.eps-shadow, .top-nav.eps-shadow{
   padding: 6px 8px !important;
   margin-left: 8px;
 }
-.DocSearch-Button .DocSearch-Button-Placeholder{ display:none !important; }
-.DocSearch-Button .DocSearch-Search-Icon{ margin:0 !important; }
+.DocSearch-Button .DocSearch-Button-Placeholder{ display: none !important; }
+.DocSearch-Button .DocSearch-Search-Icon{ margin: 0 !important; }
 
-/* Content reading rhythm (Linear-ish) */
-.prose{ max-width: 820px; line-height: 1.7; font-size: 16.5px; }
-.prose h1{ letter-spacing: -0.01em; margin-top: .2rem; margin-bottom: 1rem; font-weight: 700; }
-.prose h2{ margin-top: 1.9rem; font-weight: 700; }
-
-/* Sidebar: active item pill + spacing like Linear */
-aside nav a[aria-current="page"]{
-  background: color-mix(in oklab, var(--brand) 12%, transparent);
-  color: var(--brand) !important;
-  border-radius: 12px;
-}
-aside nav a{ padding: 8px 10px; border-radius: 10px; }
-aside nav a:hover{ background: color-mix(in oklab, var(--brand) 10%, transparent); }
-
-/* Right TOC: subtle rail + sticky */
-nav[aria-label="On this page"], nav[aria-label='On this page']{
-  border-left: 1px solid var(--epsilo-border);
-  padding-left: 12px;
-  position: sticky; top: 88px;
-}
-nav[aria-label="On this page"] a[aria-current="true"],
-nav[aria-label='On this page'] a[aria-current="page"]{
-  color: var(--brand) !important;
-  border-left: 2px solid var(--brand) !important;
-  padding-left: 10px;
-}
-
-/* Callouts, code, links already styled by you; add minimal polish */
-pre{ border-radius: 12px; }
-pre code{ display: block; padding: 16px; border-radius: 12px; }
-
-/* Top-right action cluster (Copy page + Mode) */
+/* 9) Top-right cluster: Copy + Mode */
 .eps-actions{
-  position: fixed; top: 10px; right: 16px; z-index: 70;
+  position: fixed; top: 10px; right: 16px; z-index: 90;
   display: flex; gap: 8px;
 }
 .eps-btn{
@@ -75,20 +79,16 @@ pre code{ display: block; padding: 16px; border-radius: 12px; }
   border-color: color-mix(in oklab, #16a34a 35%, var(--epsilo-border));
 }
 
-/* Bottom-left persistent support pill */
+/* 10) Bottom-left support pill spacing (never overlaps sidebar) */
 .eps-support{
-  position: fixed; left: 16px; bottom: 16px; z-index: 70;
-  display: inline-flex; align-items: center; gap: 8px;
+  position: fixed; left: 16px; bottom: 18px; z-index: 80;
   padding: 10px 12px; border-radius: 12px;
   background: var(--bg); color: var(--fg);
   border: 1px solid var(--epsilo-border);
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+  text-decoration: none; box-shadow: 0 1px 2px rgba(15,23,42,.04);
 }
 .eps-support:hover{ transform: translateY(-1px); }
 
-/* Breadcrumbs + top spacing feel */
-.breadcrumbs, nav.breadcrumbs, .mintlify-breadcrumbs{
-  color: color-mix(in oklab, var(--fg) 60%, transparent);
-  font-size: 13px;
-}
+/* 11) Anchor underline like Linear (subtle) */
+.prose a { text-decoration: none; border-bottom: 1px solid color-mix(in oklab, var(--brand) 35%, transparent); }
+.prose a:hover { border-bottom-color: color-mix(in oklab, var(--brand) 60%, transparent); }

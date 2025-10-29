@@ -1,33 +1,27 @@
 // /topnav.js
 (function () {
-  const onReady = (fn) =>
-    (document.readyState !== 'loading'
-      ? fn()
-      : document.addEventListener('DOMContentLoaded', fn));
+  const ready = (fn) => (document.readyState !== 'loading'
+    ? fn()
+    : document.addEventListener('DOMContentLoaded', fn));
+
+  const debounce = (fn, ms=100) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+  };
 
   function moveSearchNextToLogo() {
     const header = document.querySelector('header, .navbar, .top-nav, nav[role="navigation"]');
     if (!header) return;
-
-    const logo =
-      header.querySelector('a[aria-label="Logo"]') ||
-      header.querySelector('.site-logo, .logo, a[href="/"]');
+    const logo = header.querySelector('a[aria-label="Logo"], .site-logo, .logo, a[href="/"]');
     const searchBtn = header.querySelector('.DocSearch-Button');
-
-    if (logo && searchBtn) {
-      // make search compact + place just after logo
-      if (logo.nextSibling !== searchBtn) {
-        logo.parentElement.insertBefore(searchBtn, logo.nextSibling);
-      }
-      searchBtn.setAttribute('aria-label', 'Search');
-      // icon-only (text hidden via CSS too)
+    if (logo && searchBtn && logo.nextSibling !== searchBtn) {
+      logo.parentElement.insertBefore(searchBtn, logo.nextSibling);
+      searchBtn.title = 'Search (Ctrl + K)';
       const ph = searchBtn.querySelector('.DocSearch-Button-Placeholder');
       if (ph) ph.style.display = 'none';
     }
   }
 
-  function buildTopRightActions() {
-    // a fixed cluster at the very top-right like Linear (Copy page + theme toggle)
+  function buildTopActions() {
     let cluster = document.querySelector('.eps-actions');
     if (!cluster) {
       cluster = document.createElement('div');
@@ -35,32 +29,28 @@
       document.body.appendChild(cluster);
     }
 
-    // Copy page button
-    let copyBtn = cluster.querySelector('.eps-btn.copy');
-    if (!copyBtn) {
-      copyBtn = document.createElement('button');
-      copyBtn.className = 'eps-btn copy';
-      copyBtn.type = 'button';
-      copyBtn.textContent = 'Copy page';
-      copyBtn.addEventListener('click', async () => {
+    // Copy page
+    if (!cluster.querySelector('.eps-btn.copy')) {
+      const btn = document.createElement('button');
+      btn.className = 'eps-btn copy';
+      btn.type = 'button';
+      btn.textContent = 'Copy page';
+      btn.addEventListener('click', async () => {
         const title = document.querySelector('h1')?.innerText?.trim() || document.title;
         const url = location.href;
-        const h2s = Array.from(document.querySelectorAll('h2')).slice(0, 8)
-          .map(h => `- ${h.textContent.trim()}`).join('\n');
-        const text = `${title}\n${url}${h2s ? `\n\nSections:\n${h2s}` : ''}`;
+        const sections = Array.from(document.querySelectorAll('h2'))
+          .slice(0, 8).map(h => `- ${h.textContent.trim()}`).join('\n');
+        const text = `${title}\n${url}${sections ? `\n\nSections:\n${sections}` : ''}`;
         try {
           await navigator.clipboard.writeText(text);
-          copyBtn.classList.add('done');
-          copyBtn.textContent = 'Copied';
-          setTimeout(() => { copyBtn.classList.remove('done'); copyBtn.textContent = 'Copy page'; }, 1400);
-        } catch {
-          alert('Copy failed—please copy from the address bar.');
-        }
+          btn.classList.add('done'); btn.textContent = 'Copied';
+          setTimeout(() => { btn.classList.remove('done'); btn.textContent = 'Copy page'; }, 1300);
+        } catch { alert('Copy failed—please copy from your address bar.'); }
       });
-      cluster.appendChild(copyBtn);
+      cluster.appendChild(btn);
     }
 
-    // Theme toggle: reuse Mintlify's if available; else provide a minimal fallback
+    // Mode switch (clone if Mintlify provides one, else fallback)
     if (!cluster.querySelector('.eps-btn.theme')) {
       const existing = document.querySelector(
         'button[aria-label*="theme" i], button[aria-label*="dark" i], button[aria-label*="light" i]'
@@ -87,41 +77,35 @@
     }
   }
 
-  function addContactSupport() {
-    // bottom-left persistent contact pill
+  function supportPill() {
     if (!document.querySelector('.eps-support')) {
       const a = document.createElement('a');
       a.className = 'eps-support';
-      a.href = 'mailto:support@epsilo.io'; // change if you use a help portal
+      a.href = 'mailto:support@epsilo.io';  // change if you use a helpdesk URL
       a.textContent = 'Contact support';
       document.body.appendChild(a);
     }
   }
 
-  function headerScrollShadow() {
+  function headerShadowOnScroll() {
     const header = document.querySelector('header, .navbar, .top-nav, nav[role="navigation"]');
     if (!header) return;
-    const handler = () => {
-      if (window.scrollY > 2) header.classList.add('eps-shadow');
-      else header.classList.remove('eps-shadow');
-    };
-    handler();
-    window.addEventListener('scroll', handler, { passive: true });
+    const tick = () => (window.scrollY > 2 ? header.classList.add('eps-shadow')
+                                           : header.classList.remove('eps-shadow'));
+    tick(); window.addEventListener('scroll', tick, { passive: true });
   }
 
-  function observeSpaChanges() {
-    // Mintlify is SPA-like; watch for route/content changes and re-run placement
-    const mo = new MutationObserver(() => {
-      moveSearchNextToLogo();
-    });
+  function observeSpa() {
+    const rerun = debounce(() => moveSearchNextToLogo(), 120);
+    const mo = new MutationObserver(rerun);
     mo.observe(document.body, { childList: true, subtree: true });
   }
 
-  onReady(() => {
+  ready(() => {
     moveSearchNextToLogo();
-    buildTopRightActions();
-    addContactSupport();
-    headerScrollShadow();
-    observeSpaChanges();
+    buildTopActions();
+    supportPill();
+    headerShadowOnScroll();
+    observeSpa();
   });
 })();
