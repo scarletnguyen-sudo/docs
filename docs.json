@@ -12,12 +12,9 @@
 
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
-  
-  "navbar": {
-  "contextual": {
-    "options": ["copy"]
-  },
 
+  "navbar": {
+    "contextual": { "options": ["copy"] },
     "links": [],
     "primary": {
       "type": "button",
@@ -59,5 +56,10 @@
         ]
       }
     ]
-  }
+  },
+
+  "head": [
+    "<link rel=\"stylesheet\" href=\"/style.css\" />",
+    "<script src=\"/topnav.js\" defer></script>"
+  ]
 }

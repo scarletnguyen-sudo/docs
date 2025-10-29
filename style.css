@@ -1,12 +1,48 @@
+/* ---------- Epsilo top-nav overrides ---------- */
+:root {
+  --epsilo-blue: #2563EB;
+  --epsilo-border: rgba(0, 0, 0, 0.12);
+  --epsilo-fg: #0b1220;
+  --epsilo-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --epsilo-border: rgba(255, 255, 255, 0.18);
+  --epsilo-fg: #e6e8ee;
+  --epsilo-bg: #0b0f1a;
+}
+
+/* Hide any prior injected junk */
 .eps-actions { display: none !important; }
 
+/* Keep Mintlify primary CTA permanently blue in both themes */
+nav .primary a,
+nav .primary button,
+header .primary a,
+header .primary button {
+  background: var(--epsilo-blue) !important;
+  color: #fff !important;
+  border: 1px solid var(--epsilo-blue) !important;
+  border-radius: 10px !important;
+  height: 32px !important;
+  padding: 8px 12px !important;
+  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial !important;
+}
+
+nav .primary a:hover,
+nav .primary button:hover {
+  filter: brightness(0.93);
+}
+
+/* Container to hold Copy + Dropdown + Sign in */
 .eps-nav-actions{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-left: 8px; 
+  margin-left: 8px;
 }
 
+/* Generic small buttons */
 .eps-nav-actions .eps-btn,
 .eps-btn {
   font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -18,37 +54,64 @@
   gap: 8px;
   cursor: pointer;
   transition: transform 120ms ease, filter 120ms ease, background 120ms ease, border-color 120ms ease;
-}
-
-.eps-btn-outline{
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--epsilo-bg);
+  color: var(--epsilo-fg);
   border: 1px solid var(--epsilo-border);
 }
-.eps-btn-outline:hover{ transform: translateY(-1px); }
 
-.eps-btn-primary, .eps-actions .eps-btn.open {
-  background: #2563EB;
-  color: #fff;
-  border: 1px solid #2563EB;
-}
-.eps-btn-primary:hover, .eps-actions .eps-btn.open:hover { filter: brightness(0.96); }
+.eps-btn:hover { transform: translateY(-1px); }
 
-nav .primary a, nav .primary button,
-header .primary a, header .primary button {
-  background: #2563EB !important;
-  color: #fff !important;
-  border: 1px solid #2563EB !important;
-  border-radius: 10px !important;
-  height: 32px;
-  padding: 8px 12px;
-  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-}
-
+/* Copy -> success state */
 .eps-btn.done {
-  background: color-mix(in oklab, #2563EB 10%, var(--bg));
-  border: 1px solid color-mix(in oklab, #2563EB 35%, var(--epsilo-border));
+  background: color-mix(in oklab, var(--epsilo-blue) 12%, var(--epsilo-bg));
+  border-color: color-mix(in oklab, var(--epsilo-blue) 40%, var(--epsilo-border));
   color: #fff;
 }
 
-.eps-support::before { content: "💬"; font-size: 15px; }
+/* ---------- Dropdown like Linear ---------- */
+.eps-dropdown {
+  position: relative;
+}
+
+.eps-dropdown > .eps-btn {
+  /* keep it the outline style */
+}
+
+.eps-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--epsilo-bg);
+  border: 1px solid var(--epsilo-border);
+  border-radius: 12px;
+  padding: 4px 0;
+  display: none;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.eps-dropdown.open .eps-dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eps-dropdown-menu li { list-style: none; }
+
+.eps-dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  color: var(--epsilo-fg);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.eps-dropdown-menu a:hover {
+  background: color-mix(in oklab, var(--epsilo-blue) 9%, var(--epsilo-bg));
+}
+
+/* Move DocSearch next to logo for saner F-layout (optional, harmless if absent) */
