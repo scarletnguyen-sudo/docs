@@ -5,7 +5,8 @@
   --card:#fff;          --border:rgba(2,6,23,.12);
   --radius:12px;
   --content-w:940px;    /* readable width like Linear */
-  --toc-w:260px;        --side-w:264px;
+  --toc-w:260px;        --side-w:264px; 
+  --primary-dark:0 109 199;
 }
 [data-theme="dark"]{
   --bg:#0b0f1a;         --fg:#e2e8f0;    --muted:#94a3b8;
