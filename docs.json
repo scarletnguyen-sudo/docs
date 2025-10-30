@@ -17,23 +17,42 @@
   },
 
   "navigation": {
+    "dropdowns": [
+      {
+        "dropdown": "Start Guide",
+        "icon": "book-open",
+        "pages": ["getting-started", "navigating-epsilo"]
+      },
+      {
+        "dropdown": "Optimization Playbooks",
+        "icon": "square-terminal",
+        "pages": ["ad-spend-optimization", "hyper-automation-scripts", "thinking-in-campaigns"]
+      },
+      {
+        "dropdown": "How-to Guides",
+        "icon": "wrench",
+        "pages": [
+          "how-to-guide/gmv-max",
+          "how-to-guide/budget-distribution",
+          "how-to-guide/attribute-scheduled",
+          "how-to-guide/campaigns",
+          "how-to-guide/hyper-automation",
+          "how-to-guide/multi-row",
+          "how-to-guide/setting-up-views"
+        ]
+      }
+    ],
+
     "groups": [
       {
         "group": "Start Guide",
         "expanded": true,
-        "pages": [
-          "introduction/getting-started",
-          "introduction/navigating-epsilo"
-        ]
+        "pages": ["getting-started", "navigating-epsilo"]
       },
       {
         "group": "Optimization Playbooks",
         "expanded": false,
-        "pages": [
-          "optimization-playbooks/ad-spend-optimization",
-          "optimization-playbooks/hyper-automation-scripts",
-          "optimization-playbooks/thinking-in-campaigns"
-        ]
+        "pages": ["ad-spend-optimization", "hyper-automation-scripts", "thinking-in-campaigns"]
       },
       {
         "group": "How-to Guides",
@@ -52,7 +71,7 @@
   },
 
   "head": [
-    "<link rel=\"stylesheet\" href=\"/style.css\" />",
-    "<script src=\"/topnav.js\" defer></script>"
+    "<link rel=\"stylesheet\" href=\"/style.css?v=2\" />",
+    "<script src=\"/topnav.js?v=2\" defer></script>"
   ]
 }
