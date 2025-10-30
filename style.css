@@ -102,3 +102,40 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     background:var(--bg); border:1px solid var(--border); z-index:1300; font-size:13px;
   }
 }
+/* Sidebar accordion animation */
+.eps-side .group-body {
+  overflow: hidden;
+  transition: height 0.25s ease;
+}
+
+.eps-side .group.collapsed .group-body {
+  height: 0 !important;
+  padding: 0;
+}
+
+.eps-side .group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.eps-side .group-head:hover {
+  background: color-mix(in oklab, var(--blue) 8%, var(--card));
+}
+
+.eps-side .group.collapsed .chev {
+  transform: rotate(-90deg);
+  transition: transform 0.25s ease;
+}
+
+.eps-side .chev {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+}
