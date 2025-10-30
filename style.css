@@ -7,6 +7,7 @@
   --content-w:940px;    /* readable width like Linear */
   --toc-w:260px;        --side-w:264px; 
   --primary-dark:0 109 199;
+  --primary-light:0 109 199;
 }
 [data-theme="dark"]{
   --bg:#0b0f1a;         --fg:#e2e8f0;    --muted:#94a3b8;
