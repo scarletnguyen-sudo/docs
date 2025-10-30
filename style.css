@@ -1,104 +1,130 @@
-:root {
-  --epsilo-blue: #2563EB;
-  --epsilo-border: rgba(0, 0, 0, 0.12);
-  --epsilo-bg: #ffffff;
-  --epsilo-fg: #0f172a;
+/* ---------- Tokens */
+:root{
+  --blue:#2563EB;
+  --bg:#ffffff; --fg:#0f172a; --muted:#64748b; --border:rgba(2,6,23,.12);
+  --card: #ffffff;
+  --radius: 12px;
+  --content-w: 940px;      /* Linear-ish readable width */
+  --toc-w: 260px;
+}
+[data-theme="dark"]{
+  --bg:#0b0f1a; --fg:#e2e8f0; --muted:#94a3b8; --border:rgba(241,245,249,.14);
+  --card:#0f172a;
 }
 
-[data-theme="dark"] {
-  --epsilo-border: rgba(255, 255, 255, 0.18);
-  --epsilo-bg: #0f172a;
-  --epsilo-fg: #e2e8f0;
+/* ---------- Layout: center content + right TOC like Linear */
+.mntl-container, main, .content, .docs {
+  --page-gap: 32px;
+}
+main .markdown {
+  max-width: var(--content-w);
+}
+main .page {
+  display: grid;
+  grid-template-columns: 1fr var(--toc-w);
+  gap: var(--page-gap);
+}
+@media (max-width: 1200px){
+  main .page { grid-template-columns: 1fr; }
 }
 
-/* Sign in button color */
-nav .primary a,
-nav .primary button,
-header .primary a,
-header .primary button {
-  background: var(--epsilo-blue) !important;
-  color: #fff !important;
-  border: 1px solid var(--epsilo-blue) !important;
-  border-radius: 10px !important;
-  height: 32px;
-  padding: 8px 12px;
+/* ---------- Typography scale */
+.markdown h1{ font-size: 34px; line-height: 1.2; letter-spacing: -0.01em; margin: 6px 0 18px; }
+.markdown h2{ font-size: 22px; margin: 28px 0 12px; }
+.markdown h3{ font-size: 18px; margin: 22px 0 8px; }
+.markdown p, .markdown li{ color: var(--fg); font-size: 15.5px; line-height: 1.7; }
+.markdown strong{ color: var(--fg); }
+.markdown a{ color: var(--blue); text-underline-offset: 3px; }
+
+/* ---------- Breadcrumb eyebrow */
+header [data-eyebrow]{
+  color: var(--muted); font-size: 12px;
+  letter-spacing: .02em;
+}
+
+/* ---------- Images: rounded, subtle border + shadow, Linear-style */
+.markdown img{
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+}
+figure{ margin: 16px 0; }
+figcaption{ color: var(--muted); font-size: 12px; text-align: center; margin-top: 6px; }
+
+/* ---------- Callouts using blockquotes (Linear’s soft cards) */
+.markdown blockquote{
+  background: color-mix(in oklab, var(--blue) 7%, var(--card));
+  border: 1px solid color-mix(in oklab, var(--blue) 25%, var(--border));
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  color: var(--fg);
+}
+.markdown blockquote p{ margin: 0; }
+
+/* ---------- Right rail: “On this page” card */
+aside, .on-this-page, .toc, nav.toc{
+  /* ui.linear.js will add .eps-toc-card; these keep it neat if Mintlify changes classnames */
+}
+.eps-toc-card{
+  position: sticky; top: 88px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  height: fit-content;
+}
+.eps-toc-card .title{
+  font-size: 12px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase;
+  padding: 4px 6px 8px; border-bottom: 1px solid var(--border); margin-bottom: 8px;
+}
+.eps-toc-card a{
+  display: block; padding: 6px 6px; border-radius: 8px;
+  color: var(--fg); text-decoration: none; font-size: 13px;
+}
+.eps-toc-card a:hover{ background: color-mix(in oklab, var(--blue) 7%, var(--card)); }
+.eps-toc-card .active{ background: color-mix(in oklab, var(--blue) 12%, var(--card)); }
+
+/* ---------- Code blocks: keep system theme, polish edges */
+pre, code[class*="language-"]{
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  font-size: 13px !important;
+}
+
+/* ---------- Top-right controls (Copy / Resources ▾ / Sign in) */
+.eps-nav-actions{ display:inline-flex; align-items:center; gap:8px; margin-left:8px; }
+.eps-btn{
+  height:32px; padding:8px 12px; border-radius:10px; border:1px solid var(--border);
+  background: var(--bg); color: var(--fg);
   font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  display:inline-flex; align-items:center; gap:6px; cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.eps-btn:hover{ transform: translateY(-1px); }
+.eps-btn.done{ background: color-mix(in oklab, var(--blue) 15%, var(--bg)); color:#fff; }
+.eps-dropdown{ position: relative; }
+.eps-dropdown-menu{
+  position:absolute; right:0; top:calc(100% + 6px);
+  background: var(--card); border:1px solid var(--border); border-radius:12px;
+  min-width: 180px; padding: 4px 0; display:none; opacity:0; transform:translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12); transition:opacity .15s ease, transform .15s ease; z-index: 1000;
+}
+.eps-dropdown.open .eps-dropdown-menu{ display:block; opacity:1; transform:translateY(0); }
+.eps-dropdown-menu a{ display:block; padding:9px 12px; color:var(--fg); text-decoration:none; font-size:13px; }
+.eps-dropdown-menu a:hover{ background: color-mix(in oklab, var(--blue) 9%, var(--card)); }
+
+/* ---------- Footer next/prev into tiles */
+footer .navigation a{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--card);
 }
 
-nav .primary a:hover,
-nav .primary button:hover {
-  filter: brightness(0.93);
+/* ---------- Tables: cleaner */
+.markdown table{
+  border-collapse: separate; border-spacing: 0; width: 100%;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
 }
-
-/* Hide redundant nav actions Mintlify injects */
-.eps-actions { display: none !important; }
-
-/* Wrapper for Copy + Dropdown + Sign in */
-.eps-nav-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: 8px;
-}
-
-.eps-btn {
-  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  height: 32px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  border: 1px solid var(--epsilo-border);
-  background: var(--epsilo-bg);
-  color: var(--epsilo-fg);
-  transition: all 0.15s ease;
-}
-.eps-btn:hover { transform: translateY(-1px); }
-
-/* Copy -> success state */
-.eps-btn.done {
-  background: color-mix(in oklab, var(--epsilo-blue) 15%, var(--epsilo-bg));
-  color: #fff;
-}
-
-/* Dropdown styling */
-.eps-dropdown { position: relative; }
-
-.eps-dropdown-menu {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 6px);
-  background: var(--epsilo-bg);
-  border: 1px solid var(--epsilo-border);
-  border-radius: 10px;
-  padding: 4px 0;
-  display: none;
-  flex-direction: column;
-  min-width: 160px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.eps-dropdown.open .eps-dropdown-menu {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.eps-dropdown-menu li { list-style: none; }
-.eps-dropdown-menu a {
-  display: block;
-  padding: 8px 12px;
-  color: var(--epsilo-fg);
-  text-decoration: none;
-  font-size: 13px;
-}
-.eps-dropdown-menu a:hover {
-  background: color-mix(in oklab, var(--epsilo-blue) 10%, var(--epsilo-bg));
-}
+.markdown th, .markdown td{ border-bottom: 1px solid var(--border); padding: 10px 12px; }
+.markdown tr:last-child td{ border-bottom: none; }
