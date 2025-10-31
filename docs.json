@@ -5,7 +5,6 @@
   "description": "Unified workspace for retail media teams.",
   "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
   "favicon": "/favicon.svg",
-
   "colors": { "primary": "#2563EB" },
   "appearance": { "default": "system" },
   "styling": { "eyebrows": "breadcrumbs", "codeblocks": "system" },
@@ -20,40 +19,71 @@
   "navigation": {
     "groups": [
       {
-        "group": "Start Guide",
+        "group": "Concept",
+        "expanded": false,
+        "pages": [
+          "concept/what-is-epsilo-one",
+          "concept/roles-permissions",
+          "concept/terminology",
+          "concept/data-refresh-latency",
+          "concept/retail-media-network"
+        ]
+      },
+      {
+        "group": "Getting Started",
         "expanded": true,
         "pages": [
-          "getting-started",
-          "navigating-epsilo"
+          "getting-started/create-workspace",
+          "getting-started/connect-marketplace",
+          "getting-started/invite-team",
+          "getting-started/first-campaign"
         ]
       },
       {
-        "group": "Optimization Playbooks",
+        "group": "Marketing Automation",
         "expanded": false,
         "pages": [
-          "ad-spend-optimization",
-          "hyper-automation-scripts",
-          "thinking-in-campaigns"
+          "features/marketing-automation/create-campaign",
+          "features/marketing-automation/schedule-campaign",
+          "features/marketing-automation/duplicate-campaign",
+          "features/marketing-automation/mass-action",
+          "features/marketing-automation/bulk-action"
         ]
       },
       {
-        "group": "How-to Guides",
+        "group": "Budget Management",
         "expanded": false,
         "pages": [
-          "how-to-guide/gmv-max",
-          "how-to-guide/budget-distribution",
-          "how-to-guide/attribute-scheduled",
-          "how-to-guide/campaigns",
-          "how-to-guide/hyper-automation",
-          "how-to-guide/multi-row",
-          "how-to-guide/setting-up-views"
+          "features/budget/budget-planning",
+          "features/budget/budget-distribution",
+          "features/budget/budget-lock",
+          "features/budget/budget-scheduler"
+        ]
+      },
+      {
+        "group": "Automation Rules",
+        "expanded": false,
+        "pages": [
+          "features/rules/apply-rule",
+          "features/rules/edit-rule"
+        ]
+      },
+      {
+        "group": "Playbook",
+        "expanded": false,
+        "pages": [
+          "playbooks/shopee-create-gmv-max",
+          "playbooks/shopee-budget-rules-best-practice",
+          "playbooks/lazada-smart-budgeting",
+          "playbooks/tiktok-catalog-sync-and-boost",
+          "playbooks/amazon-keyword-starter"
         ]
       }
     ]
   },
 
   "head": [
-    "<link rel=\"stylesheet\" href=\"/style.css\" />",
-    "<script src=\"/topnav.js\" defer></script>"
+    "<link rel=\"stylesheet\" href=\"/style.css?v=5\" />",
+    "<script src=\"/topnav.js?v=5\" defer></script>"
   ]
 }
