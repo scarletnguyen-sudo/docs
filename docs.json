@@ -29,21 +29,20 @@
         ]
       },
       {
-        "group": "Marketing Automation",
+        "group": "Unified Campaign",
         "expanded": false,
         "pages": [
-          "features/marketing-automation/create-campaign",
-          "features/marketing-automation/schedule-campaign",
-          "features/marketing-automation/duplicate-campaign",
-          "features/marketing-automation/mass-action",
-          "features/marketing-automation/bulk-action"
+          "features/unified-campaign/create-campaign",
+          "features/unified-campaign/schedule-campaign",
+          "features/unified-campaign/duplicate-campaign",
+          "features/unified-campaign/mass-action",
+          "features/unified-campaign/bulk-action"
         ]
       },
       {
         "group": "Budget Management",
         "expanded": false,
         "pages": [
-          "features/budget/budget-planning",
           "features/budget/budget-distribution",
           "features/budget/budget-lock",
           "features/budget/budget-scheduler"
