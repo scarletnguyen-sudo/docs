@@ -57,14 +57,12 @@
         ]
       },
       {
-        "group": "Playbook",
+        "group": "Playbooks",
         "expanded": false,
         "pages": [
-          "playbooks/shopee-create-gmv-max",
-          "playbooks/shopee-budget-rules-best-practice",
-          "playbooks/lazada-smart-budgeting",
-          "playbooks/tiktok-catalog-sync-and-boost",
-          "playbooks/amazon-keyword-starter"
+          "playbooks/ad-spend-optimization",
+          "playbooks/hyper-automation-scripts",
+          "playbooks/thinking-in-campaigns"
         ]
       }
     ]
