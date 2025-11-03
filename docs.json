@@ -19,17 +19,6 @@
   "navigation": {
     "groups": [
       {
-        "group": "Concept",
-        "expanded": false,
-        "pages": [
-          "concept/what-is-epsilo",
-          "concept/roles-permissions",
-          "concept/terminology",
-          "concept/data-refresh-latency",
-          "concept/retail-media-network"
-        ]
-      },
-      {
         "group": "Getting Started",
         "expanded": true,
         "pages": [
