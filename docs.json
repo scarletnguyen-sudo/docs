@@ -59,10 +59,10 @@
         "group": "Unified Campaign",
         "expanded": false,
         "pages": [
+          "c-unified-campaign/default-campaign",          
           "c-unified-campaign/create-campaign",
           "c-unified-campaign/duplicate-campaign",
-          "c-unified-campaign/apply-rules",
-          "c-unified-campaign/schedule-budget"
+          "c-unified-campaign/apply-rules"
         ]
       },
       {
