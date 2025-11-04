@@ -36,24 +36,31 @@
           "features/unified-campaign/schedule-campaign",
           "features/unified-campaign/duplicate-campaign",
           "features/unified-campaign/mass-action",
-          "features/unified-campaign/bulk-action"
+          "features/unified-campaign/bulk-action",
+          "features/unified-campaign/budget-distribution",
+          "features/unified-campaign/budget-lock",
+          "features/unified-campaign/budget-scheduler",
+          "features/unified-campaign/apply-rule",
+          "features/unified-campaign/edit-rule"         
         ]
       },
       {
-        "group": "Budget Management",
+        "group": "Keyword Lab",
         "expanded": false,
         "pages": [
-          "features/budget/budget-distribution",
-          "features/budget/budget-lock",
-          "features/budget/budget-scheduler"
+          "features/keyword-lab/article-1",
+          "features/keyword-lab/article-2",
+          "features/keyword-lab/article-3"
         ]
       },
       {
-        "group": "Automation Rules",
+        "group": "Digital Shelf Analytics",
         "expanded": false,
         "pages": [
-          "features/rules/apply-rule",
-          "features/rules/edit-rule"
+          "features/digital-shelf-analytics/article-4",
+          "features/digital-shelf-analytics/article-5",
+          "features/digital-shelf-analytics/article-6"
+         
         ]
       },
       {
