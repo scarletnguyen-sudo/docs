@@ -3,31 +3,33 @@
   "theme": "almond",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
-  "logo": { 
-    "light": "/logo/dark.svg", 
-    "dark": "/logo/light.svg", 
-    "href": "https://one.epsilo.io" 
+  "logo": {
+    "light": "/logo/dark.svg",
+    "dark": "/logo/light.svg",
+    "href": "https://one.epsilo.io"
   },
   "favicon": "/favicon.svg",
-  "colors": { 
-    "primary": "#2563EB" 
+  "colors": {
+    "primary": "#2563EB"
   },
-  "appearance": { 
-    "default": "system" 
+  "appearance": {
+    "default": "system"
   },
-  "styling": { 
-    "eyebrows": "breadcrumbs", 
-    "codeblocks": "system" 
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system"
   },
-  "contextual": { 
-    "options": ["copy"] 
+  "contextual": {
+    "options": [
+      "copy"
+    ]
   },
   "navbar": {
     "links": [],
-    "primary": { 
-      "type": "button", 
-      "label": "Sign in", 
-      "href": "https://one.epsilo.io" 
+    "primary": {
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://one.epsilo.io"
     }
   },
   "navigation": {
@@ -48,7 +50,6 @@
           "b-workspace/workspace-setting",
           "b-workspace/invite-members",
           "b-workspace/login-methods",
-          "b-workspace/team-roles",
           "b-workspace/billing-and-plans",
           "b-workspace/channels-and-integrations",
           "b-workspace/edit-rules"
