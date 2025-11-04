@@ -3,88 +3,124 @@
   "theme": "almond",
   "name": "Epsilo Docs",
   "description": "Unified workspace for retail media teams.",
-  "logo": { "light": "/logo/dark.svg", "dark": "/logo/light.svg", "href": "https://one.epsilo.io" },
+  "logo": { 
+    "light": "/logo/dark.svg", 
+    "dark": "/logo/light.svg", 
+    "href": "https://one.epsilo.io" 
+  },
   "favicon": "/favicon.svg",
-  "colors": { "primary": "#2563EB" },
-  "appearance": { "default": "system" },
-  "styling": { "eyebrows": "breadcrumbs", "codeblocks": "system" },
-
-  "contextual": { "options": ["copy"] },
-
+  "colors": { 
+    "primary": "#2563EB" 
+  },
+  "appearance": { 
+    "default": "system" 
+  },
+  "styling": { 
+    "eyebrows": "breadcrumbs", 
+    "codeblocks": "system" 
+  },
+  "contextual": { 
+    "options": ["copy"] 
+  },
   "navbar": {
     "links": [],
-    "primary": { "type": "button", "label": "Sign in", "href": "https://one.epsilo.io" }
+    "primary": { 
+      "type": "button", 
+      "label": "Sign in", 
+      "href": "https://one.epsilo.io" 
+    }
   },
-
   "navigation": {
     "groups": [
       {
         "group": "Getting Started",
         "expanded": true,
         "pages": [
-          "getting-started/start-guide",
-          "getting-started/connect-marketplace",
-          "getting-started/first-campaign"
+          "a-getting-started/start-guide",
+          "a-getting-started/connect-marketplace",
+          "a-getting-started/your-first-campaign"
         ]
       },
       {
         "group": "Workspace",
         "expanded": false,
         "pages": [
-          "features/workspace/workspace-setting",
-          "features/workspace/invite-members",
-          "features/workspace/billing-and-plans",
-          "features/workspace/article-7",
-          "features/workspace/article-8"         
+          "b-workspace/workspace-setting",
+          "b-workspace/invite-members",
+          "b-workspace/login-methods",
+          "b-workspace/team-roles",
+          "b-workspace/billing-and-plans",
+          "b-workspace/channels-and-integrations",
+          "b-workspace/edit-rules"
         ]
       },
       {
         "group": "Unified Campaign",
         "expanded": false,
         "pages": [
-          "features/unified-campaign/create-campaign",
-          "features/unified-campaign/schedule-campaign",
-          "features/unified-campaign/duplicate-campaign",
-          "features/unified-campaign/mass-action",
-          "features/unified-campaign/bulk-action",
-          "features/unified-campaign/budget-distribution",
-          "features/unified-campaign/budget-lock",
-          "features/unified-campaign/budget-scheduler",
-          "features/unified-campaign/apply-rule",
-          "features/unified-campaign/edit-rule"         
+          "c-unified-campaign/create-campaign",
+          "c-unified-campaign/duplicate-campaign",
+          "c-unified-campaign/apply-rules",
+          "c-unified-campaign/schedule-budget"
         ]
       },
       {
-        "group": "Keyword Lab",
+        "group": "Budget Management",
         "expanded": false,
         "pages": [
-          "features/keyword-lab/article-1",
-          "features/keyword-lab/article-2",
-          "features/keyword-lab/article-3"
+          "d-budget-management/budget-distribution",
+          "d-budget-management/budget-lock",
+          "d-budget-management/budget-planning",
+          "d-budget-management/manual-and-auto-mode"
         ]
       },
       {
-        "group": "Digital Shelf Analytics",
+        "group": "Scheduling Actions",
         "expanded": false,
         "pages": [
-          "features/digital-shelf-analytics/article-4",
-          "features/digital-shelf-analytics/article-5",
-          "features/digital-shelf-analytics/article-6"
-         
+          "e-scheduling-actions/schedule-budget",
+          "e-scheduling-actions/schedule-status",
+          "e-scheduling-actions/schedule-storefront"
+        ]
+      },
+      {
+        "group": "Agentic AI",
+        "expanded": false,
+        "pages": [
+          "f-agentic-ai/botep-ai"
+        ]
+      },
+      {
+        "group": "Workspace Intelligence",
+        "expanded": false,
+        "pages": [
+          "g-workspace-intelligence/bulk-action",
+          "g-workspace-intelligence/filter-and-advanced-filtering",
+          "g-workspace-intelligence/mass-action",
+          "g-workspace-intelligence/sort-group-and-multi-group",
+          "g-workspace-intelligence/view-modes-and-saved-views"
+        ]
+      },
+      {
+        "group": "Insight & Analytics",
+        "expanded": false,
+        "pages": [
+          "h-insight-and-analytics/digital-shelf-analytics",
+          "h-insight-and-analytics/keyword-lab",
+          "h-insight-and-analytics/h-ideo-3"
         ]
       },
       {
         "group": "Playbooks",
         "expanded": false,
         "pages": [
-          "playbooks/ad-spend-optimization",
-          "playbooks/hyper-automation-scripts",
-          "playbooks/thinking-in-campaigns"
+          "i-playbooks/ad-spend-optimization",
+          "i-playbooks/hyper-automation-scripts",
+          "i-playbooks/thinking-in-campaigns"
         ]
       }
     ]
   },
-
   "head": [
     "<link rel=\"stylesheet\" href=\"/style.css?v=5\" />",
     "<script src=\"/topnav.js?v=5\" defer></script>"
