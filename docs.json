@@ -38,7 +38,7 @@
         "group": "Getting Started",
         "expanded": true,
         "pages": [
-          "a-getting-started/1-start-guide",
+          "a-getting-started/start-guide",
           "a-getting-started/connect-marketplace",
           "a-getting-started/your-first-campaign"
         ]
