@@ -29,6 +29,16 @@
         ]
       },
       {
+        "group": "Workspace",
+        "expanded": false,
+        "pages": [
+          "features/workspace/workspace-setting",
+          "features/workspace/billing-and-plans",
+          "features/workspace/article-7",
+          "features/workspace/article-8"         
+        ]
+      },
+      {
         "group": "Unified Campaign",
         "expanded": false,
         "pages": [
