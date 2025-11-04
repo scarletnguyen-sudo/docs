@@ -22,7 +22,7 @@
         "group": "Getting Started",
         "expanded": true,
         "pages": [
-          "getting-started/create-workspace",
+          "getting-started/start-guide",
           "getting-started/connect-marketplace",
           "getting-started/invite-team",
           "getting-started/first-campaign"
