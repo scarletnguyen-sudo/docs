@@ -69,9 +69,9 @@
         "group": "Budget Management",
         "expanded": false,
         "pages": [
+          "d-budget-management/budget-planning",          
           "d-budget-management/budget-distribution",
           "d-budget-management/budget-lock",
-          "d-budget-management/budget-planning",
           "d-budget-management/manual-and-auto-mode"
         ]
       },
@@ -95,19 +95,19 @@
         "group": "Workspace Intelligence",
         "expanded": false,
         "pages": [
-          "g-workspace-intelligence/bulk-action",
-          "g-workspace-intelligence/filter-and-advanced-filtering",
-          "g-workspace-intelligence/mass-action",
+          "g-workspace-intelligence/filter-and-advanced-filtering",          
           "g-workspace-intelligence/sort-group-and-multi-group",
-          "g-workspace-intelligence/view-modes-and-saved-views"
+          "g-workspace-intelligence/view-modes-and-saved-views",
+          "g-workspace-intelligence/bulk-action",
+          "g-workspace-intelligence/mass-action"
         ]
       },
       {
         "group": "Insight & Analytics",
         "expanded": false,
         "pages": [
-          "h-insight-and-analytics/digital-shelf-analytics",
-          "h-insight-and-analytics/keyword-lab"
+          "h-insight-and-analytics/keyword-lab",
+          "h-insight-and-analytics/digital-shelf-analytics"
         ]
       },
       {
