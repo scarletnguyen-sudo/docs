@@ -50,7 +50,7 @@
     },
     "typography": {
       "fontFamily": {
-        "heading": "Inter, system-ui, sans-serif",
+        "heading": "Inter, SF Pro Display, sans-serif",
         "body": "Inter, system-ui, sans-serif",
         "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
       },
