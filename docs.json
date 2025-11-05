@@ -9,8 +9,12 @@
     "href": "https://one.epsilo.io"
   },
   "favicon": "/favicon.svg",
-  "colors": {
-    "primary": "#2563EB"
+  "colors": { "primary": "#2563EB" },
+  "appearance": { "default": "system" },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system",
+    "toc": { "enabled": true, "depth": 3, "position": "right" }
   },
   "appearance": {
     "default": "system"

@@ -1,10 +1,9 @@
-/* ==== Tokens ============================================================= */
 :root{
   --blue:#2563EB;
   --bg:#fff;            --fg:#0f172a;    --muted:#64748b; 
   --card:#fff;          --border:rgba(2,6,23,.12);
   --radius:12px;
-  --content-w:940px;    /* readable width like Linear */
+  --content-w:940px;    
   --toc-w:260px;        --side-w:264px; 
   --primary-dark:0 109 199;
   --primary-light:0 109 199;
@@ -14,7 +13,7 @@
   --card:#0f172a;       --border:rgba(241,245,249,.14);
 }
 
-/* ==== Page layout / typography ========================================== */
+/* Typography/layout */
 main .markdown{ max-width:var(--content-w); }
 .markdown h1{ font-size:34px; line-height:1.2; letter-spacing:-.01em; margin:6px 0 18px; }
 .markdown h2{ font-size:22px; margin:28px 0 12px; }
@@ -23,7 +22,7 @@ main .markdown{ max-width:var(--content-w); }
 .markdown a{ color:var(--blue); text-underline-offset:3px; }
 .markdown img{ border-radius:14px; border:1px solid var(--border); box-shadow:0 12px 32px rgba(0,0,0,.12); }
 
-/* Right-rail TOC card */
+/* TOC card (chỉ có tác dụng nếu bạn render .eps-toc-card) */
 .eps-toc-card{
   position:sticky; top:88px; background:var(--card); border:1px solid var(--border);
   border-radius:var(--radius); padding:12px; height:fit-content;
@@ -31,13 +30,18 @@ main .markdown{ max-width:var(--content-w); }
 .eps-toc-card .title{ font-size:12px; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; 
   padding:4px 6px 8px; border-bottom:1px solid var(--border); margin-bottom:8px; }
 .eps-toc-card a{ display:block; padding:6px; border-radius:8px; color:var(--fg); text-decoration:none; font-size:13px; }
-.eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
-.eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
 
-/* Footer next/prev into tiles */
+/* Fallback + progressive enhancement cho color-mix */
+.eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
+  .eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
+}
+
+/* Footer next/prev */
 footer .navigation a{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
 
-/* ==== Top-right cluster ================================================== */
+/* Buttons */
 .eps-nav-actions{ display:inline-flex; align-items:center; gap:8px; margin-left:8px; }
 .eps-btn{
   height:32px; padding:8px 12px; border-radius:10px; border:1px solid var(--border);
@@ -47,49 +51,42 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
   transition:transform .12s ease, background .12s ease, border-color .12s ease;
 }
 .eps-btn:hover{ transform:translateY(-1px); }
-.eps-btn.done{ background:color-mix(in oklab,var(--blue) 15%,var(--bg)); color:#fff; }
-.eps-dropdown{ position:relative; }
-.eps-dropdown-menu{
-  position:absolute; right:0; top:calc(100% + 6px);
-  background:var(--card); border:1px solid var(--border); border-radius:12px; min-width:180px;
-  padding:4px 0; display:none; opacity:0; transform:translateY(-4px);
-  box-shadow:0 8px 24px rgba(0,0,0,.12); transition:opacity .15s ease, transform .15s ease; z-index:1000;
-}
-.eps-dropdown.open .eps-dropdown-menu{ display:block; opacity:1; transform:translateY(0); }
-.eps-dropdown-menu a{ display:block; padding:9px 12px; color:var(--fg); text-decoration:none; font-size:13px; }
-.eps-dropdown-menu a:hover{ background:color-mix(in oklab,var(--blue) 9%,var(--card)); }
+.eps-btn.done{ background:#2563EB; color:#fff; }
 
-/* ==== Sidebar: dropdown groups like Linear =============================== */
+/* Sidebar (chỉ tác dụng nếu DOM có .eps-side) */
 .eps-side{ width:var(--side-w); }
-.eps-side .group{
-  margin:8px 0; border-radius:10px;
-}
+.eps-side .group{ margin:8px 0; border-radius:10px; }
 .eps-side .group .group-head{
   display:flex; align-items:center; justify-content:space-between; width:100%;
   background:transparent; border:0; padding:8px 10px; border-radius:10px; color:var(--fg);
   font:600 13px/1 Inter,system-ui; cursor:pointer;
 }
-.eps-side .group .group-head:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .group .group-head:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
+}
 .eps-side .group .chev{ width:16px; height:16px; transition:transform .15s ease; }
-.eps-side .group.collapsed .chev{ transform:rotate(-90deg); }
 .eps-side .group .group-body{ margin:4px 0 8px 6px; }
-.eps-side .group.collapsed .group-body{ display:none; }
 
+/* XÓA hoàn toàn display:none để không phá transition */
+/* .eps-side .group.collapsed .group-body{ display:none; } */
+
+/* Accordion: dùng height transition, không display:none */
+.eps-side .group-body { overflow:hidden; transition: height 0.25s ease, padding 0.25s ease; }
+.eps-side .group.collapsed .group-body { height:0 !important; padding:0; }
+.eps-side .group.collapsed .chev{ transform:rotate(-90deg); }
+
+/* Links */
 .eps-side .link{
   display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:8px; color:var(--fg);
   text-decoration:none; font-size:13px;
 }
-.eps-side .link:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
-.eps-side .link.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
-
-/* Collapse/Expand all controls */
-.eps-side .side-controls{ display:flex; gap:6px; padding:6px 4px 0 4px; }
-.eps-side .side-controls .mini{
-  height:28px; padding:6px 10px; border-radius:8px; border:1px solid var(--border);
-  background:var(--bg); color:var(--fg); font-size:12px; cursor:pointer;
+.eps-side .link:hover{ background:rgba(37,99,235,.06); }
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .link:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
+  .eps-side .link.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
 }
 
-/* Mobile: overlay sidebar toggle */
+/* Mobile overlay */
 @media (max-width: 1024px){
   .eps-side{ position:fixed; top:64px; bottom:0; left:0; width:min(86vw, 320px);
     background:var(--bg); border-right:1px solid var(--border); padding:8px; z-index:1200;
@@ -102,40 +99,8 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     background:var(--bg); border:1px solid var(--border); z-index:1300; font-size:13px;
   }
 }
-/* Sidebar accordion animation */
-.eps-side .group-body {
-  overflow: hidden;
-  transition: height 0.25s ease;
-}
 
-.eps-side .group.collapsed .group-body {
-  height: 0 !important;
-  padding: 0;
-}
-
-.eps-side .group-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.eps-side .group-head:hover {
-  background: color-mix(in oklab, var(--blue) 8%, var(--card));
-}
-
-.eps-side .group.collapsed .chev {
-  transform: rotate(-90deg);
-  transition: transform 0.25s ease;
-}
-
-.eps-side .chev {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.25s ease;
+/* Tôn trọng người dùng giảm chuyển động */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
 }
