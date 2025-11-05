@@ -42,47 +42,6 @@
       "href": "https://one.epsilo.io"
     }
   },
-  "custom": {
-    "layout": {
-      "maxWidth": 1160,
-      "sidebarWidth": 280,
-      "rightRailWidth": 200,
-      "contentPadding": 24,
-      "containerGutter": 16,
-      "stickyOffsets": { "topbar": 56, "toc": 96 }
-    },
-    "typography": {
-      "fontFamily": {
-        "heading": "Inter, SF Pro Display, sans-serif",
-        "body": "Inter, system-ui, sans-serif",
-        "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
-      },
-      "baseSize": 16,
-      "scale": 1.125,
-      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
-      "lineHeights": { "tight": 1.15, "snug": 1.3, "normal": 1.55 }
-    },
-    "themeTokens": {
-      "light": {
-        "background": "#0E0F12",
-        "surface": "#15171B",
-        "text": "#E6E8EB",
-        "muted": "#A0A6AD",
-        "primary": "#6E7AFF",
-        "link": "#8BA7FF",
-        "border": "#24272D",
-        "radius": 12,
-        "elevation": { "card": 8, "popover": 16 }
-      },
-      "dark": {
-        "background": "#0B0F1A",
-        "surface": "#0F172A",
-        "text": "#E2E8F0",
-        "muted": "#94A3B8",
-        "border": "rgba(241,245,249,.14)"
-      }
-    }
-  },
   "navigation": {
     "groups": [
       {
