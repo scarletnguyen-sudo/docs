@@ -51,8 +51,7 @@
           "b-workspace/invite-members",
           "b-workspace/login-methods",
           "b-workspace/billing-and-plans",
-          "b-workspace/channels-and-integrations",
-          "b-workspace/edit-rules"
+          "b-workspace/channels-and-integrations"
         ]
       },
       {
