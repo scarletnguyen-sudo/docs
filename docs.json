@@ -43,7 +43,7 @@
     "layout": {
       "maxWidth": 1160,
       "sidebarWidth": 280,
-      "rightRailWidth": 260,
+      "rightRailWidth": 280,
       "contentPadding": 24,
       "containerGutter": 16,
       "stickyOffsets": { "topbar": 56, "toc": 96 }
