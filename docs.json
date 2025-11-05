@@ -84,13 +84,6 @@
         ]
       },
       {
-        "group": "Agentic AI",
-        "expanded": false,
-        "pages": [
-          "f-agentic-ai/botep-ai"
-        ]
-      },
-      {
         "group": "Workspace Booster",
         "expanded": false,
         "pages": [
@@ -99,6 +92,13 @@
           "g-workspace-intelligence/view-modes-and-saved-views",
           "g-workspace-intelligence/bulk-action",
           "g-workspace-intelligence/mass-action"
+        ]
+      },
+      {
+        "group": "Agentic AI",
+        "expanded": false,
+        "pages": [
+          "f-agentic-ai/botep-ai"
         ]
       },
       {
