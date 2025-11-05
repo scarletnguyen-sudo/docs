@@ -36,6 +36,15 @@
       "href": "https://one.epsilo.io"
     }
   },
+  "footer": {
+    "links": [
+      {
+        "header":"test",
+        "items":[{ "label": "Book a Demo", "href": "https://calendly.com/alex-vo/meeting-with-alex" },
+      { "label": "Contact support", "href": "mailto:support@epsilo.io" }]
+      }
+    ]
+  },
   "custom": {
     "layout": {
       "maxWidth": 1160,
