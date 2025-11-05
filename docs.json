@@ -25,6 +25,9 @@
       "collapsible": true
     }
   },
+    "fonts": {
+    "family": "Inter"
+  },
   "contextual": {
     "options": 
     ["copy",
