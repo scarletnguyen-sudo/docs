@@ -35,6 +35,8 @@
   "navigation": {
     "groups": [
       {
+        "group":"Test",
+        "pages":[{
         "group": "Getting Started",
         "pages": [
           "start-guide",
@@ -116,6 +118,7 @@
           "i-playbooks/hyper-automation-scripts",
           "i-playbooks/thinking-in-campaigns"
         ]
+      }]
       }
     ]
   },
