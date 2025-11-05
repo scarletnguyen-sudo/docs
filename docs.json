@@ -9,24 +9,24 @@
     "href": "https://one.epsilo.io"
   },
   "favicon": "/favicon.svg",
-  "colors": { "primary": "#2563EB" },
-  "appearance": { "default": "system" },
-  "styling": {
-    "eyebrows": "breadcrumbs",
-    "codeblocks": "system",
-    "toc": { "enabled": true, "depth": 3, "position": "right" }
+  "colors": {
+    "primary": "#2563EB"
   },
   "appearance": {
     "default": "system"
   },
   "styling": {
     "eyebrows": "breadcrumbs",
-    "codeblocks": "system"
+    "codeblocks": "system",
+    "toc": {
+      "enabled": true,
+      "depth": 3,
+      "position": "right",
+      "collapsible": true
+    }
   },
   "contextual": {
-    "options": [
-      "copy"
-    ]
+    "options": ["copy"]
   },
   "navbar": {
     "links": [],
@@ -36,93 +36,134 @@
       "href": "https://one.epsilo.io"
     }
   },
+  "custom": {
+    "layout": {
+      "maxWidth": 1160,
+      "sidebarWidth": 280,
+      "rightRailWidth": 260,
+      "contentPadding": 24,
+      "containerGutter": 16,
+      "stickyOffsets": { "topbar": 56, "toc": 96 }
+    },
+    "typography": {
+      "fontFamily": {
+        "heading": "Inter, system-ui, sans-serif",
+        "body": "Inter, system-ui, sans-serif",
+        "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
+      },
+      "baseSize": 16,
+      "scale": 1.125,
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+      "lineHeights": { "tight": 1.15, "snug": 1.3, "normal": 1.55 }
+    },
+    "themeTokens": {
+      "light": {
+        "background": "#0E0F12",
+        "surface": "#15171B",
+        "text": "#E6E8EB",
+        "muted": "#A0A6AD",
+        "primary": "#6E7AFF",
+        "link": "#8BA7FF",
+        "border": "#24272D",
+        "radius": 12,
+        "elevation": { "card": 8, "popover": 16 }
+      },
+      "dark": {
+        "background": "#0B0F1A",
+        "surface": "#0F172A",
+        "text": "#E2E8F0",
+        "muted": "#94A3B8",
+        "border": "rgba(241,245,249,.14)"
+      }
+    }
+  },
   "navigation": {
     "groups": [
       {
-        "group":" ",
-        "pages":[{
-        "group": "Getting Started",
+        "group": " ",
         "pages": [
-          "a-getting-started/start-guide",
-          "a-getting-started/start-guide-new-admin",
-          "a-getting-started/start-guide-new-operator"
+          {
+            "group": "Getting Started",
+            "pages": [
+              "a-getting-started/start-guide",
+              "a-getting-started/start-guide-new-admin",
+              "a-getting-started/start-guide-new-operator"
+            ]
+          },
+          {
+            "group": "Workspace",
+            "expanded": false,
+            "pages": [
+              "b-workspace/workspace-setting",
+              "b-workspace/invite-members",
+              "b-workspace/login-methods",
+              "b-workspace/billing-and-plans",
+              "b-workspace/channels-and-integrations"
+            ]
+          },
+          {
+            "group": "Unified Campaign",
+            "expanded": false,
+            "pages": [
+              "c-unified-campaign/default-campaign",
+              "c-unified-campaign/create-campaign",
+              "c-unified-campaign/duplicate-campaign",
+              "c-unified-campaign/apply-rules"
+            ]
+          },
+          {
+            "group": "Budget Management",
+            "expanded": false,
+            "pages": [
+              "d-budget-management/budget-planning",
+              "d-budget-management/budget-distribution",
+              "d-budget-management/budget-lock",
+              "d-budget-management/manual-and-auto-mode"
+            ]
+          },
+          {
+            "group": "Scheduling Actions",
+            "expanded": false,
+            "pages": [
+              "e-scheduling-actions/schedule-budget",
+              "e-scheduling-actions/schedule-status",
+              "e-scheduling-actions/schedule-storefront"
+            ]
+          },
+          {
+            "group": "Workspace Booster",
+            "expanded": false,
+            "pages": [
+              "g-workspace-intelligence/filter-and-advanced-filtering",
+              "g-workspace-intelligence/sort-group-and-multi-group",
+              "g-workspace-intelligence/view-modes-and-saved-views",
+              "g-workspace-intelligence/bulk-action",
+              "g-workspace-intelligence/mass-action"
+            ]
+          },
+          {
+            "group": "Agentic AI",
+            "expanded": false,
+            "pages": ["f-agentic-ai/botep-ai"]
+          },
+          {
+            "group": "Insight & Analytics",
+            "expanded": false,
+            "pages": [
+              "h-insight-and-analytics/keyword-lab",
+              "h-insight-and-analytics/digital-shelf-analytics"
+            ]
+          },
+          {
+            "group": "Playbooks",
+            "expanded": false,
+            "pages": [
+              "i-playbooks/ad-spend-optimization",
+              "i-playbooks/hyper-automation-scripts",
+              "i-playbooks/thinking-in-campaigns"
+            ]
+          }
         ]
-      },
-      {
-        "group": "Workspace",
-        "expanded": false,
-        "pages": [
-          "b-workspace/workspace-setting",
-          "b-workspace/invite-members",
-          "b-workspace/login-methods",
-          "b-workspace/billing-and-plans",
-          "b-workspace/channels-and-integrations"
-        ]
-      },
-      {
-        "group": "Unified Campaign",
-        "expanded": false,
-        "pages": [
-          "c-unified-campaign/default-campaign",          
-          "c-unified-campaign/create-campaign",
-          "c-unified-campaign/duplicate-campaign",
-          "c-unified-campaign/apply-rules"
-        ]
-      },
-      {
-        "group": "Budget Management",
-        "expanded": false,
-        "pages": [
-          "d-budget-management/budget-planning",          
-          "d-budget-management/budget-distribution",
-          "d-budget-management/budget-lock",
-          "d-budget-management/manual-and-auto-mode"
-        ]
-      },
-      {
-        "group": "Scheduling Actions",
-        "expanded": false,
-        "pages": [
-          "e-scheduling-actions/schedule-budget",
-          "e-scheduling-actions/schedule-status",
-          "e-scheduling-actions/schedule-storefront"
-        ]
-      },
-      {
-        "group": "Workspace Booster",
-        "expanded": false,
-        "pages": [
-          "g-workspace-intelligence/filter-and-advanced-filtering",          
-          "g-workspace-intelligence/sort-group-and-multi-group",
-          "g-workspace-intelligence/view-modes-and-saved-views",
-          "g-workspace-intelligence/bulk-action",
-          "g-workspace-intelligence/mass-action"
-        ]
-      },
-      {
-        "group": "Agentic AI",
-        "expanded": false,
-        "pages": [
-          "f-agentic-ai/botep-ai"
-        ]
-      },
-      {
-        "group": "Insight & Analytics",
-        "expanded": false,
-        "pages": [
-          "h-insight-and-analytics/keyword-lab",
-          "h-insight-and-analytics/digital-shelf-analytics"
-        ]
-      },
-      {
-        "group": "Playbooks",
-        "expanded": false,
-        "pages": [
-          "i-playbooks/ad-spend-optimization",
-          "i-playbooks/hyper-automation-scripts",
-          "i-playbooks/thinking-in-campaigns"
-        ]
-      }]
       }
     ]
   },
