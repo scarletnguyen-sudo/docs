@@ -22,7 +22,7 @@
 
 /* Typography/layout */
 main .markdown{ max-width:var(--content-w); }
-.markdown h1{ font-size:40px; line-height:1.2; letter-spacing:-.01em; margin:6px 0 18px; }
+.markdown h1{ font-size:40px; line-height:1.5; letter-spacing:-.01em; margin:6px 0 18px; }
 .markdown h2{ font-size:21px; margin:28px 0 12px; }
 .markdown h3{ font-size:15px; margin:22px 0 8px; }
 .markdown p, .markdown li{ font-size:15.5px; line-height:1.7; color:var(--fg); }
