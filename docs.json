@@ -86,8 +86,8 @@
             "group": "Getting Started",
             "pages": [
               "a-getting-started/start-guide",
-              "a-getting-started/start-guide-new-admin",
-              "a-getting-started/start-guide-new-operator"
+              "a-getting-started/quick-start-new-admin",
+              "a-getting-started/quick-start-new-operator"
             ]
           },
           {
