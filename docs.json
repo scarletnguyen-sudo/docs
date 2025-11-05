@@ -39,9 +39,9 @@
         "pages":[{
         "group": "Getting Started",
         "pages": [
-          "start-guide",
-          "start-guide-new-admin",
-          "start-guide-new-operator"
+          "a-getting-started/start-guide",
+          "a-getting-started/start-guide-new-admin",
+          "a-getting-started/start-guide-new-operator"
         ]
       },
       {
