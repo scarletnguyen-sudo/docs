@@ -25,6 +25,7 @@
 #content-area span[data-as=p], #content-area p {
   font-size: 15px;
 }
+#content-area li { font-size:15px}
 
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
