@@ -43,18 +43,6 @@
     }
   },
   "navigation": {
-    "anchors": [
-      {
-        "anchor": "Developers",
-        "icon": "code-2",
-        "href": "/developers/getting-started"
-      },
-      {
-        "anchor": "Contact support",
-        "icon": "message-circle",
-        "href": "mailto:business@epsilo.io"
-      }
-    ],
     "groups": [
       {
         "group": " ",
