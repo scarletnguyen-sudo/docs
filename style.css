@@ -14,11 +14,11 @@
 }
 
 #table-of-contents {
-  max-width: 200px;
+  max-width: 210px;
 }
 
 #content-area {
-  max-width: 43rem;
+  max-width: 45rem;
 }
 
 /* Fallback + progressive enhancement cho color-mix */
