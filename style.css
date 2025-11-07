@@ -21,6 +21,14 @@
   max-width: 45rem;
 }
 
+#h1 { font-size: 3rem; }
+#h2 { font-size: 2.5rem; }
+#h3 { font-size: 1.5rem; }
+#h4 { font-size: 1.0rem; }
+
+
+You can also add custom classnames to h1-h4 tags in your MDX files for more specific styling control.
+
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
 @supports (background: color-mix(in oklab, black, white)) {
