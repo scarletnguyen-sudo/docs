@@ -3,8 +3,7 @@
   --bg:#fff;            --fg:#0f172a;    --muted:#64748b; 
   --card:#fff;          --border:rgba(2,6,23,.12);
   --radius:12px;
-  --content-w:1000px;    
-  --toc-w:260px;        --side-w:264px; 
+  --toc-w:268px;        --side-w:264px; 
   --primary-dark:0 109 199;
   --primary-light:0 109 199;
 }
@@ -62,12 +61,6 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
 }
 .eps-side .group .chev{ width:16px; height:16px; transition:transform .15s ease; }
 .eps-side .group .group-body{ margin:4px 0 8px 6px; }
-
-
-/* Accordion: dùng height transition, không display:none */
-.eps-side .group-body { overflow:hidden; transition: height 0.25s ease, padding 0.25s ease; }
-.eps-side .group.collapsed .group-body { height:0 !important; padding:0; }
-.eps-side .group.collapsed .chev{ transform:rotate(-90deg); }
 
 /* Links */
 .eps-side .link{
