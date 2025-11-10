@@ -27,6 +27,11 @@
 }
 #content-area li { font-size:15px; }
 
+@media (min-width: 1024px) {
+#content-container: {
+  padding-top: 1rem;
+}
+
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
 @supports (background: color-mix(in oklab, black, white)) {
