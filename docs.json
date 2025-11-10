@@ -19,6 +19,7 @@
     "default": "system"
   },
   "styling": {
+    "eyebrows": "breadcrumbs",
     "codeblocks": "system",
     "toc": {
       "enabled": true,
