@@ -1,4 +1,5 @@
 {
+
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
   "name": "Epsilo Docs",
@@ -8,10 +9,12 @@
     "dark": "/logo/light.svg",
     "href": "https://one.epsilo.io"
   },
+
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#2563EB"
   },
+
   "appearance": {
     "default": "system"
   },
@@ -25,16 +28,17 @@
       "collapsible": true
     }
   },
-  "fonts": {
+    "fonts": {
     "family": "Inter"
   },
+
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt"
-    ]
+    "options": 
+    ["copy",
+    "view",
+    "chatgpt"]
   },
+  
   "navbar": {
     "links": [],
     "primary": {
@@ -43,192 +47,99 @@
       "href": "https://one.epsilo.io"
     }
   },
+
   "navigation": {
-    "languages": [
+    "groups": [
       {
-        "language": "en",
-        "groups": [
+        "group": " ",
+        "pages": [
           {
-            "group": " ",
+            "group": "Getting Started",
             "pages": [
-              {
-                "group": "Getting Started",
-                "pages": [
-                  "en/a-getting-started/start-guide",
-                  "en/a-getting-started/quick-start-new-admin",
-                  "en/a-getting-started/quick-start-new-operator"
-                ]
-              },
-              {
-                "group": "Workspace",
-                "expanded": false,
-                "pages": [
-                  "en/b-workspace/workspace-setting",
-                  "en/b-workspace/invite-members",
-                  "en/b-workspace/login-methods",
-                  "en/b-workspace/billing-and-plans",
-                  "en/b-workspace/channels-and-integrations"
-                ]
-              },
-              {
-                "group": "Unified Campaign",
-                "expanded": false,
-                "pages": [
-                  "en/c-unified-campaign/default-campaign",
-                  "en/c-unified-campaign/create-campaign",
-                  "en/c-unified-campaign/duplicate-campaign",
-                  "en/c-unified-campaign/apply-rules"
-                ]
-              },
-              {
-                "group": "Budget Management",
-                "expanded": false,
-                "pages": [
-                  "en/d-budget-management/budget-planning",
-                  "en/d-budget-management/budget-distribution",
-                  "en/d-budget-management/budget-lock",
-                  "en/d-budget-management/manual-and-auto-mode"
-                ]
-              },
-              {
-                "group": "Scheduling Actions",
-                "expanded": false,
-                "pages": [
-                  "en/e-scheduling-actions/schedule-budget",
-                  "en/e-scheduling-actions/schedule-status",
-                  "en/e-scheduling-actions/schedule-storefront"
-                ]
-              },
-              {
-                "group": "Workspace Booster",
-                "expanded": false,
-                "pages": [
-                  "en/g-workspace-intelligence/filter-and-advanced-filtering",
-                  "en/g-workspace-intelligence/sort-group-and-multi-group",
-                  "en/g-workspace-intelligence/view-modes-and-saved-views",
-                  "en/g-workspace-intelligence/bulk-action",
-                  "en/g-workspace-intelligence/mass-action"
-                ]
-              },
-              {
-                "group": "Agentic AI",
-                "expanded": false,
-                "pages": ["en/f-agentic-ai/botep-ai"]
-              },
-              {
-                "group": "Insight & Analytics",
-                "expanded": false,
-                "pages": [
-                  "en/h-insight-and-analytics/keyword-lab",
-                  "en/h-insight-and-analytics/digital-shelf-analytics"
-                ]
-              },
-              {
-                "group": "Playbooks",
-                "expanded": false,
-                "pages": [
-                  "en/i-playbooks/ad-spend-optimization",
-                  "en/i-playbooks/hyper-automation-scripts",
-                  "en/i-playbooks/thinking-in-campaigns"
-                ]
-              }
+              "a-getting-started/start-guide",
+              "a-getting-started/quick-start-new-admin",
+              "a-getting-started/quick-start-new-operator"
             ]
-          }
-        ]
-      },
-      {
-        "language": "cn",
-        "groups": [
+          },
           {
-            "group": " ",
+            "group": "Workspace",
+            "expanded": false,
             "pages": [
-              {
-                "group": "Getting Started",
-                "pages": [
-                  "cn/a-getting-started/start-guide",
-                  "cn/a-getting-started/quick-start-new-admin",
-                  "cn/a-getting-started/quick-start-new-operator"
-                ]
-              },
-              {
-                "group": "Workspace",
-                "expanded": false,
-                "pages": [
-                  "cn/b-workspace/workspace-setting",
-                  "cn/b-workspace/invite-members",
-                  "cn/b-workspace/login-methods",
-                  "cn/b-workspace/billing-and-plans",
-                  "cn/b-workspace/channels-and-integrations"
-                ]
-              },
-              {
-                "group": "Unified Campaign",
-                "expanded": false,
-                "pages": [
-                  "cn/c-unified-campaign/default-campaign",
-                  "cn/c-unified-campaign/create-campaign",
-                  "cn/c-unified-campaign/duplicate-campaign",
-                  "cn/c-unified-campaign/apply-rules"
-                ]
-              },
-              {
-                "group": "Budget Management",
-                "expanded": false,
-                "pages": [
-                  "cn/d-budget-management/budget-planning",
-                  "cn/d-budget-management/budget-distribution",
-                  "cn/d-budget-management/budget-lock",
-                  "cn/d-budget-management/manual-and-auto-mode"
-                ]
-              },
-              {
-                "group": "Scheduling Actions",
-                "expanded": false,
-                "pages": [
-                  "cn/e-scheduling-actions/schedule-budget",
-                  "cn/e-scheduling-actions/schedule-status",
-                  "cn/e-scheduling-actions/schedule-storefront"
-                ]
-              },
-              {
-                "group": "Workspace Booster",
-                "expanded": false,
-                "pages": [
-                  "cn/g-workspace-intelligence/filter-and-advanced-filtering",
-                  "cn/g-workspace-intelligence/sort-group-and-multi-group",
-                  "cn/g-workspace-intelligence/view-modes-and-saved-views",
-                  "cn/g-workspace-intelligence/bulk-action",
-                  "cn/g-workspace-intelligence/mass-action"
-                ]
-              },
-              {
-                "group": "Agentic AI",
-                "expanded": false,
-                "pages": ["cn/f-agentic-ai/botep-ai"]
-              },
-              {
-                "group": "Insight & Analytics",
-                "expanded": false,
-                "pages": [
-                  "cn/h-insight-and-analytics/keyword-lab",
-                  "cn/h-insight-and-analytics/digital-shelf-analytics"
-                ]
-              },
-              {
-                "group": "Playbooks",
-                "expanded": false,
-                "pages": [
-                  "cn/i-playbooks/ad-spend-optimization",
-                  "cn/i-playbooks/hyper-automation-scripts",
-                  "cn/i-playbooks/thinking-in-campaigns"
-                ]
-              }
+              "b-workspace/workspace-setting",
+              "b-workspace/invite-members",
+              "b-workspace/login-methods",
+              "b-workspace/billing-and-plans",
+              "b-workspace/channels-and-integrations"
+            ]
+          },
+          {
+            "group": "Unified Campaign",
+            "expanded": false,
+            "pages": [
+              "c-unified-campaign/default-campaign",
+              "c-unified-campaign/create-campaign",
+              "c-unified-campaign/duplicate-campaign",
+              "c-unified-campaign/apply-rules"
+            ]
+          },
+          {
+            "group": "Budget Management",
+            "expanded": false,
+            "pages": [
+              "d-budget-management/budget-planning",
+              "d-budget-management/budget-distribution",
+              "d-budget-management/budget-lock",
+              "d-budget-management/manual-and-auto-mode"
+            ]
+          },
+          {
+            "group": "Scheduling Actions",
+            "expanded": false,
+            "pages": [
+              "e-scheduling-actions/schedule-budget",
+              "e-scheduling-actions/schedule-status",
+              "e-scheduling-actions/schedule-storefront"
+            ]
+          },
+          {
+            "group": "Workspace Booster",
+            "expanded": false,
+            "pages": [
+              "g-workspace-intelligence/filter-and-advanced-filtering",
+              "g-workspace-intelligence/sort-group-and-multi-group",
+              "g-workspace-intelligence/view-modes-and-saved-views",
+              "g-workspace-intelligence/bulk-action",
+              "g-workspace-intelligence/mass-action"
+            ]
+          },
+          {
+            "group": "Agentic AI",
+            "expanded": false,
+            "pages": ["f-agentic-ai/botep-ai"]
+          },
+
+          {
+            "group": "Insight & Analytics",
+            "expanded": false,
+            "pages": [
+              "h-insight-and-analytics/keyword-lab",
+              "h-insight-and-analytics/digital-shelf-analytics"
+            ]
+          },
+          {
+            "group": "Playbooks",
+            "expanded": false,
+            "pages": [
+              "i-playbooks/ad-spend-optimization",
+              "i-playbooks/hyper-automation-scripts",
+              "i-playbooks/thinking-in-campaigns"
             ]
           }
         ]
       }
     ]
   },
+
   "head": [
     "<link rel=\"stylesheet\" href=\"/style.css?v=5\" />",
     "<script src=\"/topnav.js?v=5\" defer></script>"
