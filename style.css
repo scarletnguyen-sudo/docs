@@ -36,6 +36,7 @@
   position: fixed;
   top: 12px;
   right: 108px;
+  display:none;
 }
 
 /* Fallback + progressive enhancement cho color-mix */
