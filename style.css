@@ -11,7 +11,7 @@
   --bg:#0b0f1a;         --fg:#e2e8f0;    --muted:#94a3b8;
   --card:#0f172a;       --border:rgba(241,245,249,.14);
 }
-
+.eyebrow{display:none;}
 #table-of-contents {max-width: 268px;}
 #table-of-contents button {display:none;}
 
@@ -48,7 +48,6 @@
   .eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
   .eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
 }
-.eyebrow{display:none;}
 
 /* Footer next/prev */
 footer .navigation a{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
