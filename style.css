@@ -31,6 +31,12 @@
   max-width: 1024px;
   padding-left: 0;
 }
+
+#page-context-menu {
+  position: fixed;
+  top: 12px;
+  right: 108px;
+}
   
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
