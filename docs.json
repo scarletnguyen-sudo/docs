@@ -135,10 +135,5 @@
   "head": [
     "<link rel=\"stylesheet\" href=\"/style.css?v=5\" />",
     "<script src=\"/topnav.js?v=5\" defer></script>"
-  ],
-  "integrations": {
-  "intercom": {
-    "appId": "cht7ptrj"
-  }
-}
+  ]
 }
