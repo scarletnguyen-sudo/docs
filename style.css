@@ -37,10 +37,7 @@
   top: 12px;
   right: 108px;
 }
-.almond-layout {
-  z-index: 30;
-}
-  
+
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
 @supports (background: color-mix(in oklab, black, white)) {
