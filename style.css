@@ -41,7 +41,7 @@
   z-index:10;
 }
 #page-title{margin-bottom:10px;}
-  .eyebrown{display:none;}
+  .eyebrow{display:none;}
   
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
