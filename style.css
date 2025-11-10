@@ -27,7 +27,11 @@
 #content-container: {
   padding-top: 1rem;
 }
-
+#content-container > div {
+  max-width: 1024px;
+  padding-left: 0;
+}
+  
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
 @supports (background: color-mix(in oklab, black, white)) {
