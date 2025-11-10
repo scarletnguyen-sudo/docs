@@ -21,7 +21,7 @@
 #content-area span[data-as=p], #content-area p {font-size: 15px;}
 #content-area li { font-size:15px; }
 
-#content-side-layout {font-size:13px;}
+#table-of-contents-content {font-size:13px;}
 
 @media (min-width: 1024px) {
 #content-container: {
