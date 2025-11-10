@@ -12,20 +12,16 @@
   --card:#0f172a;       --border:rgba(241,245,249,.14);
 }
 
-#table-of-contents {
-  max-width: 268px;
-}
+#table-of-contents {max-width: 268px;}
 
-#content-area {
-  max-width: 100rem;
-}
+#content-area {max-width: 100rem;}
 #content-area h1 { font-size: 2.5rem; }
 #content-area h2 { font-size: 1.5rem; }
 #content-area h3 { font-size: 1.25rem; }
-#content-area span[data-as=p], #content-area p {
-  font-size: 15px;
-}
+#content-area span[data-as=p], #content-area p {font-size: 15px;}
 #content-area li { font-size:15px; }
+
+#content-side-layout {font-size:13px;}
 
 @media (min-width: 1024px) {
 #content-container: {
