@@ -41,14 +41,14 @@
   z-index:10;
 }
 #page-title{margin-bottom:10px;}
-  .eyebrow{display:none;}
-  
+
 /* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
 @supports (background: color-mix(in oklab, black, white)) {
   .eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
   .eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
 }
+.eyebrow{display:none;}
 
 /* Footer next/prev */
 footer .navigation a{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
