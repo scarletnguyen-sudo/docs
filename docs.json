@@ -19,7 +19,6 @@
     "default": "system"
   },
   "styling": {
-    "codeblocks": "system",
     "toc": {
       "enabled": true,
       "depth": 3,
