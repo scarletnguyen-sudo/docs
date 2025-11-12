@@ -251,9 +251,12 @@ footer .navigation a {
     font-size: 13px;
   }
   
-  #page-context-menu {
+  #page-context-menu-button {
     display: none !important;
   }
+  #page-context-menu {
+  display: none !important;
+}
 }
 
 /* =================================
