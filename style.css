@@ -186,7 +186,7 @@ footer .navigation a {
    ================================= */
 @media (min-width: 1024px) {
   #content-container {
-    padding-top: 1rem;
+    padding-top: 0rem;
   }
   #content-container > div {
     max-width: 1024px;
