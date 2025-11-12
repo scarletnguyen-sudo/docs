@@ -1,110 +1,270 @@
-:root{
-  --blue:#2563EB;
-  --bg:#fff;            --fg:#0f172a;    --muted:#64748b; 
-  --card:#fff;          --border:rgba(2,6,23,.12);
-  --radius:12px;
-  --toc-w:268px;        --side-w:264px; 
-  --primary-dark:0 109 199;
-  --primary-light:0 109 199;
-}
-[data-theme="dark"]{
-  --bg:#0b0f1a;         --fg:#e2e8f0;    --muted:#94a3b8;
-  --card:#0f172a;       --border:rgba(241,245,249,.14);
-}
-.eyebrow{display:none;}
-#table-of-contents {max-width: 268px;}
-#table-of-contents button {display:none;}
-
-#content-area {max-width: 100rem;}
-#content-area h1 { font-size: 2.5rem; }
-#content-area h2 { font-size: 1.5rem; }
-#content-area h3 { font-size: 1.25rem; }
-#content-area span[data-as=p], #content-area p {font-size: 15px;}
-#content-area li { font-size:15px; }
-
-#table-of-contents-content {font-size:13px;}
-
-@media (min-width: 1024px) {
-#content-container: {
-  padding-top: 1rem;
-}
-#content-container > div {
-  max-width: 1024px;
-  padding-left: 0;
+/* =================================
+   1. Variables & Theming
+   ================================= */
+:root {
+  --blue: #2563EB;
+  --bg: #fff;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --card: #fff;
+  --border: rgba(2, 6, 23, .12);
+  --radius: 12px;
+  --toc-w: 268px;
+  --side-w: 264px;
+  --primary-dark: 0 109 199;
+  --primary-light: 0 109 199;
 }
 
-#page-context-menu {
-  position: fixed;
-  top: 12px;
-  right: 108px;
-  display:none;
-  z-index:10;
+[data-theme="dark"] {
+  --bg: #0b0f1a;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: rgba(241, 245, 249, .14);
 }
-#page-title{margin-bottom:10px;}
 
-/* Fallback + progressive enhancement cho color-mix */
-.eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
+/* =================================
+   2. Content Area & Typography
+   ================================= */
+.eyebrow {
+  display: none;
+}
+
+#content-area {
+  max-width: 100rem;
+}
+#content-area h1 {
+  font-size: 2.5rem;
+}
+#content-area h2 {
+  font-size: 1.5rem;
+}
+#content-area h3 {
+  font-size: 1.25rem;
+}
+#content-area span[data-as=p],
+#content-area p {
+  font-size: 15px;
+}
+#content-area li {
+  font-size: 15px;
+}
+
+#page-title {
+  margin-bottom: 10px;
+}
+
+/* =================================
+   3. Components
+   ================================= */
+
+/* --- Buttons --- */
+.eps-nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+.eps-btn {
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.eps-btn:hover {
+  transform: translateY(-1px);
+}
+.eps-btn.done {
+  background: #2563EB;
+  color: #fff;
+}
+
+/* --- Footer next/prev --- */
+footer .navigation a {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+/* =================================
+   4. Table of Contents (TOC)
+   ================================= */
+#table-of-contents {
+  max-width: 268px;
+}
+#table-of-contents button {
+  display: none;
+}
+#table-of-contents-content {
+  font-size: 13px;
+}
+
+/* Fallback + progressive enhancement for color-mix */
+.eps-toc-card a:hover {
+  background: rgba(37, 99, 235, .06); /* Fallback */
+}
 @supports (background: color-mix(in oklab, black, white)) {
-  .eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
-  .eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
-}
-
-/* Footer next/prev */
-footer .navigation a{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
-
-/* Buttons */
-.eps-nav-actions{ display:inline-flex; align-items:center; gap:8px; margin-left:8px; }
-.eps-btn{
-  height:32px; padding:8px 12px; border-radius:10px; border:1px solid var(--border);
-  background:var(--bg); color:var(--fg);
-  font:500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  display:inline-flex; align-items:center; gap:6px; cursor:pointer;
-  transition:transform .12s ease, background .12s ease, border-color .12s ease;
-}
-.eps-btn:hover{ transform:translateY(-1px); }
-.eps-btn.done{ background:#2563EB; color:#fff; }
-
-/* Sidebar (chỉ tác dụng nếu DOM có .eps-side) */
-.eps-side{ width:var(--side-w); }
-.eps-side .group{ margin:8px 0; border-radius:10px; }
-.eps-side .group .group-head{
-  display:flex; align-items:center; justify-content:space-between; width:100%;
-  background:transparent; border:0; padding:8px 10px; border-radius:10px; color:var(--fg);
-  font:600 13px/1 Inter,system-ui; cursor:pointer;
-}
-@supports (background: color-mix(in oklab, black, white)) {
-  .eps-side .group .group-head:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
-}
-.eps-side .group .chev{ width:16px; height:16px; transition:transform .15s ease; }
-.eps-side .group .group-body{ margin:4px 0 8px 6px; }
-
-/* Links */
-.eps-side .link{
-  display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:8px; color:var(--fg);
-  text-decoration:none; font-size:13px;
-}
-.eps-side .link:hover{ background:rgba(37,99,235,.06); }
-@supports (background: color-mix(in oklab, black, white)) {
-  .eps-side .link:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
-  .eps-side .link.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
-}
-  
-/* Mobile overlay */
-@media (max-width: 1024px){
-  .eps-side{ position:fixed; top:64px; bottom:0; left:0; width:min(86vw, 320px);
-    background:var(--bg); border-right:1px solid var(--border); padding:8px; z-index:1200;
-    transform:translateX(-100%); transition:transform .2s ease; }
-  .eps-side.open{ transform:translateX(0); }
-  .eps-side-backdrop{ content:""; position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(.8) blur(1px); display:none; z-index:1100; }
-  .eps-side.open ~ .eps-side-backdrop{ display:block; }
-  .eps-mobile-toggle{
-    position:fixed; left:12px; top:14px; height:32px; padding:8px 10px; border-radius:10px;
-    background:var(--bg); border:1px solid var(--border); z-index:1300; font-size:13px;
-    #page-context-menu{display: none !important;}
+  .eps-toc-card a:hover {
+    background: color-mix(in oklab, var(--blue) 7%, var(--card));
+  }
+  .eps-toc-card a.active {
+    background: color-mix(in oklab, var(--blue) 12%, var(--card));
   }
 }
 
+/* =================================
+   5. Sidebar (.eps-side)
+   ================================= */
+.eps-side {
+  width: var(--side-w);
+}
+.eps-side .group {
+  margin: 8px 0;
+  border-radius: 10px;
+}
+.eps-side .group .group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--fg);
+  font: 600 13px/1 Inter, system-ui;
+  cursor: pointer;
+}
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .group .group-head:hover {
+    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+  }
+}
+.eps-side .group .chev {
+  width: 16px;
+  height: 16px;
+  transition: transform .15s ease;
+}
+.eps-side .group .group-body {
+  margin: 4px 0 8px 6px;
+}
 
-@media (prefers-reduced-motion: reduce){
-  *{ animation:none !important; transition:none !important; }
-}#content-area 
+/* Sidebar Links */
+.eps-side .link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 13px;
+}
+.eps-side .link:hover {
+  background: rgba(37, 99, 235, .06); /* Fallback */
+}
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .link:hover {
+    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+  }
+  .eps-side .link.active {
+    background: color-mix(in oklab, var(--blue) 12%, var(--card));
+  }
+}
+
+/* =================================
+   6. Responsive Styles (Desktop)
+   ================================= */
+@media (min-width: 1024px) {
+  /* FIX: Removed extra colon from selector */
+  #content-container {
+    padding-top: 1rem;
+  }
+  #content-container > div {
+    max-width: 1024px;
+    padding-left: 0;
+  }
+  
+  #page-context-menu {
+    position: fixed;
+    top: 12px;
+    right: 108px;
+    display: none;
+    z-index: 10;
+  }
+}
+
+/* =================================
+   7. Responsive Styles (Mobile)
+   ================================= */
+@media (max-width: 1024px) {
+  /* Mobile sidebar functionality */
+  .eps-side {
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    width: min(86vw, 320px);
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    padding: 8px;
+    z-index: 1200;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+  }
+  .eps-side.open {
+    transform: translateX(0);
+  }
+  .eps-side-backdrop {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: saturate(.8) blur(1px);
+    display: none;
+    z-index: 1100;
+  }
+  .eps-side.open ~ .eps-side-backdrop {
+    display: block;
+  }
+
+  /* Mobile sidebar toggle button */
+  .eps-mobile-toggle {
+    position: fixed;
+    left: 12px;
+    top: 14px;
+    height: 32px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    z-index: 1300;
+    font-size: 13px;
+  }
+  
+  /* FIX: Moved this rule out of .eps-mobile-toggle */
+  #page-context-menu-button {
+    display: none !important;
+  }
+}
+
+/* =================================
+   8. Accessibility
+   ================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* FIX: Removed stray #content-area from the end of the file */
