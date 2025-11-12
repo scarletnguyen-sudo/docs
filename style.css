@@ -201,6 +201,21 @@ footer .navigation a {
     display: none;
     z-index: 10;
   }
+  
+  aside[role="navigation"] > div:last-child {
+    position: fixed; /* Pull it out of the sidebar's flow */
+    
+    top: 16px;   /* Vertically centers in a 64px header */
+    right: 60px; /* Places it left of the search bar. Adjust this value as needed! */
+    
+    bottom: auto;
+    width: auto;
+    border-top: none;
+    padding: 0;
+    
+    z-index: 50; 
+  }
+}
 }
 
 /* =================================
