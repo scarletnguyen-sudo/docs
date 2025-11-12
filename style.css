@@ -200,19 +200,6 @@ footer .navigation a {
     display: none;
     z-index: 10;
   }
-  
-  aside[role="navigation"] > div:last-child {
-    position: fixed !important; 
-    
-    top: 16px; !important  
-    right: 60px; !important
-    
-    bottom: auto; !important
-    width: auto; !important
-    border-top: none; !important
-    padding: 0; !important
-    z-index: 50; !important
-  }
 }
 
 /* =================================
