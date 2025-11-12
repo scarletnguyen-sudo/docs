@@ -30,8 +30,9 @@
   display: none;
 }
 
+/* ▼ FIX 1: "Linear" 3-column layout fix ▼ */
 #content-area {
-  max-width: 100rem;
+  max-width: 720px; /* Was 100rem, this makes room for the TOC */
 }
 #content-area h1 {
   font-size: 2.5rem;
@@ -185,8 +186,10 @@ footer .navigation a {
    6. Responsive Styles (Desktop)
    ================================= */
 @media (min-width: 1024px) {
+
+  /* ▼ FIX 2: Syntax fix for title height (colon removed) ▼ */
   #content-container {
-    padding-top: 0rem;
+    padding-top: 1rem; 
   }
   #content-container > div {
     max-width: 1024px;
@@ -199,6 +202,21 @@ footer .navigation a {
     right: 108px;
     display: none;
     z-index: 10;
+  }
+  
+  /* ▼ FIX 3: Theme toggle move (corrected selector & syntax) ▼ */
+  aside[role="navigation"] [class*="Sidebar_footer"] {
+    position: fixed !important; 
+    top: 16px !important;   
+    right: 60px !important; /* Adjust this value as needed */
+    
+    /* Reset styles */
+    bottom: auto !important;
+    width: auto !important;
+    border-top: none !important;
+    padding: 0 !important;
+    
+    z-index: 50 !important; 
   }
 }
 
@@ -250,12 +268,13 @@ footer .navigation a {
     font-size: 13px;
   }
   
+  /* Original fix: moved this rule out of .eps-mobile-toggle */
   #page-context-menu-button {
     display: none !important;
   }
   #page-context-menu {
-  display: none !important;
-}
+    display: none !important;
+  }
 }
 
 /* =================================
@@ -267,5 +286,3 @@ footer .navigation a {
     transition: none !important;
   }
 }
-
-/* FIX: Removed stray #content-area from the end of the file */
