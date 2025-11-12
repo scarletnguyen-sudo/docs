@@ -251,7 +251,6 @@ footer .navigation a {
     font-size: 13px;
   }
   
-  /* FIX: Moved this rule out of .eps-mobile-toggle */
   #page-context-menu-button {
     display: none !important;
   }
