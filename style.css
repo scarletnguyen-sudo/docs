@@ -31,6 +31,7 @@
 #content-container > div {
   max-width: 1024px;
   padding-left: 0;
+  gap:32px;
 }
 
 #page-context-menu {
