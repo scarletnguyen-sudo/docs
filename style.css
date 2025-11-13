@@ -87,7 +87,6 @@
    ================================= */
 
 /* --- TOC Card --- */
-/* Fallback + progressive enhancement cho color-mix */
 .eps-toc-card a:hover {
   background: rgba(37, 99, 235, .06);
 }
