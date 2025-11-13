@@ -1,108 +1,233 @@
-:root{
-  --blue:#2563EB;
-  --bg:#fff;            --fg:#0f172a;    --muted:#64748b; 
-  --card:#fff;          --border:rgba(2,6,23,.12);
-  --radius:12px;
-  --toc-w:268px;        --side-w:264px; 
-  --primary-dark:0 109 199;
-  --primary-light:0 109 199;
-}
-[data-theme="dark"]{
-  --bg:#0b0f1a;         --fg:#e2e8f0;    --muted:#94a3b8;
-  --card:#0f172a;       --border:rgba(241,245,249,.14);
+/* =================================
+   1. Root & Theme Variables
+   ================================= */
+:root {
+  --blue: #2563EB;
+  --bg: #fff;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --card: #fff;
+  --border: rgba(2, 6, 23, .12);
+  --radius: 12px;
+  --toc-w: 268px;
+  --side-w: 264px;
+  --primary-dark: 0 109 199;
+  --primary-light: 0 109 199;
 }
 
-.eyebrow{display:none;}
+[data-theme="dark"] {
+  --bg: #0b0f1a;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: rgba(241, 245, 249, .14);
+}
+
+/* =================================
+   2. Base Layout & Typography
+   ================================= */
+.eyebrow {
+  display: none;
+}
+
 #table-of-contents {
-  padding-left:12px;
-  max-width:250px;
-  flex-shrink:0;
+  padding-left: 12px;
+  max-width: 250px;
+  flex-shrink: 0;
   position: sticky;
 }
-#table-of-contents button {display:none;}
 
-#content-area {max-width: 100rem;}
-#content-area h1 { font-size: 2.5rem; }
-#content-area h2 { font-size: 1.5rem; }
-#content-area h3 { font-size: 1.25rem; }
-#content-area span[data-as=p], #content-area p {font-size: 15px;}
-#content-area li { font-size:15px; }
+#table-of-contents button {
+  display: none;
+}
 
 #table-of-contents-content {
-  font-size:13px;
+  font-size: 13px;
 }
 
-@media (min-width: 1024px) {
-#content-container: {
-  padding-top: 3rem;
-  gap:32px;
+#content-area {
+  max-width: 100rem;
 }
-#content-container > div {
-  max-width: 1024px;
-  padding-left: 0;
+
+#content-area h1 {
+  font-size: 2.5rem;
+}
+
+#content-area h2 {
+  font-size: 1.5rem;
+}
+
+#content-area h3 {
+  font-size: 1.25rem;
+}
+
+#content-area span[data-as=p],
+#content-area p {
+  font-size: 15px;
+}
+
+#content-area li {
+  font-size: 15px;
 }
 
 #page-context-menu {
   position: fixed;
   top: 12px;
   right: 108px;
-  display:none;
-  z-index:10;
-}
-#page-title{margin-bottom:10px;}
-
-
-/* Fallback + progressive enhancement cho color-mix */
-.eps-toc-card a:hover{ background:rgba(37,99,235,.06); }
-@supports (background: color-mix(in oklab, black, white)) {
-  .eps-toc-card a:hover{ background:color-mix(in oklab,var(--blue) 7%,var(--card)); }
-  .eps-toc-card a.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
+  display: none;
+  z-index: 10;
 }
 
-/* Footer next/prev */
-footer .navigation a{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
+#page-title {
+  margin-bottom: 10px;
+}
 
-/* Buttons */
-.eps-nav-actions{ display:inline-flex; align-items:center; gap:8px; margin-left:8px; }
-.eps-btn{
-  height:32px; padding:8px 12px; border-radius:10px; border:1px solid var(--border);
-  background:var(--bg); color:var(--fg);
-  font:500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  display:inline-flex; align-items:center; gap:6px; cursor:pointer;
-  transition:transform .12s ease, background .12s ease, border-color .12s ease;
-}
-.eps-btn:hover{ transform:translateY(-1px); }
-.eps-btn.done{ background:#2563EB; color:#fff; }
-
-/* Sidebar (chỉ tác dụng nếu DOM có .eps-side) */
-.eps-side{ width:var(--side-w); }
-.eps-side .group{ margin:8px 0; border-radius:10px; }
-.eps-side .group .group-head{
-  display:flex; align-items:center; justify-content:space-between; width:100%;
-  background:transparent; border:0; padding:8px 10px; border-radius:10px; color:var(--fg);
-  font:600 13px/1 Inter,system-ui; cursor:pointer;
-}
-@supports (background: color-mix(in oklab, black, white)) {
-  .eps-side .group .group-head:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
-}
-.eps-side .group .chev{ width:16px; height:16px; transition:transform .15s ease; }
-.eps-side .group .group-body{ margin:4px 0 8px 6px; }
-
-/* Links */
-.eps-side .link{
-  display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:8px; color:var(--fg);
-  text-decoration:none; font-size:13px;
-}
-.eps-side .link:hover{ background:rgba(37,99,235,.06); }
-@supports (background: color-mix(in oklab, black, white)) {
-  .eps-side .link:hover{ background:color-mix(in oklab,var(--blue) 6%,var(--card)); }
-  .eps-side .link.active{ background:color-mix(in oklab,var(--blue) 12%,var(--card)); }
-}
-  
 /* =================================
-   7. Responsive Styles (Mobile)
+   3. Component Styles
+   ================================= */
+
+/* --- TOC Card --- */
+/* Fallback + progressive enhancement cho color-mix */
+.eps-toc-card a:hover {
+  background: rgba(37, 99, 235, .06);
+}
+
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-toc-card a:hover {
+    background: color-mix(in oklab, var(--blue) 7%, var(--card));
+  }
+
+  .eps-toc-card a.active {
+    background: color-mix(in oklab, var(--blue) 12%, var(--card));
+  }
+}
+
+/* --- Footer next/prev --- */
+footer .navigation a {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+/* --- Buttons --- */
+.eps-nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.eps-btn {
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font: 500 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.eps-btn:hover {
+  transform: translateY(-1px);
+}
+
+.eps-btn.done {
+  background: #2563EB;
+  color: #fff;
+}
+
+/* --- Sidebar (.eps-side) --- */
+.eps-side {
+  width: var(--side-w);
+}
+
+.eps-side .group {
+  margin: 8px 0;
+  border-radius: 10px;
+}
+
+.eps-side .group .group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--fg);
+  font: 600 13px/1 Inter, system-ui;
+  cursor: pointer;
+}
+
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .group .group-head:hover {
+    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+  }
+}
+
+.eps-side .group .chev {
+  width: 16px;
+  height: 16px;
+  transition: transform .15s ease;
+}
+
+.eps-side .group .group-body {
+  margin: 4px 0 8px 6px;
+}
+
+/* --- Sidebar Links --- */
+.eps-side .link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.eps-side .link:hover {
+  background: rgba(37, 99, 235, .06);
+}
+
+@supports (background: color-mix(in oklab, black, white)) {
+  .eps-side .link:hover {
+    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+  }
+
+  .eps-side .link.active {
+    background: color-mix(in oklab, var(--blue) 12%, var(--card));
+  }
+}
+
+/* =================================
+   4. Desktop Styles (min-width)
+   ================================= */
+@media (min-width: 1024px) {
+  #content-container {
+    padding-top: 3rem;
+    gap: 32px;
+  }
+
+  #content-container > div {
+    max-width: 1024px;
+    padding-left: 0;
+  }
+}
+
+/* =================================
+   5. Responsive Styles (Mobile)
    ================================= */
 @media (max-width: 1024px) {
+
   /* Mobile sidebar functionality */
   .eps-side {
     position: fixed;
@@ -117,9 +242,11 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     transform: translateX(-100%);
     transition: transform .2s ease;
   }
+
   .eps-side.open {
     transform: translateX(0);
   }
+
   .eps-side-backdrop {
     content: "";
     position: fixed;
@@ -129,6 +256,7 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     display: none;
     z-index: 1100;
   }
+
   .eps-side.open ~ .eps-side-backdrop {
     display: block;
   }
@@ -146,18 +274,22 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     z-index: 1300;
     font-size: 13px;
   }
-  
+
   #page-context-menu-button {
     display: none !important;
   }
+
   #page-context-menu {
     display: none !important;
   }
 }
 
-
-@media (prefers-reduced-motion: reduce){
-  *{ animation:none !important; transition:none !important; }
-}#content-area 
-
-
+/* =================================
+   6. Accessibility
+   ================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
