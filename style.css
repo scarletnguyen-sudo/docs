@@ -166,7 +166,6 @@ footer .navigation a{ background:var(--card); border:1px solid var(--border); bo
     font-size: 13px;
   }
   
-  /* Original fix: moved this rule out of .eps-mobile-toggle */
   #page-context-menu-button {
     display: none !important;
   }
