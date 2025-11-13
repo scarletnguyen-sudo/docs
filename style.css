@@ -12,7 +12,12 @@
   --card:#0f172a;       --border:rgba(241,245,249,.14);
 }
 .eyebrow{display:none;}
-#table-of-contents {max-width: 268px;}
+#table-of-contents {
+  padding-left:12px;
+  max-width:250px;
+  flex-shrink:0;
+  position: sticky;
+}
 #table-of-contents button {display:none;}
 
 #content-area {max-width: 100rem;}
@@ -24,10 +29,6 @@
 
 #table-of-contents-content {
   font-size:13px;
-  padding-left:12px;
-  max-width:250px;
-  flex-shrink:0;
-  position: sticky;
 }
 
 @media (min-width: 1024px) {
