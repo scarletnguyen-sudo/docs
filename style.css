@@ -9,7 +9,7 @@
   --card: #fff;
   --border: rgba(2, 6, 23, .12);
   --radius: 12px;
-  --toc-w: 268px;
+  --toc-w: 264px;
   --side-w: 264px;
   --primary-dark: 0 109 199;
   --primary-light: 0 109 199;
@@ -137,7 +137,7 @@ footer .navigation a {
 }
 
 .eps-btn.done {
-  background: #2563EB;
+  background: #EDECEC;
   color: #fff;
 }
 
