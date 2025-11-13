@@ -27,11 +27,11 @@
 @media (min-width: 1024px) {
 #content-container: {
   padding-top: 3rem;
+  gap:32px;
 }
 #content-container > div {
   max-width: 1024px;
   padding-left: 0;
-  gap:32px;
 }
 
 #page-context-menu {
