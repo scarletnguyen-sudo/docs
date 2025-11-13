@@ -22,7 +22,13 @@
 #content-area span[data-as=p], #content-area p {font-size: 15px;}
 #content-area li { font-size:15px; }
 
-#table-of-contents-content {font-size:13px;}
+#table-of-contents-content {
+  font-size:13px;
+  padding-left:12px;
+  max-width:250px;
+  flex-shrink:0;
+  position: sticky;
+}
 
 @media (min-width: 1024px) {
 #content-container: {
