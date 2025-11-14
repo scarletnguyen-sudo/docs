@@ -13,7 +13,7 @@ function attachMenuIfNeeded() {
   }
 
   if (navbar && darkModeSelector && !navbar.contains(darkModeSelector)) {
-    navbar.parentNode.appendChild(darkModeSelector);
+    navbar.appendChild(darkModeSelector);
     darkModeSelector.style.display = 'flex';
     darkModeSelector.style.zIndex = 30;
 
