@@ -137,8 +137,9 @@ footer .navigation a {
 }
 
 .eps-btn.done {
-  background: #EDECEC;
+  background: var(--blue);
   color: #fff;
+  border-color: var(--blue);
 }
 
 /* --- Sidebar (.eps-side) --- */
