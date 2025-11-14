@@ -56,6 +56,7 @@
 #topbar-cta-button a span {
 color:var(--cta-fg);
 }
+
 /* =================================
    2. Base Layout & Typography
    ================================= */
@@ -122,6 +123,10 @@ color:var(--cta-fg);
 
 .almond-nav-bottom-section-divider {
   display: none;
+}
+
+.eyebrow{
+  display:none;
 }
 /* =================================
    3. Component Styles
