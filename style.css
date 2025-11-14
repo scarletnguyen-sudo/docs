@@ -17,16 +17,24 @@
   --cta-fg: #f9fafb;
 }
 
+
 [data-theme="dark"] {
   --bg: #0b0f1a;
   --fg: #e2e8f0;
   --muted: #94a3b8;
   --card: #0f172a;
   --border: rgba(241, 245, 249, .14);
-  --cta-bg: #f9fafb;
-  --cta-fg: #020617;
+  --cta-bg: #edecec;
+  --cta-fg: #0c1224;
 }
 
+#topbar-cta-button a {
+  border-radius:0.25rem;
+  background-color: var(--cta-bg);
+}
+#topbar-cta-button a span {
+color:var(--cta-fg);
+}
 /* =================================
    2. Base Layout & Typography
    ================================= */
