@@ -133,12 +133,12 @@ footer .navigation a {
 }
 
 .eps-btn:hover {
-  transform: translateY(-1px);
+  transform: brightness(95%);
 }
 
 .eps-btn.done {
   background: var(--blue);
-  color: #fff;
+  color: var;
   border-color: var(--blue);
 }
 
