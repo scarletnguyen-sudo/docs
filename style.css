@@ -13,6 +13,8 @@
   --side-w: 264px;
   --primary-dark: 0 109 199;
   --primary-light: 0 109 199;
+  --cta-bg: #020617;    
+  --cta-fg: #f9fafb;
 }
 
 [data-theme="dark"] {
@@ -21,6 +23,8 @@
   --muted: #94a3b8;
   --card: #0f172a;
   --border: rgba(241, 245, 249, .14);
+  --cta-bg: #f9fafb;
+  --cta-fg: #020617;
 }
 
 /* =================================
@@ -133,13 +137,13 @@ footer .navigation a {
 }
 
 .eps-btn:hover {
-  transform: brightness(95%);
+  transform: brightness(0.95);
 }
 
 .eps-btn.done {
   background: var(--blue);
   color: var;
-  border-color: var(--blue);
+  border-color: transperent;
 }
 
 /* --- Sidebar (.eps-side) --- */
