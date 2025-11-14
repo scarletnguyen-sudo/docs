@@ -111,15 +111,12 @@ color:var(--cta-fg);
   z-index: 10;
 }
 
-#page-title {
-  margin-bottom: 10px;
+#page-context-menu button {
+height: 32px;
 }
 
-[aria-label="Toggle dark mode"] {
-  position: fixed;
-  top: 16px;
-  right: 288px;
-  z-index:10;
+#page-title {
+  margin-bottom: 10px;
 }
 
 .almond-nav-bottom-section-divider {
@@ -140,11 +137,20 @@ display: none;
 display: block;
 }
 [aria-label="Toggle dark mode"] {
-width: 34px;
-height: 34px;
+width: 32px;
+height: 32px;
 border-radius: 4px;
+position: fixed;
+top: 12px;
+right: 288px;
+z-index:10;
 }
-
+[aria-label="Toggle dark mode"] button:nth-of-type(2){
+  display:none;
+}
+[aria-label="Toggle dark mode"] button:first-child {
+justify-content: center;
+}
 /* =================================
    3. Component Styles
    ================================= */
