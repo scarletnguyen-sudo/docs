@@ -3,6 +3,7 @@
    ================================= */
 :root {
   --blue: #2563EB;
+  --orange: #E73600
   --bg: #fff;
   --fg: #0f172a;
   --muted: #64748b;
@@ -162,11 +163,11 @@ justify-content: center;
 
 @supports (background: color-mix(in oklab, black, white)) {
   .eps-toc-card a:hover {
-    background: color-mix(in oklab, var(--blue) 7%, var(--card));
+    background: color-mix(in oklab, var(--orange) 7%, var(--card));
   }
 
   .eps-toc-card a.active {
-    background: color-mix(in oklab, var(--blue) 12%, var(--card));
+    background: color-mix(in oklab, var(--orange) 12%, var(--card));
   }
 }
 
