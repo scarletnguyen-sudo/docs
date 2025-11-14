@@ -129,6 +129,22 @@ color:var(--cta-fg);
 .eyebrow{
   display:none;
 }
+
+[aria-label="Toggle dark mode"] svg:nth-of-type(2) {
+display: none;
+}
+.dark [aria-label="Toggle dark mode"] svg:first-child {
+display: none;
+}
+.dark [aria-label="Toggle dark mode"] svg:nth-of-type(2) {
+display: block;
+}
+[aria-label="Toggle dark mode"] {
+width: 34px;
+height: 34px;
+border-radius: 4px;
+}
+
 /* =================================
    3. Component Styles
    ================================= */
