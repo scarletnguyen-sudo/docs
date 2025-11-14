@@ -15,6 +15,9 @@
   --primary-light: 0 109 199;
   --cta-bg: #020617;    
   --cta-fg: #f9fafb;
+  --rounded-xl: 0.25rem;
+  --sidebar-group-link-color: #0b0c0e;
+  --sidebar-group-link-bg: #00000014;
 }
 
 
@@ -26,6 +29,18 @@
   --border: rgba(241, 245, 249, .14);
   --cta-bg: #edecec;
   --cta-fg: #0c1224;
+  --sidebar-group-link-color: #fafafa;
+  --sidebar-group-link-bg: #ffffff1a;
+}
+
+#sidebar-group li ul li a {
+  color:var(--sidebar-group-link-color);
+  background:var(--sidebar-group-link-bg);
+}
+
+#sidebar-group li ul li a:hover {
+  color:var(--sidebar-group-link-color);
+  background:var(--sidebar-group-link-bg);
 }
 
 #topbar-cta-button a {
