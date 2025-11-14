@@ -38,7 +38,7 @@
   background:var(--content-primary-bg);
 }
 
-#table-of-contents-content ul li a.text-primary {
+#table-of-contents-content li a.text-primary {
   color:var(--content-primary);
 }
 
