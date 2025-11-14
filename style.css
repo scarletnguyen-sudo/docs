@@ -32,9 +32,7 @@
   --content-primary: #fafafa;
   --content-primary-bg: #ffffff1a;
 }
-.almond-layout{
-  z-index:50;
-}
+
 #sidebar-group li ul li a.text-primary {
   color:var(--content-primary);
   background:var(--content-primary-bg);
