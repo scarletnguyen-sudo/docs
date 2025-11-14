@@ -33,7 +33,7 @@
   --sidebar-group-link-bg: #ffffff1a;
 }
 
-#sidebar-group li ul li a {
+#sidebar-group li ul li a.text-primary {
   color:var(--sidebar-group-link-color);
   background:var(--sidebar-group-link-bg);
 }
