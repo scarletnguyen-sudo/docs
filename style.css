@@ -61,9 +61,7 @@ color:var(--cta-fg);
 /* =================================
    2. Base Layout & Typography
    ================================= */
-.eyebrow {
-  display: none;
-}
+
 
 #table-of-contents {
   padding-left: 12px;
