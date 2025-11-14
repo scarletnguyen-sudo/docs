@@ -87,7 +87,7 @@ color:var(--cta-fg);
 #page-context-menu {
   position: fixed;
   top: 12px;
-  right: 108px;
+  right: 120px;
   display: none;
   z-index: 10;
 }
