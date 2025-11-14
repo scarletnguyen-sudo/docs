@@ -18,6 +18,7 @@
   --rounded-xl: 0.25rem;
   --content-primary: #0b0c0e;
   --content-primary-bg: #00000014;
+  --rounded-2xl: 0.25rem;
 }
 
 
@@ -267,6 +268,10 @@ footer .navigation a {
     max-width: 1024px;
     padding-left: 0;
   }
+}
+
+#search-bar-entry {
+  margin-top:-8px
 }
 
 /* =================================
