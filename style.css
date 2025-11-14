@@ -115,6 +115,15 @@ color:var(--cta-fg);
   margin-bottom: 10px;
 }
 
+[aria-label="Toggle dark mode"] {
+  position: fixed;
+  top: 16px;
+  right: 288px;
+}
+
+.almond-nav-bottom-section-divider {
+  display: none;
+}
 /* =================================
    3. Component Styles
    ================================= */
