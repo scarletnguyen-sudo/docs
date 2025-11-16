@@ -25,6 +25,7 @@
 
 .dark {
   --bg: #0b0f1a;
+  --orange: #E73600;
   --fg: #e2e8f0;
   --muted: #94a3b8;
   --card: #0f172a;
@@ -45,9 +46,6 @@
   border-left: 2px solid var(--orange) !important; 
 }
 
-#table-of-contents-content a.active {
-  border-left: 2px solid var(--orange) !important;
-}
 
 #sidebar-group li ul li a:hover {
   color:var(--content-primary);
@@ -275,11 +273,11 @@ footer .navigation a {
 
 @supports (background: color-mix(in oklab, black, white)) {
   .eps-side .link:hover {
-    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+    background: color-mix(in oklab, var(--orange) 6%, var(--card));
   }
 
   .eps-side .link.active {
-    background: color-mix(in oklab, var(--blue) 12%, var(--card));
+    background: color-mix(in oklab, var(--orange) 12%, var(--card));
   }
 }
 
