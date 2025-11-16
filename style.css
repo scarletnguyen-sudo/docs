@@ -43,7 +43,9 @@
 
 #table-of-contents-content li a.text-primary {
   color:var(--content-primary);
+  border-color: #E73600;
 }
+
 
 
 #sidebar-group li ul li a:hover {
