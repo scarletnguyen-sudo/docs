@@ -171,21 +171,6 @@ justify-content: center;
   }
 }
 
-.eps-side .link.active {
-  position: relative;
-}
-
-.eps-side .link.active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  background: var(--orange);
-  border-radius: 2px;
-}
-
 /* --- Footer next/prev --- */
 footer .navigation a {
   background: var(--card);
