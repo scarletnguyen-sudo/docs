@@ -43,7 +43,6 @@
 
 #table-of-contents-content li a.text-primary {
   color:var(--content-primary);
-  border-left: 2px solid var(--orange) !important; 
 }
 
 
@@ -210,9 +209,9 @@ footer .navigation a {
 }
 
 .eps-btn.done {
-  background: var(--blue);
+  background: var(--orange);
   color: var;
-  border-color: var(--blue);
+  border-color: var(--orange);
 }
 
 /* --- Sidebar (.eps-side) --- */
@@ -241,7 +240,7 @@ footer .navigation a {
 
 @supports (background: color-mix(in oklab, black, white)) {
   .eps-side .group .group-head:hover {
-    background: color-mix(in oklab, var(--blue) 6%, var(--card));
+    background: color-mix(in oklab, var(--orange) 6%, var(--card));
   }
 }
 
