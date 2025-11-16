@@ -42,6 +42,7 @@
 
 #table-of-contents-content li a.text-primary {
   color:var(--content-primary);
+  border-left: 2px solid var(--orange) !important; 
 }
 
 #sidebar-group li ul li a:hover {
@@ -171,17 +172,6 @@ justify-content: center;
   }
 }
 
-#table-of-contents-content a.text-primary::before {
-  content: "";
-  position: absolute;
-  left: -12px;       
-  top: 0;
-  height: 100%;
-  width: 2px;        
-  background: var(--orange); 
-  border-radius: 2px;
-}
-  
 /* --- Footer next/prev --- */
 footer .navigation a {
   background: var(--card);
