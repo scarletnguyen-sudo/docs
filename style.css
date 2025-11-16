@@ -171,14 +171,16 @@ justify-content: center;
   }
 }
 
-#table-of-contents::before {
+#table-of-contents-content a.text-primary::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -12px;       
   top: 0;
-  width: 2px;             
   height: 100%;
+  width: 2px;        
   background: var(--orange); 
+  border-radius: 2px;
+}
   
 /* --- Footer next/prev --- */
 footer .navigation a {
