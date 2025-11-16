@@ -172,9 +172,6 @@ justify-content: center;
     background: color-mix(in oklab, var(--orange) 12%, var(--card));
   }
 }
-#table-of-contents-content a[style*="border-left"] {
-  border-left-color: var(--orange) !important;
-}
 
 /* --- Footer next/prev --- */
 footer .navigation a {
