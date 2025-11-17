@@ -50,6 +50,7 @@
   --primary-light: #E73600;
   --primary: #E73600;
 }
+
 #sidebar-group li ul li a:hover {
   color:var(--content-primary);
   background:var(--content-primary-bg);
