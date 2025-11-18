@@ -33,3 +33,19 @@ observer.observe(document.body, {
 
 // Run once at startup too
 attachMenuIfNeeded();
+
+document.addEventListener("keydown", function (event) {
+  const isMac = navigator.platform.toUpperCase().includes('MAC');
+
+  const isToggleShortcut =
+    // macOS: Cmd + Shift + L
+    (isMac && event.metaKey && event.shiftKey && event.key.toLowerCase() === "l") ||
+    // Windows/Linux: Ctrl + Shift + L
+    (!isMac && event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "l");
+
+  if (isToggleShortcut) {
+    event.preventDefault(); // optional, prevents browser defaults
+    const toggleBtn = document.querySelector('[aria-label="Toggle dark mode"]');
+    toggleBtn?.click();
+  }
+});
