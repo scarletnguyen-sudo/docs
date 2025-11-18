@@ -116,3 +116,21 @@
   });
 
 })();
+
+// Toggle theme with Cmd + Shift + L
+document.addEventListener("keydown", (e) => {
+  const isMac = navigator.platform.toUpperCase().includes("MAC");
+  const cmd = isMac ? e.metaKey : e.ctrlKey;
+
+  if (cmd && e.shiftKey && e.key.toLowerCase() === "l") {
+    e.preventDefault();
+    const current = localStorage.getItem("mintlify-theme") || "system";
+
+    let next = "light";
+    if (current === "light") next = "dark";
+    if (current === "dark") next = "light";
+
+    localStorage.setItem("mintlify-theme", next);
+    document.documentElement.setAttribute("data-theme", next);
+  }
+});
