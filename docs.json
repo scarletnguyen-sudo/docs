@@ -13,7 +13,7 @@
   },
   
   "topnav": "/topnav.js",
-  "appearance": {
+    "appearance": {
     "default": "system"
   },
   
@@ -22,9 +22,6 @@
     "primary": "#EDECEC"
   },
 
-  "appearance": {
-    "default": "system"
-  },
   "styling": {
     "eyebrows": "section",
     "codeblocks": "system",
