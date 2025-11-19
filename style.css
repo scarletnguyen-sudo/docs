@@ -48,7 +48,16 @@
 
 #table-of-contents-content li {
   --primary-light: #E73600;
-  --primary: #E73600;
+  --primary: 231 54 0;
+}
+
+#pagination a > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#pagination pagination-title {
+  font-size: 15px;
 }
 
 #sidebar-group li ul li a:hover {
